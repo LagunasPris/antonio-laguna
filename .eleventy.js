@@ -1,19 +1,19 @@
-const { DateTime } = require('luxon');
-const { promisify } = require('util');
 const fs = require('fs');
-const execFile = promisify(require('child_process').execFile);
 const htmlmin = require('html-minifier');
-const slugify = require('slugify');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const readFile = promisify(require('fs').readFile);
-const hasha = require('hasha');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const socialImages = require('@11tyrocks/eleventy-plugin-social-images');
 
-const DefaultLocale = 'es';
+const addHash = require('./eleventy/filters/add-hash');
+const htmlDateString = require('./eleventy/filters/html-date-string');
+const lastModifiedDate = require('./eleventy/filters/last-modified-date');
+const readableDateFilter = require('./eleventy/filters/readable-date');
+const shortDateFilter = require('./eleventy/filters/short-date');
+const sitemapDateTimeStringFilter = require('./eleventy/filters/sitemap-date-time-string');
+const slugifyFilter = require('./eleventy/filters/slugify');
 
 module.exports = function(config) {
   config.addPlugin(pluginRss);
@@ -21,22 +21,10 @@ module.exports = function(config) {
   config.addPlugin(syntaxHighlight);
   config.addPlugin(socialImages);
 
-  config.addNunjucksAsyncFilter('addHash', function (
-    absolutePath,
-    callback
-  ) {
-    readFile(`public${absolutePath}`, { encoding: 'utf-8' })
-      .then(content => hasha.async(content))
-      .then((hash) => {
-        callback(null, `${absolutePath}?hash=${hash.substr(0, 10)}`);
-      })
-      .catch((error) => callback(error));
-  });
-  config.addCollection('posts', collection => {
-    return [
-      ...collection.getFilteredByGlob('./src/posts/*.md')
-    ];
-  });
+  config.addNunjucksAsyncFilter('addHash', addHash);
+  config.addCollection('posts', collection => [
+    ...collection.getFilteredByGlob('./src/posts/*.md')
+  ]);
 
   config.addWatchTarget('./src/sass/')
 
@@ -44,65 +32,22 @@ module.exports = function(config) {
   config.addPassthroughCopy('./src/img');
   config.addPassthroughCopy('./src/icons');
   config.addPassthroughCopy('_headers');
+  config.addPassthroughCopy('favicon.ico');
+  config.addPassthroughCopy('static/img');
+  config.addPassthroughCopy('admin');
+  config.addPassthroughCopy('_includes/assets/');
 
   config.addShortcode('year', () => `${new Date().getFullYear()}`);
 
   config.setDataDeepMerge(true);
 
-  config.addFilter('readableDate', dateObj => DateTime.fromJSDate(dateObj, { zone: 'Europe/Madrid' })
-    .setLocale(DefaultLocale).toFormat('dd LLLL yyyy'));
-  config.addFilter('shortDate', dateObj => {
-    const date = DateTime.fromJSDate(dateObj, { zone: 'Europe/Madrid' }).setLocale(DefaultLocale).toFormat('dd LLL');
-    const [day, month] = date.split(' ');
+  config.addFilter('readableDate', readableDateFilter);
+  config.addFilter('shortDate', shortDateFilter);
+  config.addFilter('htmlDateString', htmlDateString);
+  config.addFilter('sitemapDateTimeString', sitemapDateTimeStringFilter);
+  config.addFilter('slugify', slugifyFilter);
 
-    return `${day} ${month.substring(0, 3)}`;
-  });
-  config.addFilter('htmlDateString', dateObj => {
-    const dateObject = new Date(dateObj);
-    return dateObject.toISOString();
-  });
-
-  async function lastModifiedDate(filename) {
-    try {
-      const { stdout } = await execFile('git', [
-        'log',
-        '-1',
-        '--format=%cd',
-        filename,
-      ]);
-
-      if (stdout) {
-        return new Date(stdout);
-      }
-
-      return new Date();
-    } catch (e) {
-      console.error(e.message);
-      // Fallback to stat if git isn't working.
-      const stats = await stat(filename);
-      return stats.mtime; // Date
-    }
-  }
-
-  // Cache the lastModifiedDate call because shelling out to git is expensive.
-  // This means the lastModifiedDate will never change per single eleventy invocation.
-  const lastModifiedDateCache = new Map();
-  config.addNunjucksAsyncFilter('lastModifiedDate', function (
-    filename,
-    callback
-  ) {
-    const call = (result) => {
-      result.then((date) => callback(null, date));
-      result.catch((error) => callback(error));
-    };
-    const cached = lastModifiedDateCache.get(filename);
-    if (cached) {
-      return call(cached);
-    }
-    const promise = lastModifiedDate(filename);
-    lastModifiedDateCache.set(filename, promise);
-    call(promise);
-  });
+  config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
   // Minify HTML output
   config.addTransform('htmlmin', function(content, outputPath) {
@@ -121,24 +66,6 @@ module.exports = function(config) {
 
     return content;
   });
-
-  config.addFilter('slugify', string => {
-    if (!string) {
-      return;
-    }
-
-    return slugify(string.toString(), {
-      lower: true,
-      replacement: '-',
-      remove: /[*+~.·,()'"`´%!¡?¿:@]/g
-    });
-  });
-
-  // Don't process folders with static assets e.g. images
-  config.addPassthroughCopy('favicon.ico');
-  config.addPassthroughCopy('static/img');
-  config.addPassthroughCopy('admin');
-  config.addPassthroughCopy('_includes/assets/');
 
   const markdownLibrary = markdownIt({
     html: true,
