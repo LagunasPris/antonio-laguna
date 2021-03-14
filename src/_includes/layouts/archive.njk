@@ -1,0 +1,15 @@
+{% extends 'layouts/base.njk' %}
+
+{% block article %}
+  <div class="container">
+    {% block title %}
+      <h1 class="text-level--6 spacing--sm text--upper color--secondary text--center">{{ title }}</h1>
+    {% endblock %}
+
+    {% block postList %}
+      {% set postsHeadingLevel = 'h3' %}
+      {% set posts = collections.posts | reverse %}
+      {% include "components/postlist.njk" %}
+    {% endblock %}
+  </div>
+{% endblock %}

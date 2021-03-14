@@ -1,0 +1,24 @@
+{% macro render(content, short = false) %}
+  {% set wc = content | striptags | wordcount %}
+  {% set wPerMinute = (wc / 150) | round %}
+  {% set text = 'minutos' %}
+  {% set textBefore = 'Unos' %}
+  {% set textBefore = 'Unos' %}
+
+  {% if short %}
+    {% set textBefore = '~' %}
+    {% set text = 'mins' %}
+  {% endif %}
+
+  {% if wPerMinute == 1 %}
+    {% if short %}
+      {% set textBefore = '~' %}
+      {% set text = 'min' %}
+    {% else %}
+      {% set text = 'minuto' %}
+      {% set textBefore = 'Sobre' %}
+    {% endif %}
+  {% endif %}
+
+  {{ textBefore }} {{ wPerMinute }} {{ text }} de lectura
+{% endmacro %}

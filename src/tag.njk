@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: false
+  filter:
+    - posts
+    - all
+eleventyComputed:
+  title: "Artículos etiquetados con {{ tag }}"
+permalink: "/tag/{{ tag | slug }}/"
+---
+
+{% set templateClass %}tag tag-{{ tag | slug }}{% endset %}
+
+{% extends 'layouts/archive.njk' %}
+
+{% block postList %}
+  {% set posts = collections[tag] | reverse %}
+  {% include "components/postlist.njk" %}
+{% endblock %}

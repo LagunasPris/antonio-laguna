@@ -1,0 +1,14 @@
+.margin-0 {
+  margin: 0;
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@each $name, $amount in $spacings {
+  .spacing--#{$name} {
+    margin-bottom: $amount;
+  }
+}

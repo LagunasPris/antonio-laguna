@@ -1,0 +1,6 @@
+public/
+node_modules/
+.idea
+.DS_Store
+src/css
+social/pages.json

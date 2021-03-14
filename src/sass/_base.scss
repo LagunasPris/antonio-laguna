@@ -1,0 +1,47 @@
+html {
+  box-sizing: border-box;
+  font-family: $font-body;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: $primary;
+  color: $light;
+}
+
+.site-content {
+  flex-grow: 1;
+  padding-bottom: spacing(lg);
+  position: relative;
+}
+
+body {
+  background-color: $body;
+  display: flex;
+  flex-direction: column;
+}
+
+a:focus,
+button:focus {
+  outline: 1px solid $secondary;
+  outline-offset: .4rem;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}

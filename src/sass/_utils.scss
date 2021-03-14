@@ -1,0 +1,66 @@
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.display--flex {
+  display: flex;
+}
+
+.display--block {
+  display: block;
+}
+
+.display--inline-flex {
+  display: inline-flex;
+}
+
+.text--lower {
+  text-transform: lowercase;
+}
+
+.text--upper {
+  text-transform: uppercase;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.list--unstyled {
+  list-style: none;
+}
+
+.flex--row {
+  display: flex;
+  margin-left: $grid-outside * -1;
+  margin-right: $grid-outside * -1;
+}
+
+.flex--child {
+  padding-left: $grid-outside;
+  padding-right: $grid-outside;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.hide--sm {
+  @include bp(mobile-only) {
+    display: none !important;
+  }
+}
+
+.hide--md {
+  @include bp(tablet) {
+    display: none !important;
+  }
+}

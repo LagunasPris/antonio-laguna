@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+<head>
+  {%- set pageTitle %}{% if titleOverride %}{{ title }}{% else %}{% if title %}{{ title }} | {% endif %}{{ meta.siteName }}{% endif %}{% endset -%}
+  {%- set pageDescription %}{% if description %}{{ description }}{% else %}{{ meta.siteDescription }}{% endif %}{% endset -%}
+  {%- set pageSocialImg %}{{ meta.url }}/img/previews/{% if title %}{{ title | slugify }}{% else %}{{ 'home' | slugify }}{% endif %}.png{% endset -%}
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ pageTitle }}</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" media="print" onload="this.media='all'" />
+
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" />
+  </noscript>
+
+  <meta name="description" content="{{ pageDescription }}"/>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@{{ meta.twitterUsername }}" />
+  <meta name="twitter:site" content="@{{ meta.twitterUsername }}">
+  <meta name="twitter:title" content="{{ pageTitle }}" />
+  <meta name="twitter:description" content="{{ pageDescription }}" />
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  {% if not disableImage %}<meta name="twitter:image" content="{{ pageSocialImg }}" />{% endif %}
+  <meta name="og:title" content="{{ pageTitle }}" />
+  <meta name="og:description" content="{{ pageDescription }}" />
+  {% if not disableImage %}<meta property="og:image" content="{{ pageSocialImg }}" />{% endif %}
+  <link rel="alternate" type="application/rss+xml" title="Feed RSS para {{ meta.siteName }}" href="/feed/"/>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/icons/apple-touch-icon.png' | addHash }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/icons/favicon-32x32.png' | addHash }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/icons/favicon-16x16.png' | addHash }}">
+  <link rel="manifest" href="{{ '/icons/site.webmanifest' | addHash }}">
+  <link rel="mask-icon" color="#14213d" href="{{ '/icons/safari-pinned-tab.svg' | addHash }}">
+  <link rel="shortcut icon" href="{{ '/icons/favicon.ico' | addHash }}">
+  <meta name="msapplication-TileColor" content="#14213d">
+  <meta name="msapplication-config" content="{{ '/icons/browserconfig.xml' | addHash }}">
+  <meta name="theme-color" content="#14213d">
+  <meta name="robots" content="max-snippet:-1, max-image-preview: large, max-video-preview: -1">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <link type="text/css" rel="stylesheet" href="{{ '/css/styles.css' | addHash }}">
+  <link rel="preconnect" href="/" crossorigin>
+  {% block extraHead %}{% endblock %}
+</head>
+<body>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "@id": "#siteOwner",
+    "name": "{{ meta.author.name }}",
+    "email": "{{ meta.author.email }}",
+    "jobTitle": "Lead Front End Developer",
+    "url": "{{ meta.url }}",
+    "sameAs":[{% for network, link in meta.author.networks %}"{{ link }}"{% if not loop.last %},{% endif %}{% endfor %}]
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+      "@type": "Person",
+      "@id": "#siteOwner"
+    },
+    "author":{
+      "@type":"Person",
+      "@id": "#siteOwner"
+    },
+    "headline": "{{ meta.siteName }}",
+    "description": "{{ meta.siteDescription }}",
+    "name": "{{ meta.siteName }}",
+    "url": "{{ meta.url }}"
+  }
+</script>
+{% include 'components/header.njk' %}
+<main class="site-content">
+  {% block article %}
+    {{ content | safe }}
+  {% endblock %}
+</main>
+{% include 'components/footer.njk' %}
+</body>
+</html>

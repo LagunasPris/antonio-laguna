@@ -1,0 +1,19 @@
+---
+description:
+layout: layouts/base.njk
+---
+
+<div class="container">
+  <h1 class="home__title spacing--xl text-level--5">
+    <img src="/img/antonio-laguna.svg" width="450" height="70" alt="" />
+    <span class="visually-hidden">{{ meta.author.name }}, </span>
+    <span class="title__subtitle font--italic font--regular text--compact">
+      mis experiencias y aprendizajes sobre JavaScript, CSS, React, accesibilidad y Front End en general.
+    </span>
+  </h1>
+
+  <h2 class="text-level--6 spacing--sm text--upper color--secondary text--center">Últimos artículos</h2>
+
+  {% set postsHeadingLevel = 'h3' %}
+  {% include "components/postlist.njk" %}
+</div>

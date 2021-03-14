@@ -1,0 +1,26 @@
+.site-header {
+  margin-bottom: 6rem;
+  padding-bottom: spacing(sm);
+  padding-top: spacing(sm);
+
+  &__logo {
+    fill: currentColor;
+
+    svg {
+      @include bp(mobile-only) {
+        height: 36px;
+        width: 50px;
+      }
+    }
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav__list {
+    margin-bottom: 0;
+  }
+}

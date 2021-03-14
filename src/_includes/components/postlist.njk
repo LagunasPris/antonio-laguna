@@ -1,0 +1,14 @@
+{% import 'macros/duration.njk' as duration %}
+
+{% set headingLevel = postsHeadingLevel | default('h2') %}
+
+<div class="posts-feed">
+  {%- for post in posts | reverse -%}
+    <article class="posts-feed__post display--flex">
+      <div class="post__date text--upper font--bold color--secondary font--mono">{{ post.date | shortDate }}</div>
+      <{{ headingLevel }} class="post__title font--regular">{{ post.data.title }}</{{ headingLevel }}>
+      <div class="post__duration">{{ duration.render(post.templateContent, true) }}</div>
+      <a class="post__link" href="{{ post.url | url }}" aria-label="Leer {{ post.data.title  }}"></a>
+    </article>
+  {% endfor %}
+</div>

@@ -1,0 +1,40 @@
+---
+title: '404'
+permalink: /404.html
+templateClass: 404-page
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block extraHead %}
+<style>
+  .not-found__image {
+    position: absolute;
+    left: 50%;
+    margin-left: -110px;
+    bottom: 0;
+  }
+
+  .not-found__title {
+    color: #fff;
+    text-shadow: 2px 2px 0 #003049, 2px -2px 0 #003049, -2px 2px 0 #003049, -2px -2px 0 #003049, 2px 0 0 #003049, 0 2px 0 #003049, -2px 0 0 #003049, 0 -2px 0 #003049;
+    letter-spacing: .2em;
+  }
+
+  .site-content {
+    padding-bottom: 213px;
+  }
+</style>
+{% endblock %}
+
+{% block article %}
+  <div class="container">
+    <div class="text--center">
+      <h1 class="not-found__title text-level--1">404</h1>
+      <p>Creo que te has perdido...</p>
+      <p>Volver a <a href="/">inicio</a>.</p>
+    </div>
+  </div>
+
+  <img class="not-found__image" src="/img/404.gif" alt="" width="220" height="213" />
+{% endblock %}
