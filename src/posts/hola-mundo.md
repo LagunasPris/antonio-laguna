@@ -1,6 +1,6 @@
 ---
 title: ¡Hola Mundo!
-description: Ha pasado mucho tiempo desde que me ponía a escribir delante de un teclado.
+description: Ha pasado mucho tiempo desde que me ponía a escribir delante de un teclado. 
 date: 2021-03-14
 tags:
   - Meta
@@ -16,7 +16,9 @@ Después de darle muchas vueltas, encontré este sistema llamado [Eleventy](http
 
 El blog es intencionadamente _espartano_. Me he centrado en algo que fuera legible y accesible. Sin nada de JavaScript salvo como alternativa para navegadores antiguos e imágenes con _lazyload_.
 Me gustaría ir añadiendo más cosas, desde modo oscuro a sistema de comentarios pero al final (y al más puro estilo _[Lean Startup](http://theleanstartup.com/principles)_) me he decidido a sacar este <abbr title="Minimum Viable Product">MVP</abbr>. Al final el resto eran piedras que yo mismo me pongo en el camino para "no sacar el blog" y, sinceramente, es algo que me apetece mucho.
-También me apetecía mucho que estuviera todo en GitHub, que se pueda ver el proceso de desarrollo y las tripas para que, cualquiera, pueda coger el blog y _deconstruirlo_ como le plazca.
+
+También me apetecía mucho que estuviera todo en [GitHub](https://github.com/LagunasPris/antonio-laguna) por dos motivos principales. El primero, que se pueda ver el proceso de desarrollo y las tripas para que, cualquiera, pueda coger el blog y _deconstruirlo_ como le plazca.
+El segundo es que además, favorezca la colaboración y la transparencia para cualquiera que quiera colaborar y/o ver qué hay cociéndose en las [peticiones de cambio](https://github.com/LagunasPris/antonio-laguna/pulls).
 
 ¿Qué puedes esperar encontrar aquí? Pues espero que cosas sobre desarrollo web. Aunque ejerzo como Front End al final toco (y rompo) muchos aspectos de la web y son esas cosas las que me gustaría compartir por aquí.
 
