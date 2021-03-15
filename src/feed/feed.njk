@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ meta.siteName }}</title>
   <subtitle>{{ meta.siteDescription }}</subtitle>
-  {% set absoluteUrl %}{{ 'feed/feed.xml' | url | absoluteUrl(meta.author.url) }}{% endset %}
+  {% set absoluteUrl %}{{ 'feed/feed.xml' | url | absoluteUrl(meta.url) }}{% endset %}
   <link href="{{ absoluteUrl }}" rel="self"/>
   <link href="{{ meta.author.url }}"/>
   <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
     <email>{{ meta.author.email }}</email>
   </author>
   {%- for post in collections.posts %}
-    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(meta.author.url) }}{% endset %}
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(meta.url) }}{% endset %}
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}"/>

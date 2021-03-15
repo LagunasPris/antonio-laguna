@@ -1,14 +1,15 @@
 ---
 permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
+siteWideUpdate: 2021-03-15
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in collections.all -%}
-  {%- set absoluteUrl -%}{{ page.url | url | absoluteUrl(meta.author.url) }}{%- endset -%}
+  {%- set absoluteUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
   {%- set pageDate = page.date | sitemapDateTimeString -%}
-  {%- set lastModifiedDate = page.inputPath | lastModifiedDate  | sitemapDateTimeString -%}
-  {%- set siteWide = siteWideUpdate| sitemapDateTimeString -%}
+  {%- set lastModifiedDate = page.inputPath | lastModifiedDate | sitemapDateTimeString -%}
+  {%- set siteWide = siteWideUpdate | sitemapDateTimeString -%}
   {%- set lastmod = siteWide -%}
   {%- if pageDate > lastmod -%}
     {%- set lastmod = pageDate -%}

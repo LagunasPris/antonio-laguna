@@ -1,4 +1,4 @@
-{% macro render(content, short = false) %}
+{% macro render(content, short = false, suffix = ' de lectura') %}
   {% set wc = content | striptags | wordcount %}
   {% set wPerMinute = (wc / 150) | round %}
   {% set text = 'minutos' %}
@@ -20,5 +20,5 @@
     {% endif %}
   {% endif %}
 
-  {{ textBefore }} {{ wPerMinute }} {{ text }} de lectura
+  {{ textBefore }} {{ wPerMinute }} {{ text }}{{ suffix }}
 {% endmacro %}

@@ -5,6 +5,26 @@ templateClass: template--post
 
 {% extends "layouts/base.njk" %}
 
+{% block extraHead %}
+  {%- set pageDate = page.date | sitemapDateTimeString -%}
+  {%- set lastModifiedDate = page.inputPath | lastModifiedDate | sitemapDateTimeString -%}
+  {%- set lastmod = lastModifiedDate -%}
+  {%- if pageDate > lastmod -%}
+    {%- set lastmod = pageDate -%}
+  {%- endif -%}
+  {%- if lastModifiedDate > lastmod -%}
+    {%- set lastmod = lastModifiedDate -%}
+  {%- endif -%}
+  <meta property="article:published_time" content="{{ page.date | htmlDateString }}" />
+  {% if lastmod > pageDate %}<meta property="article:modified_time" content="{{ lastmod }}" />{% endif %}
+  {% for tag in tags %}{% if tag != 'posts' %}<meta property="article:tag" content="{{ tag }}" />{% endif %}{% endfor %}
+
+  <meta name="twitter:label1" content="Tiempo de lectura" />
+  <meta name="twitter:data1" content="{{ duration.render(content, false, '') | trim}}" />
+  <meta name="twitter:label2" content="Etiquetado en" />
+  <meta name="twitter:data2" content="{% for tag in tags %}{% if tag != 'posts' %}{{ tag }}{% if not loop.last %},{% endif %}{% endif %}{% endfor %}" />
+{% endblock %}
+
 {% block article %}
   <div class="container">
     <article>
@@ -26,7 +46,7 @@ templateClass: template--post
               <span class="visually-hidden">Tiempo de Lectura</span>
               <svg class="svg-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24"  viewBox="0 0 108 156"><path d="M96 0c6.525 0 11.834 5.209 11.996 11.695L108 12v26.73a12 12 0 01-4.486 9.357l-.278.217L63.952 78l39.284 29.696a12 12 0 014.759 9.221l.005.352V144c0 6.525-5.209 11.834-11.695 11.996L96 156H12C5.475 156 .166 150.791.004 144.305L0 144v-27a12 12 0 014.52-9.384l.28-.216L43.999 78 4.8 48.6a12 12 0 01-4.795-9.247L0 39V12C0 5.475 5.209.166 11.695.004L12 0h84zM48 90l-36 27v27h84v-26.73L60 90.056v17.94a6 6 0 01-11.996.225l-.004-.225V90zm27.804-36.004H31.995l21.99 16.493 21.819-16.493zM96 12H12v27l3.995 2.996h75.684L96 38.731V12z" fill="currentColor"/></svg>
             </dt>
-            <dd class="article__meta__value">{{ duration.render(content) }}</dd>
+            <dd class="article__meta__value">{{ duration.render(content) | trim }}</dd>
             {% if tags %}
               <dt class="article__meta__title">
                 <span class="visually-hidden">Etiquetas</span>
