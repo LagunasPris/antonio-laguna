@@ -2,6 +2,7 @@
 templateClass: template--post
 ---
 {% import 'macros/duration.njk' as duration %}
+{% import 'macros/icons.njk' as icons %}
 
 {% extends "layouts/base.njk" %}
 
@@ -39,18 +40,18 @@ templateClass: template--post
           <dl class="article__meta font--mono">
             <dt class="article__meta__title">
               <span class="visually-hidden">Fecha de publicación</span>
-              <svg class="svg-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              {{ icons.calendar() }}
             </dt>
             <dd class="article__meta__value text--capitalize"><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></dd>
             <dt class="article__meta__title">
               <span class="visually-hidden">Tiempo de Lectura</span>
-              <svg class="svg-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="24" height="24"  viewBox="0 0 108 156"><path d="M96 0c6.525 0 11.834 5.209 11.996 11.695L108 12v26.73a12 12 0 01-4.486 9.357l-.278.217L63.952 78l39.284 29.696a12 12 0 014.759 9.221l.005.352V144c0 6.525-5.209 11.834-11.695 11.996L96 156H12C5.475 156 .166 150.791.004 144.305L0 144v-27a12 12 0 014.52-9.384l.28-.216L43.999 78 4.8 48.6a12 12 0 01-4.795-9.247L0 39V12C0 5.475 5.209.166 11.695.004L12 0h84zM48 90l-36 27v27h84v-26.73L60 90.056v17.94a6 6 0 01-11.996.225l-.004-.225V90zm27.804-36.004H31.995l21.99 16.493 21.819-16.493zM96 12H12v27l3.995 2.996h75.684L96 38.731V12z" fill="currentColor"/></svg>
+              {{ icons.time() }}
             </dt>
             <dd class="article__meta__value">{{ duration.render(content) | trim }}</dd>
             {% if tags %}
               <dt class="article__meta__title">
                 <span class="visually-hidden">Etiquetas</span>
-                <svg class="svg-icon" focusable="false" aria-hidden="true" width="24" height="24" viewBox="0 0 171 171" xmlns="http://www.w3.org/2000/svg"><path d="M77.822.526A12 12 0 0188.66 3.808L167 82.148a12 12 0 010 16.97L99.118 167a12 12 0 01-16.97 0L3.807 88.66A12 12 0 01.526 77.822L12.624 17.33a6 6 0 014.707-4.707zm2.353 11.767L23.606 23.606l-11.313 56.57 78.34 78.339 67.882-67.883-78.34-78.34zM49.995 41a9 9 0 110 18 9 9 0 010-18z" fill="currentColor" /></svg>
+                {{ icons.tag() }}
               </dt>
               <dd class="article__meta__value">
                 <ul role="list" class="article__tags display--flex flex--wrap">
