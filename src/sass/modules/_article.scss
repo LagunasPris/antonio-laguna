@@ -5,6 +5,10 @@
     flex-wrap: wrap;
   }
 
+  &__tags {
+    margin-bottom: 0;
+  }
+
   &__tag {
     margin: .4rem;
   }
