@@ -11,7 +11,7 @@ tags:
 
 El caso es que el gusanillo siempre ha estado ahí tal y como explico un poco en [sobre mí](/sobre-mi). Me encanta publicar cosillas de cuando en cuando y compartir mis experiencias que, seguro, alguien podrá aprovechar.
 
-El gusanillo empezó a crecer cuando, hace ya un año, entre primos empezó a surgir la gracia de hacernos con el dominio [laguna.es](https://laguna.es/) cuando finalmente nos hicimos con él (estaba aparcado en SEDO) empezó a surgir la chispa.
+El gusanillo empezó a crecer cuando, hace ya un año, entre primos empezó a surgir la gracia de hacernos con el dominio [laguna.es](https://laguna.es/) y cuando finalmente nos hicimos con él (estaba aparcado en SEDO) empezó a surgir la chispa.
 Después de darle muchas vueltas, encontré este sistema llamado [Eleventy](https://www.11ty.dev/) gracias a Iain Bean que publicó "[Tu blog no necesita un framework de JavaScript](https://iainbean.com/posts/2020/your-blog-doesnt-need-a-javascript-framework/)" (en inglés). Eleventy (simplificando muchísimo) se encarga de convertir Markdown en contenido estático y [Netlify](https://www.netlify.com/) hace el resto. Si queréis saber más sobre Eleventy os recomiendo echarle un ojo a "[Creando una web con Eleventy 1](https://www.twitch.tv/videos/902195537)" y "[Creando una web con Eleventy 2](https://www.twitch.tv/videos/911253856)" de [Belén Albeza](https://www.belenalbeza.com/).
 
 El blog es intencionadamente _espartano_. Me he centrado en algo que fuera legible y accesible. Sin nada de JavaScript salvo como alternativa para navegadores antiguos e imágenes con _lazyload_.
