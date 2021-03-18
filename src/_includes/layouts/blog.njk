@@ -28,7 +28,7 @@ templateClass: template--post
 
 {% block article %}
   <div class="container">
-    <article>
+    <article class="article">
       <header class="article__header spacing--xl">
         <div class="article__intro">
           <h1 class="article__title leading--small text-level--2">{{ title }}</h1>
@@ -67,7 +67,14 @@ templateClass: template--post
         </div>
       </header>
 
-      <div class="article__content ugc text-level--5">{{ content | safe }}</div>
+      <div class="article__body display--flex">
+        {% if enableToc %}
+          {{ content | toc | safe }}
+        {% endif %}
+        <div class="article__content ugc text-level--5">
+          {{ content | safe }}
+        </div>
+      </div>
     </article>
   </div>
 <script type="application/ld+json">
