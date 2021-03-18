@@ -68,6 +68,10 @@ a {
     margin-top: spacing(md);
   }
 
+  > .visually-hidden + * {
+    margin-top: 0;
+  }
+
   .direct-link {
     float: left;
     line-height: 1.3;
