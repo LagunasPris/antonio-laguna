@@ -10,4 +10,4 @@ module.exports = function slugifyFilter(string) {
     replacement: '-',
     remove: /[*+~.·,()'"`´%!¡?¿:@]/g
   });
-}
+};
