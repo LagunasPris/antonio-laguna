@@ -1,0 +1,65 @@
+.article__toc {
+  display: none;
+  margin-left: auto;
+  max-height: calc(-15rem + 100vh);
+  max-width: 26rem;
+  order: 1;
+  overflow: auto;
+  padding: 0 .5rem;
+  position: sticky;
+  top: 15rem;
+
+  @include bp(desktop) {
+    display: block;
+  }
+}
+
+.toc {
+  &__anchor,
+  &__item {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+
+    & & {
+      margin-top: 1rem;
+      padding-left: .8rem;
+
+      .toc__anchor,
+      .toc__item {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__anchor {
+    opacity: .7;
+    text-decoration: none;
+    transition: opacity .3s;
+
+    &:focus,
+    &:visited,
+    &:hover {
+      color: $dark;
+      opacity: 1;
+    }
+
+    &--active {
+      &,
+      &:focus,
+      &:visited,
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  &__item {
+    margin-top: 1rem;
+  }
+}
