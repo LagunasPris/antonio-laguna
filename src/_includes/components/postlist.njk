@@ -3,7 +3,7 @@
 {% set headingLevel = postsHeadingLevel | default('h2') %}
 
 <div class="posts-feed">
-  {%- for post in posts | reverse -%}
+  {%- for post in posts -%}
     <article class="posts-feed__post display--flex">
       <div class="post__date text--upper font--bold color--secondary font--mono">{{ post.date | shortDate }}</div>
       <{{ headingLevel }} class="post__title font--regular">{{ post.data.title }}</{{ headingLevel }}>
