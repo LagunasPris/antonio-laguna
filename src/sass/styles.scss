@@ -1,5 +1,6 @@
 @import 'vars';
 @import 'mixins';
+@import '~modern-css-reset/src/reset.css';
 @import 'normalize';
 @import 'base';
 @import 'container';
@@ -13,6 +14,7 @@
 @import './modules/footer';
 @import './modules/post-list';
 @import './modules/article';
+@import './modules/toc';
 @import './modules/prism';
 
 @import './pages/home';
