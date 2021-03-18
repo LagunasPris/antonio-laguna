@@ -102,7 +102,8 @@ module.exports = function(config) {
   })
     .use(markdownItImageFigures, { lazy: true, figcaption: true, dataType: true })
     .use(markdownItAbbr)
-    .use(markdownItContainer, 'info', infoContainer(markdownLibrary));
+    .use(markdownItContainer, 'info', infoContainer(markdownLibrary))
+    .use(markdownItContainer, 'hidden-header', hiddenHeaderContainer(markdownLibrary));
 
   config.setLibrary('md', markdownLibrary);
 
