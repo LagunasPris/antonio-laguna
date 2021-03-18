@@ -1,7 +1,7 @@
 ---
 title: Consejos para aplicar a un trabajo Front End
 description: Te cuento qué tengo yo en cuenta cuando me ha tocado entrevistar a gente que busca trabajo como Front End developer.
-date: 2021-03-14
+date: 2021-03-18
 tags:
   - Trabajo
   - Front-End
