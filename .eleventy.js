@@ -10,6 +10,7 @@ const pluginNavigation = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const socialImages = require('@11tyrocks/eleventy-plugin-social-images');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
+const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
 
 const addHash = require('./eleventy/filters/add-hash');
 const htmlDateString = require('./eleventy/filters/html-date-string');
@@ -20,6 +21,7 @@ const sitemapDateTimeStringFilter = require('./eleventy/filters/sitemap-date-tim
 const slugifyFilter = require('./eleventy/filters/slugify');
 
 const infoContainer = require('./eleventy/containers/info');
+const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
 
 module.exports = function(config) {
   config.addPlugin(pluginRss);
@@ -28,6 +30,14 @@ module.exports = function(config) {
   config.addPlugin(socialImages);
   config.addPlugin(embedTwitter, {
     cacheText: true
+  });
+  config.addPlugin(eleventyPluginTOC, {
+    headingText: 'Tabla de Contenidos',
+    wrapperClass: 'article__toc',
+    headingClass: 'toc__heading text--upper text-level--6 color--secondary',
+    listClass: 'toc__list',
+    listItemClass: 'toc__item',
+    listItemAnchorClass: 'toc__anchor'
   });
 
   config.addNunjucksAsyncFilter('addHash', addHash);
