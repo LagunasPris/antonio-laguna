@@ -1,0 +1,26 @@
+.site-header {
+  margin-bottom: 6rem;
+  padding-bottom: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+
+  &__logo {
+    fill: currentColor;
+
+    svg {
+      @media (--viewport-sm-only) {
+        height: 36px;
+        width: 50px;
+      }
+    }
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__right {
+    align-items: center;
+  }
+}

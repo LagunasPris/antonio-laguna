@@ -1,0 +1,26 @@
+.color-scheme-toggler {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-left: .5rem;
+  padding: 0;
+  transition: text-shadow .3s;
+  width: 4.5rem;
+
+  .color-scheme-toggler__icon--light {
+    display: none;
+  }
+
+  &:hover {
+    text-shadow: 0 0 .5rem var(--color-text);
+  }
+}
+
+[data-theme='dark'] {
+  .color-scheme-toggler {
+    .color-scheme-toggler__icon--light {
+      display: block;
+    }
+  }
+}

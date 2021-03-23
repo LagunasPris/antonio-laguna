@@ -45,15 +45,14 @@ module.exports = function(config) {
     ...collection.getFilteredByGlob('./src/posts/*.md')
   ]);
 
-  config.addWatchTarget('./src/sass/')
+  config.addWatchTarget('./src/css/');
+  config.addWatchTarget('./src/js/');
 
-  config.addPassthroughCopy('./src/css');
   config.addPassthroughCopy('./src/img');
   config.addPassthroughCopy('./src/icons');
   config.addPassthroughCopy('_headers');
   config.addPassthroughCopy('favicon.ico');
   config.addPassthroughCopy('static/img');
-  config.addPassthroughCopy('admin');
   config.addPassthroughCopy('_includes/assets/');
 
   config.addShortcode('year', () => `${new Date().getFullYear()}`);

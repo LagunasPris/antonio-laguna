@@ -1,0 +1,14 @@
+.site-footer {
+  padding: var(--spacing-md) 0;
+
+  &__links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__disclaimer {
+    @media (--viewport-sm-only) {
+      font-size: 1.6rem;
+    }
+  }
+}
