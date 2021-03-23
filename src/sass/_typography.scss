@@ -1,6 +1,6 @@
 body,
 .color--body {
-  color: $dark;
+  color: var(--color-text);
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 1.5;
@@ -14,8 +14,8 @@ a {
   transition: color .123s, text-decoration-color .123s;
 
   &:hover {
-    color: $secondary;
-    text-decoration-color: $secondary;
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
   }
 }
 

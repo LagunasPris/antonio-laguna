@@ -21,19 +21,12 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  border: 2px solid $secondary;
+  border: 2px solid var(--color-accent);
   border-radius: 4px;
   max-width: 100%;
   overflow: auto;
   padding: 1em;
   position: relative;
-  width: 100vw;
-
-  @media (min-width: 1200px) {
-    left: 50%;
-    max-width: 100rem;
-    transform: translateX(calc(-50% - 10%));
-  }
 }
 
 :not(pre) > code[class*='language-'],

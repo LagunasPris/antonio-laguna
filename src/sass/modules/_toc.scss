@@ -45,7 +45,7 @@
     &:focus,
     &:visited,
     &:hover {
-      color: $dark;
+      color: var(--color-text);
       opacity: 1;
     }
 
@@ -54,7 +54,7 @@
       &:focus,
       &:visited,
       &:hover {
-        color: $secondary;
+        color: var(--color-accent);
       }
     }
   }

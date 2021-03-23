@@ -7,9 +7,9 @@
 }
 
 .color--primary {
-  color: $primary;
+  color: var(--color-selection);
 }
 
 .color--secondary {
-  color: $secondary;
+  color: var(--color-accent);
 }

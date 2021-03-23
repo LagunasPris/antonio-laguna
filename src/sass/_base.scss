@@ -1,3 +1,40 @@
+:root {
+  --color-background: #{$light};
+  --color-text: #{$dark};
+  --color-accent: #{$secondary};
+  --color-selection: #{$primary};
+  --color-selection-text: #{$light};
+  --color-callout: #{$callout};
+  --color-shadow: rgba(0, 0, 0, .3);
+}
+
+[data-theme='dark'] {
+  --color-background: #{$dark-bg};
+  --color-text: #{$light};
+  --color-accent: #{$secondary-dark};
+  --color-selection: #{$tertiary};
+  --color-selection-text: #{$dark};
+  --color-callout: #{$dark-callout};
+  --color-shadow: rgba(0, 0, 0, 1);
+
+  img {
+    filter: brightness(.8) contrast(1.2);
+    transition: filter .3s;
+
+    &:hover {
+      filter: brightness(1) contrast(1);
+    }
+  }
+
+  .color-scheme-toggler__icon--dark {
+    display: none;
+  }
+
+  .color-scheme-toggler__icon--light {
+    display: block !important;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-family: $font-body;
@@ -16,8 +53,8 @@ html {
 }
 
 ::selection {
-  background: $primary;
-  color: $light;
+  background: var(--color-selection);
+  color: var(--color-selection-text);
 }
 
 .site-content {
@@ -27,9 +64,10 @@ html {
 }
 
 body {
-  background-color: $body;
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
+  transition: background-color .35s;
 }
 
 a:focus,
