@@ -54,7 +54,7 @@ templateClass: template--post
                 {{ icons.tag() }}
               </dt>
               <dd class="article__meta__value">
-                <ul role="list" class="article__tags display--flex flex--wrap">
+                <ul role="list" class="article__tags spacing--none display--flex flex--wrap">
                   {% for tag in tags %}
                     {% if tag != 'posts' %}
                     <li><a class="article__tag" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">{{ tag }}</a></li>

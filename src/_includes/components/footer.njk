@@ -1,7 +1,7 @@
 <footer class="site-footer bg--primary color--light">
   <div class="container">
     <div class="site-footer__copyright text--center">
-      <ul class="site-footer__links nav__list list--unstyled spacing--sm" role="list">
+      <ul class="site-footer__links nav__list display--flex spacing--sm" role="list">
         {% for network,link in meta.author.networks %}
           <li class="nav__element"><a href="{{ link }}" rel="me" class="site-footer__link nav__link" aria-label="Ir a mi {{ network }}">{{ network }}</a></li>
         {% endfor %}
