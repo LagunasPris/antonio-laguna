@@ -5,6 +5,10 @@
   {%- set pageDescription %}{% if description %}{{ description }}{% else %}{{ meta.siteDescription }}{% endif %}{% endset -%}
   {%- set pageSocialImg %}{{ meta.url }}/img/previews/{% if title %}{{ title | slugify }}{% else %}{{ 'home' | slugify }}{% endif %}.png{% endset -%}
 
+  <script>
+    var a=localStorage.getItem('theme'),b=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=a?a:b;
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
