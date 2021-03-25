@@ -21,6 +21,13 @@
     root.dataset.theme = newTheme;
     localStorage.setItem(Key, newTheme);
     button.setAttribute('aria-label', getLabel());
+    button.dispatchEvent(new CustomEvent('changeTheme', {
+      detail: {
+        theme: newTheme
+      },
+      bubbles: true,
+      cancelable: false
+    }));
   };
 
   button.setAttribute('aria-label', getLabel());
