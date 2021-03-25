@@ -78,6 +78,8 @@
   &__content {
     margin: 0 auto;
     overflow: auto;
+    padding-top: var(--spacing-xl);
+    width: 100%;
 
     @media (--viewport-lg) {
       margin: 0;
