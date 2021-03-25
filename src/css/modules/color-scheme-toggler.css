@@ -8,7 +8,7 @@
   transition: text-shadow .3s;
   width: 4.5rem;
 
-  .color-scheme-toggler__icon--light {
+  &__icon--light {
     display: none;
   }
 
@@ -18,9 +18,7 @@
 }
 
 [data-theme='dark'] {
-  .color-scheme-toggler {
-    .color-scheme-toggler__icon--light {
-      display: block;
-    }
+  .color-scheme-toggler__icon--light {
+    display: block;
   }
 }
