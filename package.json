@@ -7,7 +7,7 @@
     "dev": "ELEVENTY_ENV=dev npm-run-all --parallel watch:css watch:js watch:eleventy",
     "build": "ELEVENTY_ENV=prod npm-run-all css js build:eleventy",
     "build:eleventy": "eleventy",
-    "lint:css": "stylelint \\\\\\\"src/css/**/*.css\\\\\\\"",
+    "lint:css": "stylelint 'src/css/**/*.css'",
     "lint:js": "eslint src/**/*.js rollup.config.js",
     "css": "postcss src/css/styles.css -o public/css/styles.css --env=production",
     "css:dev": "postcss src/css/styles.css -o public/css/styles.css",
