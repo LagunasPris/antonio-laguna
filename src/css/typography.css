@@ -83,7 +83,8 @@ a {
     }
   }
 
-  p code {
+  p code,
+  li code {
     color: var(--color-secondary);
     font-family: var(--font-code);
     font-weight: 600;
@@ -107,6 +108,16 @@ a {
 
   > :not([class*='bleed']):not([class*='video']):not([class*='language-']) {
     max-width: 50ch;
+  }
+
+  blockquote {
+    background-color: var(--color-callout);
+    border-left: .4rem solid var(--color-selection);
+    border-radius: 0 1rem 1rem 0;
+    font-style: italic;
+    margin: 5rem 0;
+    padding: 2rem;
+    position: relative;
   }
 }
 
