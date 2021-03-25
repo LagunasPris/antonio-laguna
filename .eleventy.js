@@ -30,7 +30,11 @@ module.exports = function(config) {
   config.addPlugin(syntaxHighlight);
   config.addPlugin(socialImages);
   config.addPlugin(embedTwitter, {
-    cacheText: true
+    cacheText: true,
+    doNotTrack: true,
+    twitterScript: {
+      enabled: false
+    }
   });
   config.addPlugin(embedYoutube, {
     embedClass: 'eleventy-plugin-youtube-embed bleed',
