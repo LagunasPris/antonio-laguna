@@ -105,6 +105,10 @@ pre[class*=language-] {
   cursor: help;
 }
 
+.highlight-line-active {
+  background-color: #666;
+}
+
 .token.inserted {
   color: #080;
 }
