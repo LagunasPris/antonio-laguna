@@ -10,6 +10,7 @@ const pluginNavigation = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const socialImages = require('@11tyrocks/eleventy-plugin-social-images');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
+const embedYoutube = require('eleventy-plugin-youtube-embed');
 const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
 
 const addHash = require('./eleventy/filters/add-hash');
@@ -30,6 +31,10 @@ module.exports = function(config) {
   config.addPlugin(socialImages);
   config.addPlugin(embedTwitter, {
     cacheText: true
+  });
+  config.addPlugin(embedYoutube, {
+    embedClass: 'eleventy-plugin-youtube-embed bleed',
+    lazy: true
   });
   config.addPlugin(eleventyPluginTOC, {
     headingText: 'Tabla de Contenidos',
