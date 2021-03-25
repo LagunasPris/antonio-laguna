@@ -10,6 +10,7 @@ const colors = {
   'color-dark-blue': '#001a27',
   'color-regal-blue': '#00486b',
   'color-background': 'var(--color-light)',
+  'color-shadow': 'rgba(0, 0, 0, .3)',
   'color-text': 'var(--color-dark)',
   'color-accent': 'var(--color-secondary)',
   'color-selection': 'var(--color-primary)',
