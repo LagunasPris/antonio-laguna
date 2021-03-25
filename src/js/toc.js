@@ -1,5 +1,5 @@
 import tinybounce from 'tinybounce';
-import watchResizers from './resizers';
+import { watchResizers } from './resizers';
 
 (() => {
   const ACTIVE_CLASS = 'toc__anchor--active';
