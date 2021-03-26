@@ -67,7 +67,7 @@ templateClass: template--post
         </div>
       </header>
 
-      <div class="article__body display--flex">
+      <div class="article__body display--flex spacing--xl">
         {% if enableToc %}
           {{ content | toc | safe }}
         {% endif %}
@@ -75,6 +75,11 @@ templateClass: template--post
           {{ content | safe }}
         </div>
       </div>
+
+      <footer class="article__footer display--flex">
+        <p>Publicado el {{ page.date | readableDate }}</p>
+        <p><a href="{{ page.inputPath | ghPath }}">Ver en GitHub</a></p>
+      </footer>
     </article>
   </div>
 <script type="application/ld+json">

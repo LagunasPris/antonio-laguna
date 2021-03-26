@@ -23,6 +23,7 @@ const slugifyFilter = require('./eleventy/filters/slugify');
 
 const infoContainer = require('./eleventy/containers/info');
 const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
+const pkg = require('./package.json');
 
 module.exports = function(config) {
   config.addPlugin(pluginRss);
@@ -73,6 +74,9 @@ module.exports = function(config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('sitemapDateTimeString', sitemapDateTimeStringFilter);
   config.addFilter('slugify', slugifyFilter);
+  config.addFilter('ghPath', inputPath => {
+    return inputPath.replace('./', `${pkg.repository.url}/tree/master/`);
+  });
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
