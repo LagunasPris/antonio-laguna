@@ -34,33 +34,18 @@
   text-transform: capitalize;
 }
 
-.list--unstyled {
-  list-style: none;
-}
-
-.flex--row {
-  display: flex;
-  margin-left: $grid-outside * -1;
-  margin-right: $grid-outside * -1;
-}
-
-.flex--child {
-  padding-left: $grid-outside;
-  padding-right: $grid-outside;
-}
-
 .flex--wrap {
   flex-wrap: wrap;
 }
 
 .hide--sm {
-  @include bp(mobile-only) {
+  @media (--viewport-sm-only) {
     display: none !important;
   }
 }
 
 .hide--md {
-  @include bp(tablet) {
+  @media (--viewport-md) {
     display: none !important;
   }
 }

@@ -10,6 +10,7 @@ const pluginNavigation = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const socialImages = require('@11tyrocks/eleventy-plugin-social-images');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
+const embedYoutube = require('eleventy-plugin-youtube-embed');
 const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
 
 const addHash = require('./eleventy/filters/add-hash');
@@ -22,6 +23,7 @@ const slugifyFilter = require('./eleventy/filters/slugify');
 
 const infoContainer = require('./eleventy/containers/info');
 const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
+const pkg = require('./package.json');
 
 module.exports = function(config) {
   config.addPlugin(pluginRss);
@@ -29,7 +31,15 @@ module.exports = function(config) {
   config.addPlugin(syntaxHighlight);
   config.addPlugin(socialImages);
   config.addPlugin(embedTwitter, {
-    cacheText: true
+    cacheText: true,
+    doNotTrack: true,
+    twitterScript: {
+      enabled: false
+    }
+  });
+  config.addPlugin(embedYoutube, {
+    embedClass: 'eleventy-plugin-youtube-embed bleed',
+    lazy: true
   });
   config.addPlugin(eleventyPluginTOC, {
     headingText: 'Tabla de Contenidos',
@@ -45,15 +55,14 @@ module.exports = function(config) {
     ...collection.getFilteredByGlob('./src/posts/*.md')
   ]);
 
-  config.addWatchTarget('./src/sass/')
+  config.addWatchTarget('./src/css/');
+  config.addWatchTarget('./src/js/');
 
-  config.addPassthroughCopy('./src/css');
   config.addPassthroughCopy('./src/img');
   config.addPassthroughCopy('./src/icons');
   config.addPassthroughCopy('_headers');
   config.addPassthroughCopy('favicon.ico');
   config.addPassthroughCopy('static/img');
-  config.addPassthroughCopy('admin');
   config.addPassthroughCopy('_includes/assets/');
 
   config.addShortcode('year', () => `${new Date().getFullYear()}`);
@@ -65,6 +74,9 @@ module.exports = function(config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('sitemapDateTimeString', sitemapDateTimeStringFilter);
   config.addFilter('slugify', slugifyFilter);
+  config.addFilter('ghPath', inputPath => {
+    return inputPath.replace('./', `${pkg.repository.url}/tree/master/`);
+  });
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 

@@ -1,13 +1,13 @@
 .site-header {
   margin-bottom: 6rem;
-  padding-bottom: spacing(sm);
-  padding-top: spacing(sm);
+  padding-bottom: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
 
   &__logo {
     fill: currentColor;
 
     svg {
-      @include bp(mobile-only) {
+      @media (--viewport-sm-only) {
         height: 36px;
         width: 50px;
       }
@@ -20,7 +20,7 @@
     justify-content: space-between;
   }
 
-  .nav__list {
-    margin-bottom: 0;
+  &__right {
+    align-items: center;
   }
 }

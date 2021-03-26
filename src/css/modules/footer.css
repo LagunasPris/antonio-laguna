@@ -1,5 +1,5 @@
 .site-footer {
-  padding: spacing(md) 0;
+  padding: var(--spacing-md) 0;
 
   &__links {
     flex-wrap: wrap;
@@ -7,7 +7,7 @@
   }
 
   &__disclaimer {
-    @include bp(mobile-only) {
+    @media (--viewport-sm-only) {
       font-size: 1.6rem;
     }
   }

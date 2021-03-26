@@ -5,16 +5,22 @@
         <svg width="100" height="71" viewBox="0 0 508 364" xmlns="http://www.w3.org/2000/svg"><path d="M191.216 0c63.271 0 111.596 23.834 143.14 71.15 30.263 45.391 45.036 111.088 44.14 198.255l-.006-.001.003.783c.105 22.051 4.43 37.78 12.292 47.54l.286.35c7.575 9.167 19.27 13.884 36.442 13.884s28.866-4.717 36.442-13.885c8.142-9.852 12.58-25.964 12.58-48.718h31.291l-.008 1.799c-.551 59.096-28.35 92.105-80.305 92.105-52.48 0-80.553-33.68-80.553-93.904l-.001.046c1.136-82.7-12.092-141.124-38.584-180.86-25.516-38.272-63.958-57.232-117.16-57.232-34.741 0-63.42 11.313-86.588 34.491a80.759 80.759 0 017.194-.317c39.907 0 68.983 28.438 86.946 81.144 16.52 48.472 24.71 119.59 24.872 213.771l.002 2.861H192.29c0-38.403-1.352-72.757-4.034-103.029-17.718 16.711-43.535 25.188-76.435 25.188-32.485 0-58.064-8.264-75.76-24.555-2.38 23.751-3.883 49.337-4.499 76.752-.125 7.457-.195 15.083-.208 22.878l-.002 2.766H0c0-95.604 8.187-167.67 24.874-216.632 2.13-6.252 4.417-12.162 6.86-17.724 4.318-11.975 9.08-23.118 14.29-33.43C77.865 32.45 126.88 0 191.216 0zM111.82 96.831c-20.94 0-37.988 13.923-51.327 44.473-4.95 13.982-9.278 29.294-12.98 45.932-1.322 9.378-1.98 17.906-1.98 25.575 0 6.663 2.802 13.861 8.648 21.554 11.697 13.015 30.463 19.361 57.639 19.361 27.182 0 45.951-6.35 57.648-19.37 5.84-7.69 8.639-14.885 8.639-21.545 0-12.322-1.7-26.86-5.124-43.573a255.554 255.554 0 00-3.893-12.499c-14.085-41.329-33.082-59.908-57.27-59.908zm169.275 84.8c17.401 0 31.507 14.107 31.507 31.508 0 17.4-14.106 31.507-31.507 31.507-17.401 0-31.508-14.106-31.508-31.507 0-17.401 14.107-31.508 31.508-31.508z"/></svg>
       </a>
 
-      <nav class="site-header__nav" aria-label="Navegación principal">
-        <ul class="nav__list list--unstyled" role="list">
-          <li class="nav__element">
-            <a class="nav__link" href="/posts">Blog</a>
-          </li>
-          <li class="nav__element">
-            <a class="nav__link" href="/sobre-mi">Sobre mí</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="display--flex site-header__right">
+        <nav class="site-header__nav" aria-label="Navegación principal">
+          <ul class="nav__list spacing--none display--flex" role="list">
+            <li class="nav__element">
+              <a class="nav__link" href="/posts">Blog</a>
+            </li>
+            <li class="nav__element">
+              <a class="nav__link" href="/sobre-mi">Sobre mí</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="color-scheme-toggler" type="button" aria-label="Cambiar a modo oscuro">
+          <span class="color-scheme-toggler__icon color-scheme-toggler__icon--light" aria-hidden="true">🌝</span>
+          <span class="color-scheme-toggler__icon color-scheme-toggler__icon--dark" aria-hidden="true">🌚</span>
+        </button>
+      </div>
     </div>
   </div>
 </header>

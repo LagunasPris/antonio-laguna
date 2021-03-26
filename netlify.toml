@@ -2,6 +2,9 @@
   publish = "public"
   command = "npm run build"
 
+[context.production]
+  environment = { NODE_ENV = "production" }
+
 [[redirects]]
   from = "/feed/"
   to = "/feed/feed.xml"

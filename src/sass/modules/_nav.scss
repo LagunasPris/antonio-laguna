@@ -1,9 +1,0 @@
-.nav {
-  &__list {
-    display: flex;
-  }
-}
-
-.nav__element + .nav__element {
-  margin-left: spacing(sm);
-}

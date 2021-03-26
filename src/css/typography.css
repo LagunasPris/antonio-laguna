@@ -1,6 +1,6 @@
 body,
 .color--body {
-  color: $dark;
+  color: var(--color-text);
   font-size: 2.2rem;
   font-weight: 400;
   line-height: 1.5;
@@ -8,14 +8,14 @@ body,
 
 a {
   color: currentColor;
-  text-decoration-color: $tertiary;
+  text-decoration-color: var(--color-tertiary);
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
   transition: color .123s, text-decoration-color .123s;
 
   &:hover {
-    color: $secondary;
-    text-decoration-color: $secondary;
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
   }
 }
 
@@ -60,12 +60,12 @@ a {
 }
 
 .font--mono {
-  font-family: $font-code;
+  font-family: var(--font-code);
 }
 
 .ugc {
   > * + * {
-    margin-top: spacing(md);
+    margin-top: var(--spacing-md);
   }
 
   > .visually-hidden + * {
@@ -75,50 +75,50 @@ a {
   .direct-link {
     float: left;
     line-height: 1.3;
-    margin-left: -24px;
-    padding-right: 4px;
+    margin-left: -2.4rem;
+    padding-right: .4rem;
 
     &__icon {
       visibility: hidden;
     }
   }
 
-  p code {
-    color: $secondary;
-    font-family: $font-code;
+  p code,
+  li code {
+    color: var(--color-secondary);
+    font-family: var(--font-code);
     font-weight: 600;
     letter-spacing: .015em;
   }
 
   h2 {
-    @include fluid-type(font-size, $min-width, $max-width, nth(map-get($levels, 3), 1), nth(map-get($levels, 3), 2));
+    @mixin fluid-type font-size, min-width, max-width, level-3-min, level-3-max;
     max-width: 30ch;
   }
 
   h3 {
-    @include fluid-type(font-size, $min-width, $max-width, nth(map-get($levels, 4), 1), nth(map-get($levels, 4), 2));
+    @mixin fluid-type font-size, min-width, max-width, level-4-min, level-4-max;
     font-style: italic;
     font-weight: 400;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    &:hover .direct-link__icon {
-      visibility: visible;
-    }
+  :--headings:hover .direct-link__icon {
+    visibility: visible;
   }
 
   > :not([class*='bleed']):not([class*='video']):not([class*='language-']) {
     max-width: 50ch;
   }
-}
 
-@each $level, $size in $levels {
-  .text-level--#{$level} {
-    @include fluid-type(font-size, $min-width, $max-width, nth($size, 1), nth($size, 2));
+  blockquote {
+    background-color: var(--color-callout);
+    border-left: .4rem solid var(--color-selection);
+    border-radius: 0 1rem 1rem 0;
+    font-style: italic;
+    margin: 5rem 0;
+    padding: 2rem;
+    position: relative;
   }
 }
+
+@mixin text-variants;

@@ -29,7 +29,7 @@ templateClass: template--post
 {% block article %}
   <div class="container">
     <article class="article">
-      <header class="article__header spacing--xl">
+      <header class="article__header spacing--sm">
         <div class="article__intro">
           <h1 class="article__title leading--small text-level--2">{{ title }}</h1>
           <section class="article__summary text-level--5 font--italic color--primary" aria-label="Corto resumen">
@@ -54,7 +54,7 @@ templateClass: template--post
                 {{ icons.tag() }}
               </dt>
               <dd class="article__meta__value">
-                <ul role="list" class="article__tags display--flex flex--wrap">
+                <ul role="list" class="article__tags spacing--none display--flex flex--wrap">
                   {% for tag in tags %}
                     {% if tag != 'posts' %}
                     <li><a class="article__tag" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">{{ tag }}</a></li>
@@ -67,7 +67,7 @@ templateClass: template--post
         </div>
       </header>
 
-      <div class="article__body display--flex">
+      <div class="article__body display--flex spacing--xl">
         {% if enableToc %}
           {{ content | toc | safe }}
         {% endif %}
@@ -75,6 +75,11 @@ templateClass: template--post
           {{ content | safe }}
         </div>
       </div>
+
+      <footer class="article__footer display--flex">
+        <p>Publicado el {{ page.date | readableDate }}</p>
+        <p><a href="{{ page.inputPath | ghPath }}">Ver en GitHub</a></p>
+      </footer>
     </article>
   </div>
 <script type="application/ld+json">
