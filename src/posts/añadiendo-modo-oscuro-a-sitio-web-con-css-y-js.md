@@ -1,6 +1,6 @@
 ---
 title: Añadiendo modo oscuro a sitio web con CSS y JS
-description: Te cuento qué tengo yo en cuenta cuando me ha tocado entrevistar a gente que busca trabajo como Front End developer.
+description: Aprende a añadir un botón para cambiar entre modo oscuro y modo luminoso en tu web de forma accesible con JS y custom properties de CSS.
 date: 2021-03-24
 tags:
   - CSS
