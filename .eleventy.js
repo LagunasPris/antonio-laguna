@@ -20,12 +20,12 @@ const readableDateFilter = require('./eleventy/filters/readable-date');
 const shortDateFilter = require('./eleventy/filters/short-date');
 const sitemapDateTimeStringFilter = require('./eleventy/filters/sitemap-date-time-string');
 const slugifyFilter = require('./eleventy/filters/slugify');
+const webmentionsFilter = require('./eleventy/filters/webmentions-for-page');
 const githubPathFilter = require('./eleventy/filters/github-path');
 const pluralizeFilter = require('./eleventy/filters/pluralize');
 
 const infoContainer = require('./eleventy/containers/info');
 const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
-const pkg = require('./package.json');
 
 module.exports = function(config) {
   config.addPlugin(pluginRss);
@@ -78,6 +78,8 @@ module.exports = function(config) {
   config.addFilter('slugify', slugifyFilter);
   config.addFilter('ghPath', githubPathFilter);
   config.addFilter('pluralize', pluralizeFilter);
+  config.addFilter('webmentionsForPage', webmentionsFilter.mentions);
+  config.addFilter('webmentionCountForPage', webmentionsFilter.count);
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 

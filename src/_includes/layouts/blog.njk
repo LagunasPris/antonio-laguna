@@ -2,6 +2,7 @@
 templateClass: template--post
 ---
 {% import 'macros/duration.njk' as duration %}
+{% import 'macros/mentions.njk' as mentions %}
 {% import 'macros/icons.njk' as icons %}
 
 {% extends "layouts/base.njk" %}
@@ -27,30 +28,31 @@ templateClass: template--post
 {% endblock %}
 
 {% block article %}
+  {%- set postMentions = webmentions | webmentionsForPage(page.url) -%}
+
   <div class="container">
-    <article class="article">
-      <header class="article__header spacing--sm">
+    <article class="article h-entry">
       <header class="article__header display--flex flex--wrap flex--v-center spacing--sm">
         <div class="article__intro">
-          <h1 class="article__title leading--small text-level--2">{{ title }}</h1>
+          <h1 class="article__title leading--small text-level--2 p-name">{{ title }}</h1>
           <section class="article__summary text-level--5 font--italic color--primary" aria-label="Corto resumen">
-            <p>{{ description }}</p>
+            <p class="p-summary">{{ description }}</p>
           </section>
         </div>
         <div class="article__info">
           <dl class="article__meta font--mono">
-            <dt class="article__meta__title">
+            <dt class="article__meta__title display--flex flex--v-center flex--wrapx">
               <span class="visually-hidden">Fecha de publicación</span>
               {{ icons.calendar() }}
             </dt>
-            <dd class="article__meta__value text--capitalize"><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></dd>
-            <dt class="article__meta__title">
+            <dd class="article__meta__value"><time class="dt-published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></dd>
+            <dt class="article__meta__title display--flex flex--v-center flex--wrapx">
               <span class="visually-hidden">Tiempo de Lectura</span>
               {{ icons.time() }}
             </dt>
             <dd class="article__meta__value">{{ duration.render(content) | trim }}</dd>
             {% if tags %}
-              <dt class="article__meta__title">
+              <dt class="article__meta__title display--flex flex--v-center flex--wrapx">
                 <span class="visually-hidden">Etiquetas</span>
                 {{ icons.tag() }}
               </dt>
@@ -58,12 +60,21 @@ templateClass: template--post
                 <ul role="list" class="article__tags spacing--none display--flex flex--wrap">
                   {% for tag in tags %}
                     {% if tag != 'posts' %}
-                    <li><a class="article__tag" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">{{ tag }}</a></li>
+                    <li><a class="article__tag p-category" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">{{ tag }}</a></li>
                     {% endif %}
                   {% endfor %}
                 </ul>
               </dd>
             {% endif %}
+            <dt class="article__meta__title display--flex flex--v-center flex--wrapx{% if postMentions.total == 0 %} hide{% endif %}">
+              <span class="visually-hidden">Interacciones en las redes</span>
+              {{ icons.heart() }}
+            </dt>
+            <dd class="article__meta__value{% if postMentions.total == 0 %} hide{% endif %}">
+              <a href="#mentions" class="interactions__count">
+                {{ postMentions.total }} {{ postMentions.total | pluralize('interacción', 'interacciones') }}
+              </a>
+            </dd>
           </dl>
         </div>
       </header>
@@ -72,15 +83,53 @@ templateClass: template--post
         {% if enableToc %}
           {{ content | toc | safe }}
         {% endif %}
-        <div class="article__content ugc text-level--5">
+        <div class="article__content ugc text-level--5 e-content">
           {{ content | safe }}
         </div>
       </div>
 
-      <footer class="article__footer display--flex">
+      <footer class="article__footer display--flex spacing--lg">
         <p>Publicado el {{ page.date | readableDate }}</p>
         <p><a href="{{ page.inputPath | ghPath }}">Ver en GitHub</a></p>
       </footer>
+
+      <div class="article__mentions" id="mentions">
+        <h2 class="mentions__title spacing--sm">En las redes</h2>
+
+        {% set retweet %}{{ postMentions.reposts.length | pluralize('retweet', 'retweets') }}{% endset %}
+
+        {{ mentions.render(postMentions.likes, 'like', 'heart', 'me gusta', ' spacing-sm') }}
+        {{ mentions.render(postMentions.reposts, 'retweet', 'retweet', retweet, ' spacing-md') }}
+
+        <div class="mentions__comments{% if not postMentions.comments.length %} hide{% endif %}">
+          <h3 class="text-level--6 mentions__count display--flex flex--v-center spacing--sm" id="comments-header">
+            {{ icons.comment(24, ' color--primary') }}
+            <span class="mentions__comments__title mentions__number">{{ postMentions.comments | length }}</span>
+            {{ postMentions.comments.length | pluralize('respuesta', 'respuestas') }}
+          </h3>
+
+          <ol class="mentions__list comments__list" aria-labelledby="comments-header" role="list">
+            {% for comment in postMentions.comments %}
+              {{ mentions.commentElement(
+                comment.author.url,
+                comment.author.name,
+                comment.author.photo,
+                comment.published,
+                comment.content.value,
+                comment.url) }}
+            {% endfor %}
+          </ol>
+        </div>
+        <p id="webmentions-explanation" class="spacing--md">Este blog usa <a href="https://indieweb.org/Webmention" rel="noreferrer" target="_blank">menciones webs</a> promovidas por la <a href="https://indieweb.org/">IndieWeb</a> y usando <a href="https://webmention.io/" rel="noreferrer" target="_blank">webmention.io</a> y <a href="https://brid.gy/" rel="noreferrer" target="_blank">Bridgy</a>. ¿Has publicado tu propio artículo mencionando a este? ¡Hazme saber la URL!</p>
+        <form class="form" method="post" action="https://webmention.io/antonio.laguna.es/webmention" aria-labelledby="webmentions-explanation">
+          <label class="form__label text--upper text-level--6 display--block font--bold spacing--xs" for="webmention-source">Fuente</label>
+          <input type="hidden" name="target" value="{{ page.url | url | absoluteUrl(meta.url) }}">
+          <div class="display--flex flex--wrap">
+            <input id="webmention-source" type="url" name="source" placeholder="https://ejemplo.com" required class="form__field">
+            <button class="form__button" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
     </article>
   </div>
 <script type="application/ld+json">
@@ -102,4 +151,9 @@ templateClass: template--post
   "description": "{{ content | striptags | truncate(140) }}"
 }
 </script>
+{% endblock %}
+
+{% block scripts %}
+<template id="like-template">{{ mentions.likeElement() }}</template>
+<template id="comment-template">{{ mentions.commentElement() }}</template>
 {% endblock %}
