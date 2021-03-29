@@ -1,15 +1,24 @@
 import lozad from 'lozad';
 
-(function (useNative, selector) {
-  // Lazy Loading supported
-  if (useNative && 'loading' in HTMLImageElement.prototype) {
-    const lazyEls = document.querySelectorAll(`.${selector}`);
+function lazyload() {
+  const lazyEls = Array.from(document.querySelectorAll('.lazy'));
 
-    lazyEls.forEach((lazyEl) => {
+  if (!lazyEls.length) {
+    return;
+  }
+
+  lazyEls.forEach(el => el.classList.remove('lazy'));
+
+  if ('loading' in HTMLImageElement.prototype) {
+    lazyEls.forEach(lazyEl => {
       lazyEl.setAttribute('src', lazyEl.getAttribute('data-src'));
     });
   } else {
-    const observer = lozad(`.${selector}`);
+    const observer = lozad(lazyEls);
     observer.observe();
   }
-}(true, 'lazy'));
+}
+
+(() => lazyload())();
+
+export default lazyload;
