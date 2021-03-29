@@ -4,7 +4,7 @@
 
 <div class="posts-feed">
   {%- for post in posts -%}
-    <article class="posts-feed__post display--flex">
+    <article class="posts-feed__post display--flex flex--v-center">
       <div class="post__date text--upper font--bold color--secondary font--mono">{{ post.date | shortDate }}</div>
       <{{ headingLevel }} class="post__title font--regular">{{ post.data.title }}</{{ headingLevel }}>
       <div class="post__duration">{{ duration.render(post.templateContent, true) }}</div>
