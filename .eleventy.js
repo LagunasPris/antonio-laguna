@@ -20,6 +20,7 @@ const readableDateFilter = require('./eleventy/filters/readable-date');
 const shortDateFilter = require('./eleventy/filters/short-date');
 const sitemapDateTimeStringFilter = require('./eleventy/filters/sitemap-date-time-string');
 const slugifyFilter = require('./eleventy/filters/slugify');
+const githubPathFilter = require('./eleventy/filters/github-path');
 
 const infoContainer = require('./eleventy/containers/info');
 const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
@@ -74,9 +75,7 @@ module.exports = function(config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('sitemapDateTimeString', sitemapDateTimeStringFilter);
   config.addFilter('slugify', slugifyFilter);
-  config.addFilter('ghPath', inputPath => {
-    return inputPath.replace('./', `${pkg.repository.url}/tree/master/`);
-  });
+  config.addFilter('ghPath', githubPathFilter);
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
