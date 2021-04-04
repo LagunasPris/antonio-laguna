@@ -4,4 +4,5 @@ node_modules/
 .DS_Store
 social/pages.json
 cache
+.cache
 .env

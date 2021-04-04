@@ -69,6 +69,7 @@
 
     @media (--viewport-lg) {
       margin: 0;
+      padding-right: var(--spacing-sm);
     }
 
     figure {

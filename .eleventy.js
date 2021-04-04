@@ -35,6 +35,7 @@ module.exports = function(config) {
   config.addPlugin(embedTwitter, {
     cacheText: true,
     doNotTrack: true,
+    lang: 'es',
     twitterScript: {
       enabled: false
     }
