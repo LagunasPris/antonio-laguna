@@ -49,14 +49,14 @@ const Selectors = {
     dateEl.innerText = date.toLocaleDateString('es-ES', { month: 'long', day: '2-digit', year: 'numeric' });
   }
 
-  function processLikes(likes, element, template, filler, unHide) {
-    if (likes.length) {
+  function processMention(mentions, element, template, filler, unHide) {
+    if (mentions.length) {
       const parent = element.parentElement.parentElement;
       const list = parent.querySelector('.mentions__list');
 
-      element.innerText = likes.length;
+      element.innerText = mentions.length;
       list.innerHTML = '';
-      likes.forEach(like => {
+      mentions.forEach(like => {
         const t = template.content.cloneNode(true);
         filler(t, like);
         list.appendChild(t);
@@ -82,9 +82,9 @@ const Selectors = {
 
       count.innerText = `${parsed.total} ${countText}`;
 
-      processLikes(parsed.likes, likes, likeTemplate, fillLike, unHide);
-      processLikes(parsed.reposts, retweets, likeTemplate, fillLike, unHide);
-      processLikes(parsed.comments, comments, commentTemplate, fillComment, unHide);
+      processMention(parsed.likes, likes, likeTemplate, fillLike, unHide);
+      processMention(parsed.reposts, retweets, likeTemplate, fillLike, unHide);
+      processMention(parsed.comments, comments, commentTemplate, fillComment, unHide);
 
       unHide.forEach(el => el.classList.remove('hide'));
       lazyload();
