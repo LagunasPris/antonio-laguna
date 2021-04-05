@@ -12,4 +12,4 @@
 
 
 [[plugins]]
-  package = "./plugins/webmention-cache"
+  package = "./plugins/webmentions-cache"
