@@ -95,6 +95,9 @@ templateClass: template--post
 
       <div class="article__mentions" id="mentions">
         <h2 class="mentions__title spacing--sm">En las redes</h2>
+        {% if postTweet %}
+          <p class="spacing--md">{{ icons.tweet(24, ' mentions__tweet') }} ¡<a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?in_reply_to={{ postTweet }}">Únete a la conversación</a> en Twitter! O si te gustó el artículo y crees que otros deberían leerlo, ¡<a target="_blank" rel="noreferrer" href="https://twitter.com/intent/retweet?tweet_id={{ postTweet }}">compártelo</a>!</p>
+        {% endif %}
 
         {% set retweet %}{{ postMentions.reposts.length | pluralize('retweet', 'retweets') }}{% endset %}
 
