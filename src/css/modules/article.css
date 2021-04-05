@@ -73,6 +73,9 @@
     }
 
     figure {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
       img {
         border-radius: .8rem;
         box-shadow: 0 0 1.6rem var(--color-shadow);
