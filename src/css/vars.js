@@ -11,6 +11,7 @@ const colors = {
   'color-regal-blue': '#00486b',
   'color-background': 'var(--color-light)',
   'color-shadow': 'rgba(0, 0, 0, .3)',
+  'color-tweet': '#1da1f2',
   'color-text': 'var(--color-dark)',
   'color-accent': 'var(--color-secondary)',
   'color-selection': 'var(--color-primary)',

@@ -49,6 +49,12 @@
       width: 32px;
     }
   }
+
+  &__tweet {
+    color: var(--color-tweet);
+    margin-right: .5rem;
+    vertical-align: text-top;
+  }
 }
 
 .article__mentions {
