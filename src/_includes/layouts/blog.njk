@@ -123,7 +123,7 @@ templateClass: template--post
             {% endfor %}
           </ol>
         </div>
-        <p id="webmentions-explanation" class="spacing--md">Este blog usa <a href="https://indieweb.org/Webmention" rel="noreferrer" target="_blank">menciones webs</a> promovidas por la <a href="https://indieweb.org/">IndieWeb</a> y usando <a href="https://webmention.io/" rel="noreferrer" target="_blank">webmention.io</a> y <a href="https://brid.gy/" rel="noreferrer" target="_blank">Bridgy</a>. ¿Has publicado tu propio artículo mencionando a este? ¡Hazme saber la URL!</p>
+        <p id="webmentions-explanation" class="spacing--md">Este blog usa <a href="https://indieweb.org/Webmention" rel="noreferrer" target="_blank">menciones webs</a> promovidas por la <a href="https://indieweb.org/" target="_blank" rel="noreferrer">IndieWeb</a> y usando <a href="https://webmention.io/" rel="noreferrer" target="_blank">webmention.io</a> y <a href="https://brid.gy/" rel="noreferrer" target="_blank">Bridgy</a>. ¿Has publicado tu propio artículo mencionando a este? ¡Hazme saber la URL!</p>
         <form class="form" method="post" action="https://webmention.io/antonio.laguna.es/webmention" aria-labelledby="webmentions-explanation">
           <label class="form__label text--upper text-level--6 display--block font--bold spacing--xs" for="webmention-source">Fuente</label>
           <input type="hidden" name="target" value="{{ page.url | url | absoluteUrl(meta.url) }}">
