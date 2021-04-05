@@ -12,6 +12,7 @@ const socialImages = require('@11tyrocks/eleventy-plugin-social-images');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
 const embedYoutube = require('eleventy-plugin-youtube-embed');
 const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
+const mila = require('markdown-it-link-attributes')
 
 const addHash = require('./eleventy/filters/add-hash');
 const htmlDateString = require('./eleventy/filters/html-date-string');
@@ -119,7 +120,14 @@ module.exports = function(config) {
     .use(markdownItImageFigures, { lazy: true, figcaption: true, dataType: true })
     .use(markdownItAbbr)
     .use(markdownItContainer, 'info', infoContainer(markdownLibrary))
-    .use(markdownItContainer, 'hidden-header', hiddenHeaderContainer(markdownLibrary));
+    .use(markdownItContainer, 'hidden-header', hiddenHeaderContainer(markdownLibrary))
+    .use(mila, {
+      pattern: /^https?:\/\//,
+      attrs: {
+        target: '_blank',
+        rel: 'noreferrer'
+      }
+    });
 
   config.setLibrary('md', markdownLibrary);
 
