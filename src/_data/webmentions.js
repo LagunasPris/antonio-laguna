@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const fs = require('fs/promises');
 const path = require('path');
 const fetch = require('node-fetch');
@@ -104,7 +105,6 @@ module.exports = async function () {
   const cache = await readFromCache();
 
   if (cache.children.length) {
-    // eslint-disable-next-line no-console
     console.log(`${cache.children.length} webmentions loaded from cache`);
   }
 

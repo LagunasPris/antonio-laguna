@@ -4,5 +4,3 @@ import './js/easter-egg';
 import './js/toc';
 import './js/twitter';
 import './js/webmentions';
-
-alert('Test');
