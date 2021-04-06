@@ -1,7 +1,7 @@
 const allowedTypes = {
   likes: ['like-of', 'like'],
   reposts: ['repost-of', 'repost'],
-  comments: ['mention-of', 'in-reply-to', 'link']
+  comments: ['mention-of', 'in-reply-to', 'link', 'reply']
 };
 const allowedTypesValues = [
   'like-of',
@@ -10,7 +10,8 @@ const allowedTypesValues = [
   'repost',
   'mention-of',
   'in-reply-to',
-  'link'
+  'link',
+  'reply'
 ];
 
 function getType(mention) {
