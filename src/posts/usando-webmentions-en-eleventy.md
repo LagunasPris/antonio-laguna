@@ -7,6 +7,7 @@ tags:
   - JS
   - Tutorial
 enableToc: true
+postTweet: '1379332293538500609'
 ---
 
 En mi [¡Hola Mundo!](/posts/hola-mundo/) comentaba que quería añadir un sistema de comentarios. Estuve pensando en varios. Los comento (¿lo pillas?) por si a alguien les viene bien para su página personal.
@@ -446,7 +447,7 @@ La función está hecha como algo genérico que se encarga de clonar la plantill
 
 Esta es la última parte (pero no por ello menos importante) de lo que vamos a crear.
 
-[Remy Sharp](https://remysharp.com/) creador de [Nodemon](https://www.npmjs.com/package/nodemon) (entre otras cosas) ha creado [Webmention.app](https://webmention.app/) que se encarga de esta gestión por nosotros. 
+[Remy Sharp](https://remysharp.com/) creador de [Nodemon](https://www.npmjs.com/package/nodemon) (entre otras cosas) ha creado [Webmention.app](https://webmention.app/) que se encarga de esta gestión por nosotros.
 
 Por suerte, gestionarlo con Netlify es muy sencillo [tal y como explica la aplicación](https://webmention.app/docs#how-to-integrate-with-netlify).
 
