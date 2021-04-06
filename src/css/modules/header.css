@@ -15,12 +15,6 @@
   }
 
   &__wrapper {
-    align-items: center;
-    display: flex;
     justify-content: space-between;
-  }
-
-  &__right {
-    align-items: center;
   }
 }

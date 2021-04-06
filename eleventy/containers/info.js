@@ -5,7 +5,7 @@ module.exports = md => ({
 
     if (tokens[idx].nesting === 1) {
       return `<aside class="callout callout--info">
-                <span class="callout__icon" aria-label="Información">ℹ️</span>
+                <span class="callout__icon flex--v-center" aria-label="Información">ℹ️</span>
                 <p class="callout__title">${md.utils.escapeHtml(m[1])}</p>\n`;
     }
 

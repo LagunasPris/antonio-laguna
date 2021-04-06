@@ -1,0 +1,74 @@
+{% import 'macros/icons.njk' as icons %}
+
+{% macro likeElement(type = '', url = '', author = '', image = '') %}
+  <li class="mentions__element h-card{% if type %} mentions__element--{{ type }}{% endif %}">
+    <a class="display--block u-url"
+       href="{{ url }}"
+       target="_blank"
+       rel="noreferrer"
+       title="Ver perfil de {{ author }}">
+      <img
+        src=""
+        data-src="{{ image | default('/img/webmention-avatar-default.svg') }}"
+        alt=""
+        class="lazy mentions__image u-photo"
+        loading="lazy"
+        width="48"
+        height="48"
+      >
+      <span class="p-author visually-hidden" aria-hidden="true">{{ author }}</span>
+    </a>
+  </li>
+{% endmacro %}
+
+{% macro commentElement(url = '', author = '', image = '', date = '', value = '', commentUrl = '') %}
+  <li class="comment spacing--md h-entry">
+    <div class="comment__top display--flex flex--v-center spacing--xs">
+      <a class="comment__author display--flex flex--v-center u-author"
+         href="{{ url }}"
+         target="_blank"
+         title="Ver perfil de {{ author }}"
+         rel="noreferrer">
+        <img
+          src=""
+          data-src="{{ image | default('/static/images/webmention-avatar-default.svg') }}"
+          alt="{{ author }}"
+          class="lazy mentions__image u-photo"
+          loading="lazy"
+          width="48"
+          height="48"
+        >
+        <span class="p-author">{{ author }}</span>
+      </a>
+      <time class="comment__date font--mono text-level--6 dt-published" datetime="{% if date %}{{ date | htmlDateString }}{% endif %}">
+{% if date %}{{ date | readableDate }}{% endif %}
+      </time>
+    </div>
+
+    <p class="text-level--5 e-entry">{{ value }}<p>
+    <p>
+      <a class="text-level--6 font--mono text--upper u-url"
+         href="{{ commentUrl }}"
+         target="_blank"
+         rel="noreferrer">
+        Ver original
+      </a>
+    </p>
+  </li>
+{% endmacro %}
+
+{% macro render(mentions, type, icon, text, class = '') %}
+  <div class="mentions__wall mentions__wall--{{ type }}{{ class }}{% if not mentions.length %} hide{% endif %}">
+    <h3 class="text-level--6 mentions__count display--flex flex--v-center spacing--xs" id="{{ type }}-header">
+      {{ icons[icon](24, ' color--primary') }}
+      <span class="mentions__{{ type }}s mentions__number">{{ mentions | length }}</span>
+      {{ text }}
+    </h3>
+
+    <ol class="mentions__list display--flex flex--wrap" role="list" aria-labelledby="{{ type }}-header">
+      {% for mention in mentions %}
+        {{ likeElement(type, mention.author.url, mention.author.name, mention.author.photo) }}
+      {% endfor %}
+    </ol>
+  </div>
+{% endmacro %}

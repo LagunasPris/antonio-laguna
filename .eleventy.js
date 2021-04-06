@@ -12,6 +12,7 @@ const socialImages = require('@11tyrocks/eleventy-plugin-social-images');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
 const embedYoutube = require('eleventy-plugin-youtube-embed');
 const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
+const mila = require('markdown-it-link-attributes')
 
 const addHash = require('./eleventy/filters/add-hash');
 const htmlDateString = require('./eleventy/filters/html-date-string');
@@ -20,10 +21,12 @@ const readableDateFilter = require('./eleventy/filters/readable-date');
 const shortDateFilter = require('./eleventy/filters/short-date');
 const sitemapDateTimeStringFilter = require('./eleventy/filters/sitemap-date-time-string');
 const slugifyFilter = require('./eleventy/filters/slugify');
+const webmentionsFilter = require('./eleventy/filters/webmentions-for-page');
+const githubPathFilter = require('./eleventy/filters/github-path');
+const pluralizeFilter = require('./eleventy/filters/pluralize');
 
 const infoContainer = require('./eleventy/containers/info');
 const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
-const pkg = require('./package.json');
 
 module.exports = function(config) {
   config.addPlugin(pluginRss);
@@ -33,6 +36,7 @@ module.exports = function(config) {
   config.addPlugin(embedTwitter, {
     cacheText: true,
     doNotTrack: true,
+    lang: 'es',
     twitterScript: {
       enabled: false
     }
@@ -74,9 +78,10 @@ module.exports = function(config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('sitemapDateTimeString', sitemapDateTimeStringFilter);
   config.addFilter('slugify', slugifyFilter);
-  config.addFilter('ghPath', inputPath => {
-    return inputPath.replace('./', `${pkg.repository.url}/tree/master/`);
-  });
+  config.addFilter('ghPath', githubPathFilter);
+  config.addFilter('pluralize', pluralizeFilter);
+  config.addFilter('webmentionsForPage', webmentionsFilter.mentions);
+  config.addFilter('webmentionCountForPage', webmentionsFilter.count);
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
@@ -115,7 +120,14 @@ module.exports = function(config) {
     .use(markdownItImageFigures, { lazy: true, figcaption: true, dataType: true })
     .use(markdownItAbbr)
     .use(markdownItContainer, 'info', infoContainer(markdownLibrary))
-    .use(markdownItContainer, 'hidden-header', hiddenHeaderContainer(markdownLibrary));
+    .use(markdownItContainer, 'hidden-header', hiddenHeaderContainer(markdownLibrary))
+    .use(mila, {
+      pattern: /^https?:\/\//,
+      attrs: {
+        target: '_blank',
+        rel: 'noreferrer'
+      }
+    });
 
   config.setLibrary('md', markdownLibrary);
 

@@ -1,10 +1,4 @@
 .article {
-  &__header {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   &__tag {
     margin: .4rem;
   }
@@ -66,26 +60,22 @@
     .svg-icon {
       color: var(--color-secondary);
     }
-
-    &__title,
-    &__value {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-    }
   }
 
   &__content {
     margin: 0 auto;
     overflow: auto;
-    padding-top: var(--spacing-xl);
     width: 100%;
 
     @media (--viewport-lg) {
       margin: 0;
+      padding-right: var(--spacing-sm);
     }
 
     figure {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
       img {
         border-radius: .8rem;
         box-shadow: 0 0 1.6rem var(--color-shadow);
@@ -107,6 +97,7 @@
 
   &__body {
     align-items: flex-start;
+    padding-top: var(--spacing-xl);
   }
 
   .twitter-tweet {
@@ -132,7 +123,6 @@
     }
 
     &__icon {
-      align-items: center;
       background-color: var(--color-selection);
       border-radius: 50%;
       display: inline-flex;

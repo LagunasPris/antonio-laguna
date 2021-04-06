@@ -6,6 +6,7 @@ tags:
   - CSS
   - JS
   - Tutorial
+postTweet: "1375360119945490432"
 ---
 
 Ya lo comentaba en [Hola Mundo](/posts/hola-mundo)... El modo oscuro ~~está~~ estaba en mi lista de tareas pendientes para añadir al blog. Hoy vamos a ver cómo añadirlo.

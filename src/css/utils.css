@@ -38,6 +38,14 @@
   flex-wrap: wrap;
 }
 
+.flex--v-center {
+  align-items: center;
+}
+
+.hide {
+  display: none !important;
+}
+
 .hide--sm {
   @media (--viewport-sm-only) {
     display: none !important;
