@@ -3,7 +3,7 @@ pre[class*=language-] {
   background: 0 0;
   color: #ccc;
   font-family: var(--font-code);
-  font-size: 1em;
+  font-size: 1.6rem;
   hyphens: none;
   line-height: 1.5;
   tab-size: 4;
