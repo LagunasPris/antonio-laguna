@@ -348,10 +348,10 @@ Para ello nos vamos a valer del elemento `template` y de las macros que acabamos
 
 ```html
 <template id="like-template">
-  {{ mentions.likeElement() }}
+  {% raw %}{{ mentions.likeElement() }}{% endraw %}
 </template>
 <template id="comment-template">
-  {{ mentions.commentElement() }}
+  {% raw %}{{ mentions.commentElement() }}{% endraw %}
 </template>
 ```
 
