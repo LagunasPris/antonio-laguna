@@ -39,7 +39,22 @@
       padding: var(--spacing-sm);
 
       &__top {
+        flex-wrap: wrap;
         justify-content: space-between;
+
+        @media (--viewport-md) {
+          flex-wrap: nowrap;
+        }
+      }
+
+      &__date {
+        display: block;
+        margin-top: var(--spacing-xs);
+
+        @media (--viewport-md) {
+          display: inline-block;
+          margin-top: 0;
+        }
       }
     }
 
@@ -61,10 +76,18 @@
   .form {
     &__field {
       border: 2px solid var(--color-text);
-      border-radius: .4rem 0 0 .4rem;
-      border-right: 0;
+      border-bottom-width: 0;
+      border-radius: .4rem .4rem 0 0;
       outline: none;
       padding: .5rem;
+      width: 100%;
+
+      @media (--viewport-md) {
+        border-bottom-width: 2px;
+        border-radius: .4rem 0 0 .4rem;
+        border-right-width: 0;
+        width: auto;
+      }
 
       &:focus {
         border-color: var(--color-accent);
@@ -74,10 +97,16 @@
     &__button {
       background-color: var(--color-selection);
       border: 2px solid var(--color-selection);
-      border-radius: 0 .4rem .4rem 0;
+      border-radius: 0 0 .4rem .4rem;
       color: var(--color-selection-text);
       padding: .5rem 1.5rem;
       transition: .2s color, .2s background-color, .2s border-color;
+      width: 100%;
+
+      @media (--viewport-md) {
+        border-radius: 0 .4rem .4rem 0;
+        width: auto;
+      }
 
       &:hover {
         background-color: var(--color-background);
