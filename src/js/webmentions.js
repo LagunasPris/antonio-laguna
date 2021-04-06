@@ -6,6 +6,7 @@ const ENDPOINT = 'https://webmention.io/api/mentions?perPage=1000&jsonp=parseWeb
 const Selectors = {
   Counts: {
     Interactions: '.interactions__count',
+    InteractionsDescription: '.interactions__count__description',
     Likes: '.mentions__likes',
     Retweets: '.mentions__retweets',
     Comments: '.mentions__comments__title'
@@ -71,6 +72,7 @@ const Selectors = {
 
     if (parsed.total) {
       const count = document.querySelector(Selectors.Counts.Interactions);
+      const countDescription = document.querySelector(Selectors.Counts.InteractionsDescription);
       const likes = document.querySelector(Selectors.Counts.Likes);
       const retweets = document.querySelector(Selectors.Counts.Retweets);
       const comments = document.querySelector(Selectors.Counts.Comments);
@@ -78,7 +80,7 @@ const Selectors = {
       const commentTemplate = document.querySelector(Selectors.Templates.Comment);
 
       const countText = parsed.total === 1 ? 'interacción' : 'interacciones';
-      const unHide = [count];
+      const unHide = [count.parentElement, countDescription];
 
       count.innerText = `${parsed.total} ${countText}`;
 

@@ -41,18 +41,18 @@ templateClass: template--post
         </div>
         <div class="article__info">
           <dl class="article__meta font--mono">
-            <dt class="article__meta__title display--flex flex--v-center flex--wrapx">
+            <dt class="article__meta__title display--flex flex--v-center flex--wrap">
               <span class="visually-hidden">Fecha de publicación</span>
               {{ icons.calendar() }}
             </dt>
             <dd class="article__meta__value"><time class="dt-published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></dd>
-            <dt class="article__meta__title display--flex flex--v-center flex--wrapx">
+            <dt class="article__meta__title display--flex flex--v-center flex--wrap">
               <span class="visually-hidden">Tiempo de Lectura</span>
               {{ icons.time() }}
             </dt>
             <dd class="article__meta__value">{{ duration.render(content) | trim }}</dd>
             {% if tags %}
-              <dt class="article__meta__title display--flex flex--v-center flex--wrapx">
+              <dt class="article__meta__title display--flex flex--v-center flex--wrap">
                 <span class="visually-hidden">Etiquetas</span>
                 {{ icons.tag() }}
               </dt>
@@ -66,7 +66,7 @@ templateClass: template--post
                 </ul>
               </dd>
             {% endif %}
-            <dt class="article__meta__title display--flex flex--v-center flex--wrapx{% if postMentions.total == 0 %} hide{% endif %}">
+            <dt class="article__meta__title interactions__count__description display--flex flex--v-center flex--wrap{% if postMentions.total == 0 %} hide{% endif %}">
               <span class="visually-hidden">Interacciones en las redes</span>
               {{ icons.heart() }}
             </dt>
