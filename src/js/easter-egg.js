@@ -1,5 +1,5 @@
 (() => {
-  const siteLogo = document.querySelector(".site-header__logo");
+  const siteLogo = document.querySelector('.site-header__logo');
   const links = document.querySelectorAll('link[rel~="icon"]');
   const originalValues = Array.from(links).map(link => link.href);
 
