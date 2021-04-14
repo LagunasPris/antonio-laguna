@@ -43,7 +43,7 @@ module.exports = function(config) {
   });
   config.addPlugin(embedYoutube, {
     embedClass: 'eleventy-plugin-youtube-embed bleed',
-    lazy: true
+    lite: true
   });
   config.addPlugin(eleventyPluginTOC, {
     headingText: 'Tabla de Contenidos',
