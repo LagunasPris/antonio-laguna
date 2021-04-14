@@ -46,7 +46,7 @@ module.exports = function(config) {
     lazy: true
   });
   config.addPlugin(eleventyPluginTOC, {
-    headingText: 'Tabla de Contenidos',
+    headingText: "Tabla de Contenidos",
     wrapperClass: 'article__toc',
     headingClass: 'toc__heading text--upper text-level--6 color--secondary',
     listClass: 'toc__list',
