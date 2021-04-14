@@ -20,7 +20,7 @@ Me gustaría ir añadiendo más cosas, desde modo oscuro a sistema de comentario
 También me apetecía mucho que estuviera todo en [GitHub](https://github.com/LagunasPris/antonio-laguna) por dos motivos principales. El primero, que se pueda ver el proceso de desarrollo y las tripas para que, cualquiera, pueda coger el blog y _deconstruirlo_ como le plazca.
 El segundo es que además, favorezca la colaboración y la transparencia para cualquiera que quiera colaborar y/o ver qué hay cociéndose en las [peticiones de cambio](https://github.com/LagunasPris/antonio-laguna/pulls).
 
-¿Qué puedes esperar encontrar aquí? Pues espero que cosas sobre desarrollo web. Aunque ejerzo como Front End al final toco (y rompo) muchos aspectos de la web y son esas cosas las que me gustaría compartir por aquí.
+¿Qué puedes esperar encontrar aquí? Pues espero que cosas sobre desarrollo web. Aunque ejerzo como Front End al final toco (y rompo) muchos otros aspectos de la web y son esas cosas las que me gustaría compartir por aquí.
 
 Tanto si vienes de nuevo como si ya me conocías, ¡gracias! Como diría [Daniel Primo](https://www.danielprimo.io/), _gracias por dedicarme unos minutos de tu tiempo y por poner tus ojos (u orejas) a trabajar_. ¡Me apetecía mucho volver!
 
