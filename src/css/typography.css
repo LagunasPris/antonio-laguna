@@ -11,7 +11,7 @@ a {
   text-decoration-color: var(--color-tertiary);
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  transition: color .123s, text-decoration-color 0.123s;
+  transition: color .123s, text-decoration-color .123s;
 
   &:hover {
     color: var(--color-accent);
@@ -106,7 +106,7 @@ a {
     visibility: visible;
   }
 
-  > :not([class*='bleed']):not([class*="video"]):not([class*='language-']) {
+  > :not([class*='bleed']):not([class*='video']):not([class*='language-']) {
     max-width: 50ch;
   }
 
