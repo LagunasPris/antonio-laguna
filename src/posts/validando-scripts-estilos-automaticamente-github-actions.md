@@ -1,7 +1,7 @@
 ---
 title: Validando scripts y estilos de forma automática con GitHub Actions
 description: Aprende cómo usar las acciones de GitHub de forma sencilla para llevar a cabo tareas sencillas como usar linters de forma automática.
-date: 2021-04-13
+date: 2021-04-18
 tags:
   - CSS
   - JS
@@ -58,8 +58,9 @@ Este tutorial asume que tienes cierta familiaridad con ESLint y Stylelint en tu 
 
 Si prefieres ver este tutorial en un corto vídeo, te lo dejo por aquí:
 
+https://youtu.be/xldbA8dHwBA
 
-
+Lamento el audio del vídeo. Es el primero en un montón de tiempo. ¡Espero que el próximo salga mejor!
 
 ## ¿Qué son las GitHub Actions?
 
