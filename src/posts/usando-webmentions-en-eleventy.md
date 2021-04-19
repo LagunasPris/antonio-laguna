@@ -10,6 +10,8 @@ enableToc: true
 postTweet: '1379332293538500609'
 ---
 
+:::hidden-header Introducción
+
 En mi [¡Hola Mundo!](/posts/hola-mundo/) comentaba que quería añadir un sistema de comentarios. Estuve pensando en varios. Los comento (¿lo pillas?) por si a alguien les viene bien para su página personal.
 
 * [Utterances](https://utteranc.es/). Es probablemente mi segundo favorito. Se basa en incidencias en un repositorio de GitHub. Teniendo en cuenta que mi página ya está en GitHub de forma pública, creo que tiene sentido.

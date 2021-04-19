@@ -1,0 +1,17 @@
+name: Stylelint
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - uses: xt0rted/stylelint-problem-matcher@v1
+      - run: npm ci
+      - run: npm run lint:css
