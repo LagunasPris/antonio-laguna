@@ -6,6 +6,7 @@ tags:
   - CSS
   - JS
   - Tutorial
+postTweet: '1384042329980477440'
 ---
 
 A las personas que nos dedicamos al desarrollo del software nos encanta automatizar cosas. Aunque casi siempre es beneficioso (dado que nos evita tener que repetir la inversión de tiempo una   y otra vez), en esta ocasión creo que es doblemente beneficioso.
