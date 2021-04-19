@@ -180,7 +180,7 @@ Esto no es necesario en ESLint porque ya se encarga la librería de forma autom�
 
 ## Conclusión
 
-Espero que este pequeño tutorial te haya servido y que puedas automatizar ciertos procesos y revisiones. En mis equipos ha ayudado este tipo de configuraciones que, llevan poco tiempo, y aseguran que la revisión posterior de código va a estar únicamente centrada en problemas y no en fallos de consistencia.
+Espero que este pequeño tutorial te haya servido y que puedas automatizar ciertos procesos y revisiones. En mis equipos ha ayudado este tipo de configuraciones que llevan poco tiempo y aseguran que la revisión posterior de código va a estar únicamente centrada en problemas y no en fallos de consistencia.
 
 ![Captura de pantalla que muestra ambas acciones habiendo fallado](/img/posts/errores-github-actions.png "Error en ambas acciones")
 
