@@ -45,7 +45,7 @@ if (c < 10) {
 
 Parece más sencillo de discernir qué está haciendo. Los espacios son consistentes, las alineaciones, el uso de comillas, etc.
 
-Está muy extendido el uso de librerías como [ESLint](https://eslint.org/) y [Stylelint](https://stylelint.io/) para que, dadas unas reglas establecidas (y opinionadas), nos ayude a mantener un código que cumpla dichas reglas.
+Está muy extendido el uso de librerías como [ESLint](https://eslint.org/) y [Stylelint](https://stylelint.io/) para que, dadas unas reglas establecidas (y subjetivas), nos ayude a mantener un código que cumpla dichas reglas.
 
 A la hora de revisar código de otra persona, es fantástico poder quitarnos este tipo de comentarios/revisiones de encima y centrarnos en otras partes más interesantes.
 
