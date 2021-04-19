@@ -27,13 +27,13 @@ No obstante, creo que es más sencillo explicarme por aquí, donde no tengo tant
 
 :::info Nota
 
-Aun teniendo experiencia en el campo, ten en cuenta que al final esto es mi experiencia personal y cómo enfoco yo este tipo de procesos. Así que, ¡cógelo con pinzas!
+Aun teniendo experiencia en el campo, ten en cuenta que al final esto es mi experiencia personal y cómo enfoco yo este tipo de procesos. Así que ¡cógelo con pinzas!
 
 :::
 
 ## Aplicando a la oferta
 
-Lo primero a destacar es, ¡aplica! Si crees que llegas al 40-60% de lo que piden es probable que tengas más opciones de las que te imaginas. **No te descartes tú mismo/misma**, deja que sea la empresa la que lo haga.
+Lo primero a destacar es: ¡aplica! Si crees que llegas al 40-60% de lo que piden es probable que tengas más opciones de las que te imaginas. **No te descartes tú mismo/misma**, deja que sea la empresa la que lo haga.
 
 Dicho esto, intenta ponerte en la piel de la persona (o equipo) que han abierto un proceso.
 Como contexto, en mi caso la oferta en España alcanzó más de 200 personas aplicando (no todas eran de España) y más de 700 en Estados Unidos.
@@ -63,7 +63,7 @@ Y es que esto pasa. Más de lo que te imaginas.
 Lo siguiente que se revisa (al menos yo) es el currículum. Es el documento en el que se puede ver que la experiencia y ver qué cosas ha hecho dónde y por cuánto tiempo.
 Lo cierto es que tampoco me pongo a contar el tiempo ni presto demasiada atención a los lapsos de tiempo pero sí me encargo de ver si, más o menos, cuenta con las suficientes palabras claves.
 
-Hay algunos puntos negativos que he visto en varios currículum. El motivo para todos es el mismo. No aportan información necesaria y (hasta donde yo sé) en algunos lugares como el Reino Unido es hasta contra producente.
+Hay algunos puntos negativos que he visto en varios currículums. El motivo para todos es el mismo: Aportan información innecesaria y (hasta donde yo sé) en algunos lugares como el Reino Unido es hasta contraproducente.
 
 * Fotos de carné (u otras).
 * Edad.

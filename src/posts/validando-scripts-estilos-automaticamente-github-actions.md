@@ -1,11 +1,12 @@
 ---
 title: Validando scripts y estilos de forma automática con GitHub Actions
 description: Aprende cómo usar las acciones de GitHub de forma sencilla para llevar a cabo tareas sencillas como usar linters de forma automática.
-date: 2021-04-18
+date: 2021-04-19
 tags:
   - CSS
   - JS
   - Tutorial
+postTweet: '1384042329980477440'
 ---
 
 A las personas que nos dedicamos al desarrollo del software nos encanta automatizar cosas. Aunque casi siempre es beneficioso (dado que nos evita tener que repetir la inversión de tiempo una   y otra vez), en esta ocasión creo que es doblemente beneficioso.
@@ -44,7 +45,7 @@ if (c < 10) {
 
 Parece más sencillo de discernir qué está haciendo. Los espacios son consistentes, las alineaciones, el uso de comillas, etc.
 
-Está muy extendido el uso de librerías como [ESLint](https://eslint.org/) y [Stylelint](https://stylelint.io/) para que, dadas unas reglas establecidas (y opinionadas), nos ayude a mantener un código que cumpla dichas reglas.
+Está muy extendido el uso de librerías como [ESLint](https://eslint.org/) y [Stylelint](https://stylelint.io/) para que, dadas unas reglas establecidas (y subjetivas), nos ayude a mantener un código que cumpla dichas reglas.
 
 A la hora de revisar código de otra persona, es fantástico poder quitarnos este tipo de comentarios/revisiones de encima y centrarnos en otras partes más interesantes.
 
@@ -179,7 +180,7 @@ Esto no es necesario en ESLint porque ya se encarga la librería de forma autom�
 
 ## Conclusión
 
-Espero que este pequeño tutorial te haya servido y que puedas automatizar ciertos procesos y revisiones. En mis equipos ha ayudado este tipo de configuraciones que, llevan poco tiempo, y aseguran que la revisión posterior de código va a estar únicamente centrada en problemas y no en fallos de consistencia.
+Espero que este pequeño tutorial te haya servido y que puedas automatizar ciertos procesos y revisiones. En mis equipos ha ayudado este tipo de configuraciones que llevan poco tiempo y aseguran que la revisión posterior de código va a estar únicamente centrada en problemas y no en fallos de consistencia.
 
 ![Captura de pantalla que muestra ambas acciones habiendo fallado](/img/posts/errores-github-actions.png "Error en ambas acciones")
 
