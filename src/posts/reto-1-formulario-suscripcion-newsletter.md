@@ -6,6 +6,7 @@ tags:
   - CSS
   - JS
   - Reto
+postTweet: '1384780292003663872'
 ---
 
 Cuando escribí sobre los [consejos para el trabajo Front End](/posts/consejos-para-aplicar-trabajo-front-end/), una de las cosas que quería hacer es resolver pruebas de código y/o ayudar a gente con estos enfoques.
