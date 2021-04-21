@@ -64,7 +64,7 @@
 
   &__content {
     margin: 0 auto;
-    overflow: auto;
+    overflow: visible;
     width: 100%;
 
     @media (--viewport-lg) {

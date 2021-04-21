@@ -74,8 +74,9 @@ a {
 
   .direct-link {
     float: left;
-    line-height: 1.3;
-    margin-left: -2.4rem;
+    line-height: 1.5;
+    margin-left: -2.8rem;
+    margin-top: .8rem;
     padding-right: .4rem;
 
     &__icon {
@@ -91,6 +92,10 @@ a {
     letter-spacing: .015em;
   }
 
+  :--headings {
+    display: inline-block;
+  }
+
   h2 {
     @mixin fluid-type font-size, min-width, max-width, level-3-min, level-3-max;
     max-width: 30ch;
@@ -102,7 +107,7 @@ a {
     font-weight: 400;
   }
 
-  :--headings:hover .direct-link__icon {
+  .heading-wrapper:hover .direct-link__icon {
     visibility: visible;
   }
 
