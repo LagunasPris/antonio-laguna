@@ -1,5 +1,6 @@
 @import 'vars.css';
 @import 'modern-css-reset/src/reset.css';
+@import 'lite-youtube-embed/src/lite-yt-embed.css';
 @import 'base.css';
 @import 'container.css';
 @import 'typography.css';
