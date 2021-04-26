@@ -38,14 +38,14 @@ Algunos de los colores:
 
 ```css
 :root {
-  --primary-color: '#4292f4';
-  --text-color: '#1f1f27';
-  --border-color: '#e4e4e4';
-  --placeholder-color: 'rgba(31, 31, 39, .5)';
-  --error-color: '#af2854';
-  --error-background: '#fbecf1';
-  --success-color: '#93f48b';
-  --success-background: '#f8fef8';
+  --primary-color: #4292f4;
+  --text-color: #1f1f27;
+  --border-color: #e4e4e4;
+  --placeholder-color: rgba(31, 31, 39, .5);
+  --error-color: #af2854;
+  --error-background: #fbecf1;
+  --success-color: #93f48b;
+  --success-background: #f8fef8;
 }
 ```
 
