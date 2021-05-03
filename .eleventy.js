@@ -3,6 +3,7 @@ const htmlmin = require('html-minifier');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAbbr = require('markdown-it-abbr');
+const markdownItAttrs = require('markdown-it-attrs');
 const markdownItContainer = require('markdown-it-container');
 const markdownItImageFigures = require('markdown-it-image-figures');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
@@ -126,6 +127,7 @@ module.exports = function(config) {
     renderPermalink,
     level: [1, 2, 3, 4]
   })
+    .use(markdownItAttrs)
     .use(markdownItImageFigures, { lazy: true, figcaption: true, dataType: true })
     .use(markdownItAbbr)
     .use(markdownItContainer, 'info', infoContainer(markdownLibrary))
