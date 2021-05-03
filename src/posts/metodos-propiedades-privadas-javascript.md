@@ -4,7 +4,7 @@ description: Repasamos las novedades sobre clases que Babel incluye por defecto 
 date: 2021-05-03
 tags:
 - JS
-postTweet: ''
+postTweet: '1389140613820567554'
 ---
 
 Hace unos días que Babel sacó su versión 7.14 que viene con soporte nativo para campos de clase y métodos y propiedades privadas. Puedes [leer el anuncio en el blog de babel](https://babeljs.io/blog/2021/04/29/7.14.0).
