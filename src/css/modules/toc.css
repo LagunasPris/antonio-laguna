@@ -1,16 +1,17 @@
 .article__toc {
-  display: none;
-  margin-left: auto;
-  max-height: calc(-15rem + 100vh);
-  max-width: 26rem;
-  order: 1;
-  overflow: auto;
+  margin-bottom: var(--spacing-md);
   padding: 0 .5rem;
-  position: sticky;
-  top: 15rem;
+  width: 100%;
 
   @media (--viewport-lg) {
-    display: block;
+    margin-bottom: 0;
+    margin-left: auto;
+    max-height: calc(-15rem + 100vh);
+    max-width: 26rem;
+    order: 1;
+    overflow: auto;
+    position: sticky;
+    top: 15rem;
   }
 }
 
@@ -38,9 +39,12 @@
   }
 
   &__anchor {
-    opacity: .7;
     text-decoration: none;
-    transition: opacity .3s;
+
+    @media (--viewport-lg) {
+      opacity: .7;
+      transition: opacity .3s;
+    }
 
     &:focus,
     &:visited,
