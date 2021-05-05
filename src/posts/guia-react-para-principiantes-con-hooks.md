@@ -11,8 +11,8 @@ postTweet: ''
 
 :::hidden-header Introducción
 
-Llevo cierto tiempo trabajando con React y poniéndolo en práctica en sitios con millones de usuarios y usando técnicas avanzadas. El motivo por el que retomé el blog es el de compartir las cosas que aprendo por si le sirven de ayuda a alguien.
-Le he dado muchas vueltas a escribir sobre este tema porque hay mucha literatura al respecto aunque ¡espero que haya algo que te pueda aportar! Te voy a contar lo que a mí me ha servido. Desde 0 y nada de clases ni conversiones que ya quedaron atrás en el pasado.
+Llevo cierto tiempo trabajando con React y poniéndolo en práctica en sitios con millones de usuarios, compartiéndolo con el resto del equipo y, en definitiva, usándolo casi a diario. El motivo por el que retomé el blog es el de compartir las cosas que aprendo por si le sirven de ayuda a alguien.
+Le he dado muchas vueltas a escribir sobre React porque hay mucha literatura al respecto aunque ¡espero que haya algo que te pueda aportar! Te voy a contar lo que a mí me ha servido. Desde 0 y nada de clases ni conversiones que ya quedaron atrás en el pasado.
 
 :::info Nota
 
@@ -20,7 +20,7 @@ Si bien es una guía para principiantes en React, asumo que tienes conocimientos
 
 :::
 
-[React](https://reactjs.org/) es un framework/librería de JavaScript escrita por Facebook en 2013. React simplifica y agiliza el desarrollo de front end en algunas áreas dadas sus múltiples cualidades. A día de hoy es una librería muy popular y muy solicitada en el mundo laboral.
+Según su propia web, [React](https://reactjs.org/) es una librería de JavaScript para crear interfaces de usuario de forma **declarativa**. Fue escrita por Facebook en 2013 y que sigue manteniendo y actualizando a día de hoy. Es una librería muy popular y muy solicitada en el mundo laboral.
 
 Si prefieres ver este artículo en formato vídeo:
 
@@ -29,6 +29,47 @@ Si prefieres ver este artículo en formato vídeo:
 En este tutorial pretendo que aprendas sobre los fundamentos de React. Cómo crear un proyecto con [Create React App](https://github.com/facebook/create-react-app) y cómo crear una aplicación sencilla con su estado y sus *props*.
 
 Es probable que, si empiezas, muchas cosas no terminen de encajarte. **Es normal**. En este artículo solo vamos a hablar de lo básico e iremos expandiendo en futuras entregas.
+
+### Programación declarativa vs Programación imperativa
+
+Puede que te hayas quedado leyendo la parte de React que dice que es *declarativa* y estés preguntándote, ¿qué es la programación declarativa?
+
+Las programaciones declarativas e imperativas son *paradigmas* del desarrollo, que es una palabra muy rimbombante para decir que son *formas de entender el desarrollo*.
+
+* La programación imperativa es un paradigma que usa sentencias que cambian el estado del programa.
+* La programación declarativa es un paradigma que expresa la lógica sin describir los flujos de control.
+
+Si vienes del mundo de jQuery o de usar JavaScript sin otras librerías vienes de un mundo imperativo. Me gusta pensar en imperativo como más trabajo.
+
+Mira este código para crear un botón que cambie su atributo `aria-checked` al pulsarlo:
+
+```js
+const gallery = document.getElementById('gallery');
+const button = document.createElement('button');
+
+button.addEventListener('click', function() {
+  if (this.getAttribute('aria-checked') === 'true') {
+    this.setAttribute('aria-checked', 'false');
+  } else {
+    this.setAttribute('aria-checked', 'true');
+  }
+});
+
+gallery.appendChild(button);
+```
+
+Ahora veamos el mismo ejemplo pero con React (aunque no nos quede del todo claro):
+
+```jsx
+const Button = () => {
+  const [isChecked, setIsChecked] = useState(false);
+  return (<button aria-checked={isChecked} />);
+};
+```
+
+Si te fijas no estamos seleccionando ningún elemento ni usando `addEventListener` ni nada parecido. De manera muy clara y concisa, estamos *declarando* cómo queremos que se comporte nuestro código.
+
+### Componentes, componentes por todos lados
 
 Si hace poco que has comenzado este maravilloso camino que es la programación, quizá hayas trabajado en la separación de responsabilidades o a separar tu código HTML, CSS y JS en ficheros diferentes. React toma un enfoque diferente y nos permite escribir la lógica y la vista todo en uno y nos anima a escribir componentes. Esto nos va a ayudar con la modularidad del código y de nuestras interfaces dado que podemos componer componentes de diferentes maneras y reusarlos como y cuando queramos.
 
@@ -346,6 +387,12 @@ Aquí tienes el componente en acción:
 Espero que este pequeño tutorial te haya enseñado las cosas básicas de React y algunos de los conceptos iniciales complejos.
 
 Hemos aprendido a crear una pequeña aplicación valiéndonos de Create React App y sobre componentes, *hooks* y *props*.
+
+Ahora, te dejo un pequeño ejercicio.
+
+¿Cómo harías que el primer radio esté seleccionado al cargar la aplicación?
+
+¡Cuéntamelo!
 
 *[HTML]: HyperText Markup Language
 *[JS]: JavaScript
