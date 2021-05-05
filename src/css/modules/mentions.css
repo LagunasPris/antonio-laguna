@@ -15,6 +15,7 @@
 
   &__image {
     border-radius: 50%;
+    height: 48px;
     object-fit: cover;
   }
 

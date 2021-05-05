@@ -64,7 +64,7 @@
 
   &__content {
     margin: 0 auto;
-    overflow: visible;
+    overflow: auto;
     width: 100%;
 
     @media (--viewport-lg) {
@@ -97,7 +97,12 @@
 
   &__body {
     align-items: flex-start;
+    flex-wrap: wrap;
     padding-top: var(--spacing-xl);
+
+    @media (--viewport-lg) {
+      flex-wrap: no;
+    }
   }
 
   .twitter-tweet {
