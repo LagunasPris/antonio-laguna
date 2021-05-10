@@ -1,7 +1,7 @@
 ---
 title: "Guía de React con Hooks para principiantes"
 description: Vamos a descubrir React juntos y a aprenderlo desde cero. En esta ocasión vamos a crear nuestra primera aplicación y nuestro primer hook.
-date: 2021-05-01
+date: 2021-05-11
 enableToc: true
 tags:
   - React
@@ -22,9 +22,11 @@ Si bien es una guía para principiantes en React, asumo que tienes conocimientos
 
 Según su propia web, [React](https://reactjs.org/) es una librería de JavaScript para crear interfaces de usuario de forma **declarativa**. Fue escrita por Facebook en 2013 y que sigue manteniendo y actualizando a día de hoy. Es una librería muy popular y muy solicitada en el mundo laboral.
 
+La web la puedes encontrar en [Inglés](https://reactjs.org/) y en [Castellano](https://reactjs.org/) (y en más idiomas también).
+
 Si prefieres ver este artículo en formato vídeo:
 
-
+https://youtu.be/H_3IkTklcX8
 
 En este tutorial pretendo que aprendas sobre los fundamentos de React. Cómo crear un proyecto con [Create React App](https://github.com/facebook/create-react-app) y cómo crear una aplicación sencilla con su estado y sus *props*.
 
