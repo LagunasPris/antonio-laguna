@@ -16,5 +16,6 @@ layout: layouts/base.njk
   <h2 class="text-level--6 spacing--sm text--upper color--secondary text--center">Últimos artículos</h2>
 
   {% set postsHeadingLevel = 'h3' %}
+  {% set posts = collections.posts | reverse %}
   {% include 'components/postlist.njk' %}
 </div>
