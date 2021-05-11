@@ -6,7 +6,7 @@ enableToc: true
 tags:
   - React
   - Guia
-postTweet: ''
+postTweet: '1392055676860518403'
 ---
 
 :::hidden-header Introducción
