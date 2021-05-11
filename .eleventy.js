@@ -64,9 +64,6 @@ module.exports = function(config) {
   });
 
   config.addNunjucksAsyncFilter('addHash', addHash);
-  config.addCollection('posts', collection => [
-    ...collection.getFilteredByGlob('./src/posts/*.md')
-  ]);
 
   config.addWatchTarget('./src/css/');
   config.addWatchTarget('./src/js/');
