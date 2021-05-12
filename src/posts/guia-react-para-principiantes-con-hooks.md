@@ -14,6 +14,16 @@ postTweet: '1392055676860518403'
 Llevo cierto tiempo trabajando con React y poniéndolo en práctica en sitios con millones de usuarios, compartiéndolo con el resto del equipo y, en definitiva, usándolo casi a diario. El motivo por el que retomé el blog es el de compartir las cosas que aprendo por si le sirven de ayuda a alguien.
 Le he dado muchas vueltas a escribir sobre React porque hay mucha literatura al respecto aunque ¡espero que haya algo que te pueda aportar! Te voy a contar lo que a mí me ha servido. Desde 0 y nada de clases ni conversiones que ya quedaron atrás en el pasado.
 
+En este tutorial pretendo que aprendas sobre los fundamentos de React. Cómo crear un proyecto con [Create React App](https://github.com/facebook/create-react-app) y cómo crear una aplicación sencilla con su estado y sus *props*.
+
+Es probable que, si empiezas, muchas cosas no terminen de encajarte. **Es normal**. En este artículo solo vamos a hablar de lo básico e iremos expandiendo en futuras entregas.
+
+Aquí os dejo mi introducción a React en vídeo:
+
+https://youtu.be/H_3IkTklcX8
+
+O si prefieres el formato texto ¡sigue leyendo!
+
 :::info Nota
 
 Si bien es una guía para principiantes en React, asumo que tienes conocimientos, al menos de los fundamentos, sobre HTML, CSS y JavaScript.
@@ -23,14 +33,6 @@ Si bien es una guía para principiantes en React, asumo que tienes conocimientos
 Según su propia web, [React](https://reactjs.org/) es una librería de JavaScript para crear interfaces de usuario de forma **declarativa**. Fue escrita por Facebook en 2013 y que sigue manteniendo y actualizando a día de hoy. Es una librería muy popular y muy solicitada en el mundo laboral.
 
 La web la puedes encontrar en [Inglés](https://reactjs.org/) y en [Castellano](https://reactjs.org/) (y en más idiomas también).
-
-Si prefieres ver este artículo en formato vídeo:
-
-https://youtu.be/H_3IkTklcX8
-
-En este tutorial pretendo que aprendas sobre los fundamentos de React. Cómo crear un proyecto con [Create React App](https://github.com/facebook/create-react-app) y cómo crear una aplicación sencilla con su estado y sus *props*.
-
-Es probable que, si empiezas, muchas cosas no terminen de encajarte. **Es normal**. En este artículo solo vamos a hablar de lo básico e iremos expandiendo en futuras entregas.
 
 ### Programación declarativa vs Programación imperativa
 

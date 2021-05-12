@@ -101,7 +101,7 @@
     padding-top: var(--spacing-xl);
 
     @media (--viewport-lg) {
-      flex-wrap: no;
+      flex-wrap: nowrap;
     }
   }
 
