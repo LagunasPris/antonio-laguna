@@ -16,6 +16,7 @@ const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
 const mila = require('markdown-it-link-attributes')
 
 const addHash = require('./eleventy/filters/add-hash');
+const headFilter = require('./eleventy/filters/head');
 const htmlDateString = require('./eleventy/filters/html-date-string');
 const lastModifiedDate = require('./eleventy/filters/last-modified-date');
 const readableDateFilter = require('./eleventy/filters/readable-date');
@@ -88,6 +89,7 @@ module.exports = function(config) {
   config.addFilter('pluralize', pluralizeFilter);
   config.addFilter('webmentionsForPage', webmentionsFilter.mentions);
   config.addFilter('webmentionCountForPage', webmentionsFilter.count);
+  config.addFilter('head', headFilter);
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
