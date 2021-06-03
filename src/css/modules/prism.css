@@ -15,12 +15,43 @@ pre[class*=language-] {
 }
 
 pre[class*=language-] {
-  border: .2rem solid var(--color-accent);
+  border: .2rem solid var(--color-secondary-dark);
   border-radius: .4rem;
   margin: 5rem 0;
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
   padding: 1em;
+  position: relative;
+
+  &::before {
+    background-color: var(--color-secondary-dark);
+    border-radius: 0 0 0 .4rem;
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0 .5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* stylelint-disable */
+  &.language-js::before {
+    content: 'JS';
+  }
+
+  &.language-html::before {
+    content: 'HTML';
+  }
+
+  &.language-jsx::before {
+    content: 'JSX';
+  }
+
+  &.language-css::before {
+    content: 'CSS';
+  }
+  /* stylelint-enable */
 }
 
 :not(pre) > code[class*=language-],
