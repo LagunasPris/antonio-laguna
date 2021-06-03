@@ -59,7 +59,7 @@ templateClass: template--post
               <dd class="article__meta__value">
                 <ul role="list" class="article__tags spacing--none display--flex flex--wrap">
                   {% for tag in tags %}
-                    {% if tag != 'posts' %}
+                    {% if tag != 'posts' and tag != 'Guia React' %}
                     <li><a class="article__tag p-category" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">{{ tag }}</a></li>
                     {% endif %}
                   {% endfor %}
