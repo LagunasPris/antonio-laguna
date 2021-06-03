@@ -134,6 +134,31 @@ templateClass: template--post
         </form>
       </div>
     </article>
+
+    {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    {%- if nextPost or previousPost %}
+      <nav class="article__suggested-list">
+        <ul class="display--flex text-level--6" role="list">
+          {%- if previousPost %}
+            <li class="article__suggested">
+              <a class="suggested__link" rel="prev" href="{{ previousPost.url | url }}">
+                <span>Anterior</span>
+                {{ previousPost.data.title }}
+              </a>
+            </li>
+          {% endif %}
+          {%- if nextPost %}
+            <li class="article__suggested">
+              <a class="suggested__link" rel="next" href="{{ nextPost.url | url }}">
+                <span>Siguiente</span>
+                {{ nextPost.data.title }}
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    {%- endif %}
   </div>
 <script type="application/ld+json">
 {
