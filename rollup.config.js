@@ -4,14 +4,14 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import filesize from 'rollup-plugin-filesize';
 
-export default {
-  input: 'src/main.js',
+export default ['main', 'course'].map(name => ({
+  input: `src/${name}.js`,
   output: [
     {
-      file: 'public/js/main.js',
+      file: `public/js/${name}.js`,
       format: 'iife',
       sourcemap: false,
-      name: 'main'
+      name
     }
   ],
   plugins: [
@@ -21,4 +21,4 @@ export default {
     terser(),
     filesize()
   ]
-};
+}));

@@ -5,7 +5,7 @@ date: 2021-05-11
 enableToc: true
 tags:
   - React
-  - Guia
+  - Guia React
 postTweet: '1392055676860518403'
 ---
 
