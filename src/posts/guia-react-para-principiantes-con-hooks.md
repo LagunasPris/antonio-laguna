@@ -7,6 +7,8 @@ tags:
   - React
   - Guia React
 postTweet: '1392055676860518403'
+ghBranch: '001-guia-react-hooks'
+video: 'https://www.youtube.com/watch?v=H_3IkTklcX8'
 ---
 
 :::hidden-header Introducción

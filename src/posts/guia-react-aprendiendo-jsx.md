@@ -7,6 +7,8 @@ tags:
   - React
   - Guia React
 postTweet: ''
+ghBranch: '002-aprendiendo-jsx'
+video: 'https://www.youtube.com/watch?v=H_3IkTklcX8'
 ---
 
 :::hidden-header Introducción

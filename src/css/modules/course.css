@@ -35,7 +35,7 @@
   &:hover,
   &:focus {
     .card__icon {
-      color: #61dafb;
+      color: var(--color-react);
       transform: translate3d(-1rem, 1rem, 0);
     }
 
@@ -74,6 +74,90 @@
     height: auto;
     margin: 0 auto;
     max-width: 40rem;
+  }
+
+  &__lessons {
+    counter-reset: course;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    .lesson__wrapper {
+      margin-bottom: var(--spacing-sm);
+      padding: 0 1rem;
+      position: relative;
+      width: 100%;
+
+      @media (--viewport-md) {
+        width: 50%;
+      }
+
+      @media (--viewport-lg) {
+        width: 33.33%;
+      }
+    }
+  }
+
+  &__lesson {
+    border-radius: .8rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.2rem 3.2rem 1rem;
+    position: relative;
+    z-index: 1;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__links {
+    padding-top: 1rem;
+    position: relative;
+
+    &::after {
+      background-color: var(--color-background);
+      content: '';
+      height: 2px;
+      inset: 0 -3.2rem auto;
+      position: absolute;
+    }
+
+    ul {
+      justify-content: center;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+
+    li {
+      margin: 1rem;
+    }
+  }
+
+  &__article-link {
+    counter-increment: course;
+    position: relative;
+
+    &::before {
+      content: counter(course);
+      font-family: var(--font-base);
+      font-weight: bold;
+      padding: 0 10px;
+      position: absolute;
+      right: -30px;
+      top: -30px;
+    }
+
+    &::before,
+    &:hover::before {
+      color: #33596d;
+    }
+
+    &:visited::before,
+    &:hover:visited::before {
+      color: var(--color-react);
+    }
   }
 }
 
