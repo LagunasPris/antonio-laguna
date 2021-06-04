@@ -13,7 +13,7 @@ video: 'https://www.youtube.com/watch?v=H_3IkTklcX8'
 
 :::hidden-header Introducción
 
-Ahora que ya tenemos una ligera idea sobre cómo funciona React, me parece propio que pasemos a centrarnos en JSX.
+Ahora que ya tenemos [una ligera idea sobre cómo funciona React](/posts/guia-react-aprendiendo-jsx/), me parece propio que pasemos a centrarnos en JSX.
 
 Si eres de los que prefiere disfrutar el contenido en formato vídeo, puedes verme contando esto mismo por aquí:
 
