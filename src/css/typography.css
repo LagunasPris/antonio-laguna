@@ -73,15 +73,8 @@ a {
   }
 
   .direct-link {
-    float: left;
-    line-height: 1.5;
-    margin-left: -2.8rem;
-    margin-top: .8rem;
-    padding-right: .4rem;
-
-    &__icon {
-      visibility: hidden;
-    }
+    margin-left: .5rem;
+    text-decoration: none;
   }
 
   p code,
@@ -105,10 +98,6 @@ a {
     @mixin fluid-type font-size, min-width, max-width, level-4-min, level-4-max;
     font-style: italic;
     font-weight: 400;
-  }
-
-  .heading-wrapper:hover .direct-link__icon {
-    visibility: visible;
   }
 
   > :not([class*='bleed']):not([class*='video']):not([class*='language-']):not([class*='cp_embed_wrapper']) {
