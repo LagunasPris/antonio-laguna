@@ -2,8 +2,10 @@
 <html lang="es"{% if templateClass %} class="{{ templateClass }}"{% endif %}>
 <head>
   {%- set pageTitle %}{% if titleOverride %}{{ title }}{% else %}{% if title %}{{ title }} | {% endif %}{{ meta.siteName }}{% endif %}{% endset -%}
+  {%- set imageTitle %}{% if socialTitle %}{{ socialTitle }}{% else %}{{ title }}{% endif %}{% endset -%}
   {%- set pageDescription %}{% if description %}{{ description }}{% else %}{{ meta.siteDescription }}{% endif %}{% endset -%}
-  {%- set pageSocialImg %}{{ meta.url }}/img/previews/{% if title %}{{ title | slugify }}{% else %}{{ 'home' | slugify }}{% endif %}.png{% endset -%}
+  {%- set imageDescription %}{% if socialDescription %}{{ socialDescription }}{% else %}{{ pageDescription }}{% endif %}{% endset -%}
+  {%- set pageSocialImg %}{% socialImage imageTitle, imageDescription %}{% endset -%}
 
   <script>
     var a=localStorage.getItem('theme'),b=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=a?a:b;
@@ -14,6 +16,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ pageTitle }}</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" media="print" onload="this.media='all'" />
 

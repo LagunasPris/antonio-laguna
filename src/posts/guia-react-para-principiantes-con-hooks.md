@@ -1,6 +1,7 @@
 ---
 title: "Guía de React con Hooks para principiantes"
 description: Vamos a descubrir React juntos y a aprenderlo desde cero. En esta ocasión vamos a crear nuestra primera aplicación y nuestro primer hook.
+socialDescription: Descubramos React desde cero. Creamos nuestra primera aplicación y usamos nuestro primer hook.
 date: 2021-05-11
 enableToc: true
 tags:

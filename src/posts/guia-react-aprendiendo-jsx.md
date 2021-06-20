@@ -1,6 +1,7 @@
 ---
 title: "Fundamentos de React: Aprendiendo JSX"
 description: Aprende sobre JSX. El lenguaje que ha creado React mezclando HTML y JavaScript. Indagamos en los componentes, elementos, props y algunos patrones.
+socialDescription: 'Aprende los fundamentos de JSX: el lenguaje que mezcla HTML y JS'
 date: 2021-06-21
 enableToc: true
 tags:

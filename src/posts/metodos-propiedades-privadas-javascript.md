@@ -1,5 +1,6 @@
 ---
 title: Métodos de clase y métodos y propiedades estáticas y privadas en JavaScript
+socialTitle: 'Métodos y propiedades y métodos privados en clases de JS'
 description: Repasamos las novedades sobre clases que Babel incluye por defecto y que están por llegar en ES2021.
 date: 2021-05-03
 tags:

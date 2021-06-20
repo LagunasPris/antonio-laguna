@@ -1,5 +1,6 @@
 ---
 title: Validando scripts y estilos de forma automática con GitHub Actions
+socialTitle: Validando JS y CSS con GitHub Actions
 description: Aprende cómo usar las acciones de GitHub de forma sencilla para llevar a cabo tareas sencillas como usar linters de forma automática.
 date: 2021-04-19
 tags:
