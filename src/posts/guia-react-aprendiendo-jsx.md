@@ -7,7 +7,7 @@ enableToc: true
 tags:
   - React
   - Guia React
-postTweet: ''
+postTweet: '1406877126389809154'
 ghBranch: '002-aprendiendo-jsx'
 video: 'https://www.youtube.com/watch?v=RZ6EVaxmtN4'
 ---
