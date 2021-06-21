@@ -7,8 +7,10 @@ pagination:
   filter:
     - posts
     - all
+    - Guia React
 eleventyComputed:
   title: "Artículos etiquetados con {{ tag }}"
+  description: "Todos mis artículos etiquetados en {{ tag }} hasta la fecha."
 permalink: "/tag/{{ tag | slug }}/"
 ---
 

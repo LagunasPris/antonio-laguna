@@ -19,12 +19,12 @@ templateClass: template--post
   {%- endif -%}
   <meta property="article:published_time" content="{{ page.date | htmlDateString }}" />
   {% if lastmod > pageDate %}<meta property="article:modified_time" content="{{ lastmod }}" />{% endif %}
-  {% for tag in tags %}{% if tag != 'posts' %}<meta property="article:tag" content="{{ tag }}" />{% endif %}{% endfor %}
+  {% for tag in tags %}{% if tag != 'posts' and tag != 'Guia React' %}<meta property="article:tag" content="{{ tag }}" />{% endif %}{% endfor %}
 
   <meta name="twitter:label1" content="Tiempo de lectura" />
   <meta name="twitter:data1" content="{{ duration.render(content, false, '') | trim}}" />
   <meta name="twitter:label2" content="Etiquetado en" />
-  <meta name="twitter:data2" content="{% for tag in tags %}{% if tag != 'posts' %}{{ tag }}{% if not loop.last %},{% endif %}{% endif %}{% endfor %}" />
+  <meta name="twitter:data2" content="{% for tag in tags %}{% if tag != 'posts' and tag != 'Guia React' %}{{ tag }}{% if not loop.last %},{% endif %}{% endif %}{% endfor %}" />
 {% endblock %}
 
 {% block article %}
@@ -59,7 +59,7 @@ templateClass: template--post
               <dd class="article__meta__value">
                 <ul role="list" class="article__tags spacing--none display--flex flex--wrap">
                   {% for tag in tags %}
-                    {% if tag != 'posts' %}
+                    {% if tag != 'posts' and tag != 'Guia React' %}
                     <li><a class="article__tag p-category" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">{{ tag }}</a></li>
                     {% endif %}
                   {% endfor %}
@@ -92,6 +92,17 @@ templateClass: template--post
         <p>Publicado el {{ page.date | readableDate }}</p>
         <p><a href="{{ page.inputPath | ghPath }}">Ver en GitHub</a></p>
       </footer>
+
+      {% if 'Guia React' in tags %}
+        <div class="course-list">
+          <div class="course-card bg--primary color--light">
+            <h2 class="card__title text-level--5">Aprende React</h2>
+            <span class="text-level--6 spacing--sm">Este artículo es parte del <a href="/curso-react/">curso de React</a>. Si te ha interesado te recomiendo visitar el resto del curso para leer más artículos. <br/> Todo el contenido, material, ejercicios y soluciones de este artículo <a href="https://github.com/Antonio-Laguna/curso-react/tree/{{ ghBranch }}" target="_blank" rel="noreferrer">están disponibles en GitHub</a> para que puedas disponer de ellos a tu ritmo, cómo y dónde quieras.<br/>
+              Además, si tienes dudas o quieres mostrar algo, ¡<a href="https://github.com/Antonio-Laguna/curso-react/discussions" target="_blank" rel="noreferrer">pásate por las discusiones</a>!</span>
+            <span class="card__icon">{{ icons.react() }}</span>
+          </div>
+        </div>
+      {% endif %}
 
       <div class="article__mentions" id="mentions">
         <h2 class="mentions__title spacing--sm">En las redes</h2>
@@ -134,6 +145,31 @@ templateClass: template--post
         </form>
       </div>
     </article>
+
+    {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
+    {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+    {%- if nextPost or previousPost %}
+      <nav class="article__suggested-list">
+        <ul class="display--flex text-level--6" role="list">
+          {%- if previousPost %}
+            <li class="article__suggested">
+              <a class="suggested__link" rel="prev" href="{{ previousPost.url | url }}">
+                <span>Anterior</span>
+                {{ previousPost.data.title }}
+              </a>
+            </li>
+          {% endif %}
+          {%- if nextPost %}
+            <li class="article__suggested">
+              <a class="suggested__link" rel="next" href="{{ nextPost.url | url }}">
+                <span>Siguiente</span>
+                {{ nextPost.data.title }}
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    {%- endif %}
   </div>
 <script type="application/ld+json">
 {
@@ -143,6 +179,7 @@ templateClass: template--post
   "image": [],
   "author": "{{ meta.author.name }}",
   "genre": "{{ meta.genre }}",
+  "commentCount": {{ postMentions.comments.length }},
   "publisher": {
     "@type": "Person",
     "@id": "#siteOwner"

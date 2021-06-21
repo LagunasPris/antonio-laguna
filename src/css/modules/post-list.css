@@ -1,18 +1,41 @@
 .posts-feed {
   margin: 0 auto;
-  max-width: 75rem;
+
+  &,
+  &__title {
+    max-width: 96rem;
+  }
+
+  &__title {
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.3rem;
+
+    &__link {
+      background-color: var(--color-secondary-dark);
+      border-radius: .4rem;
+      color: var(--color-background);
+      line-height: 1;
+      padding: 1rem 1.2rem;
+      text-decoration: none;
+      transition: color .123s, background-color .123s;
+
+      &:hover {
+        background-color: var(--color-background);
+      }
+    }
+  }
 
   &__post {
-    padding: 1.5rem 0;
+    border-radius: .4rem;
+    padding: 1.2rem 1.6rem;
     position: relative;
 
     @media (--viewport-sm-only) {
       flex-wrap: wrap;
       justify-content: space-between;
-    }
-
-    & + & {
-      border-top: 1px solid var(--color-light-gray);
     }
 
     &:hover {
@@ -24,13 +47,9 @@
   }
 
   .post {
-    &__date,
-    &__duration {
+    &__date {
       flex-shrink: 0;
       font-size: 1.9rem;
-    }
-
-    &__date {
       margin-right: 1.5rem;
       width: 7rem;
     }
@@ -40,21 +59,10 @@
       font-size: 2.3rem;
       font-weight: 400;
       margin-bottom: 0;
-      overflow: hidden;
-      padding-right: 1rem;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      @media (--viewport-sm-only) {
-        margin-bottom: 1rem;
-        order: -1;
-        padding-right: 0;
-        white-space: initial;
-        width: 100%;
-      }
     }
 
     &__link {
+      border-radius: .4rem;
       bottom: 0;
       left: 0;
       position: absolute;

@@ -38,7 +38,7 @@ Lo primero a destacar es: ¡aplica! Si crees que llegas al 40-60% de lo que pide
 Dicho esto, intenta ponerte en la piel de la persona (o equipo) que han abierto un proceso.
 Como contexto, en mi caso la oferta en España alcanzó más de 200 personas aplicando (no todas eran de España) y más de 700 en Estados Unidos.
 
-![Sheldon Cooper de la serie The Big Bang Theory respirando ansiosamente en una bolsa de papel](/img/posts/sheldon-bag.gif "_El horror_")
+{% image 'sheldon-bag_qeznn3.gif' 498 280 'Sheldon Cooper de la serie The Big Bang Theory respirando ansiosamente en una bolsa de papel' '<em>El horror</em>' %}
 
 Cuando digo, *intenta* ponerte en la piel es para que intentes visualizar cómo se siente esa persona revisando una cantidad enorme de aplicaciones.
 
@@ -74,7 +74,7 @@ Quizá pienses, ¿qué daño hacen ahí? Pues el caso es que lo que generan es *
 En este punto quizá te estés preguntando, ¿cómo se ve un currículum *bueno*?
 Pues he revisado los que pasaron de fase y este Currículum resume bien la esencia de lo que, a mi juicio, es un buen ejemplo. **Directo, sencillo y al punto**.
 
-![Imagen que ilustra un currículum con datos pixelados para preservar la privacidad](/img/posts/curriculum-modelo.png "_Ejemplo de Currículum (con permiso cedido)_")
+{% image 'curriculum-modelo_ahk5oj.png' 658 853 'Imagen que ilustra un currículum con datos pixelados para preservar la privacidad' '<em>Ejemplo de Currículum (con permiso cedido)</em>' %}
 
 ## Entrevistas y ejercicios
 

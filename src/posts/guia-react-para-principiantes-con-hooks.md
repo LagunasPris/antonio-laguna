@@ -1,12 +1,15 @@
 ---
 title: "Guía de React con Hooks para principiantes"
 description: Vamos a descubrir React juntos y a aprenderlo desde cero. En esta ocasión vamos a crear nuestra primera aplicación y nuestro primer hook.
+socialDescription: Descubramos React desde cero. Creamos nuestra primera aplicación y usamos nuestro primer hook.
 date: 2021-05-11
 enableToc: true
 tags:
   - React
-  - Guia
+  - Guia React
 postTweet: '1392055676860518403'
+ghBranch: '001-guia-react-hooks'
+video: 'https://www.youtube.com/watch?v=H_3IkTklcX8'
 ---
 
 :::hidden-header Introducción
@@ -81,7 +84,7 @@ En muchas de las páginas que visitas tienes componentes repartidos por todos la
 
 Echa un vistazo al enfoque por componentes de este módulo de Billboard:
 
-![Captura de un módulo de la página Billboard.com en la que se muestra cómo están subdivididos los diferentes componentes de React](/img/posts/componentes-billboard-react.jpg "Repartición por componentes de un componente de Billboard.com"){width=1332 height=921}
+{% image 'componentes-billboard-react_arvxhq.jpg' 1332 921 'Captura de un módulo de la página Billboard.com en la que se muestra cómo están subdivididos los diferentes componentes de React' 'Repartición por componentes de un componente de Billboard.com' %}
 
 Cada caja es un componente diferente y como ves, cada componente puede contar con varios *subcomponentes* a su vez. Además, hay componentes (como el autor) que se repiten entre sí.
 
@@ -111,7 +114,7 @@ $ npm start
 
 Y se nos abrirá en el navegador lo siguiente:
 
-![Captura de pantalla de lo que se ve al ejecutar una aplicación creada con Create React App](/img/posts/cra-react-pantalla.png "Pantalla de Create React App"){width=1026 height=1026}
+{% image 'cra-react-pantalla_c7o6j9.png' 1026 1026 'Captura de pantalla de lo que se ve al ejecutar una aplicación creada con Create React App' 'Pantalla de Create React App' %}
 
 ¡Genial!
 
@@ -119,7 +122,7 @@ Y se nos abrirá en el navegador lo siguiente:
 
 Si ya has abierto la carpeta verás algo parecido a esto:
 
-![Árbol de ficheros creados por Create React App con su estructura de directorios](/img/posts/ficheros-cra-gif-chooser.jpg){width=550 height=884}
+{% image 'ficheros-cra-gif-chooser_ehdmjb.jpg' 550 884 'Árbol de ficheros creados por Create React App con su estructura de directorios' %}
 
 Dado que esto es una introducción, no vamos a pararnos en todos los ficheros pero sí que hay algunos que nos interesan. Empecemos por `src/index.js`
 

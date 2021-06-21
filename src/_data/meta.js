@@ -13,7 +13,8 @@ module.exports = {
       Twitter: 'https://twitter.com/ant_laguna',
       GitHub: 'https://github.com/Antonio-Laguna',
       YouTube: 'https://www.youtube.com/c/AntonioLaguna',
-      LinkedIn: 'https://www.linkedin.com/in/alagunamatias/'
+      Linkedin: 'https://www.linkedin.com/in/alagunamatias/',
+      RSS: '/feed/feed.xml'
     }
   }
 };
