@@ -9,16 +9,16 @@ templateClass: 404-page
 {% block extraHead %}
 <style>
   .not-found__image {
+    bottom: 0;
     position: absolute;
     left: 50%;
     margin-left: -110px;
-    bottom: 0;
   }
 
   .not-found__title {
-    color: #fff;
-    text-shadow: 2px 2px 0 #003049, 2px -2px 0 #003049, -2px 2px 0 #003049, -2px -2px 0 #003049, 2px 0 0 #003049, 0 2px 0 #003049, -2px 0 0 #003049, 0 -2px 0 #003049;
+    color: var(--color-background);
     letter-spacing: .2em;
+    text-shadow: 2px 2px 0 var(--color-text), 2px -2px 0 var(--color-text), -2px 2px 0 var(--color-text), -2px -2px 0 var(--color-text), 2px 0 0 var(--color-text), 0 2px 0 var(--color-text), -2px 0 0 var(--color-text), 0 -2px 0 var(--color-text);
   }
 
   .site-content {
@@ -29,12 +29,12 @@ templateClass: 404-page
 
 {% block article %}
   <div class="container">
-    <div class="text--center">
+    <div class="text--center spacing--md">
       <h1 class="not-found__title text-level--1">404</h1>
       <p>Creo que te has perdido...</p>
       <p>Volver a <a href="/">inicio</a>.</p>
     </div>
   </div>
 
-  <img class="not-found__image" src="/img/404.gif" alt="" width="220" height="213" />
+  <img class="not-found__image" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1624254488/antonio.laguna/404_t6xpof.gif" alt="" width="220" height="213" />
 {% endblock %}

@@ -57,7 +57,7 @@ Una vez hecho esto, tienes que editar tus perfiles para que apunten a tu página
 
 Finalmente, verás que al entrar en Webmention.io y escribir tu dominio nos aparecen las dos opciones para poder iniciar sesión.
 
-![Captura de pantalla de webmention.io que muestra los botones que permiten iniciar sesión para Twitter y GitHub](/img/posts/webmention-login.png "Botones de inicio de sesión")
+{% image 'webmention-login_ijqw3t.png' 1328 602 'Captura de pantalla de webmention.io que muestra los botones que permiten iniciar sesión para Twitter y GitHub' 'Botones de inicio de sesión' %}
 
 Cuando hayas iniciado sesión, podrás encontrar las etiquetas que les dicen a otros sitios *dónde* enviar esas menciones web. En Ajustes (settings) encontrarás las etiquetas.
 
@@ -340,7 +340,7 @@ El HTML que vamos a usar es bastante estándar. Para poder reusarlo luego dentro
 
 En las imágenes, en caso de que no venga definimos una por defecto para no dejar un círculo ahí roto vacío aunque en mis pruebas nunca ha venido uno vacío.
 
-![Captura de pantalla que muestra el resultado que quedará en mi web](/img/posts/vistazo-a-webmentions.jpg "El resultado final")
+{% image 'vistazo-a-webmentions_qw9axr.jpg' 2324 1330 'Captura de pantalla que muestra el resultado que quedará en mi web' 'El resultado final' %}
 
 ### Actualizando las menciones de forma dinámica
 

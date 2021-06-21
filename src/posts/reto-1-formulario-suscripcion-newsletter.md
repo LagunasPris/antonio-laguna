@@ -17,7 +17,7 @@ Si bien no voy a coger directamente [la que usé en mi empresa](https://github.c
 
 Coge el fichero y recrea el formulario de inicio de sesión con lo que quieras. Es un reto de front-end y no necesitamos gestionar el formulario en sí.
 
-![Imagen que muestra el objetivo final del reto propuesto en la que se ve un formulario de suscripción a una newsletter](/img/posts/reto-1-fuente.jpg "El reto")
+{% image 'reto-1-fuente_wquaxt.jpg' 2238 712 'Imagen que muestra el objetivo final del reto propuesto en la que se ve un formulario de suscripción a una newsletter' 'El reto' %}
 
 Las instrucciones son:
 
@@ -32,7 +32,7 @@ Conseguirás puntos extras si...
 * Usas CSS moderno.
 * No matas moscas a cañonazos con librerías extra.
 
-[Ver fichero en tamaño completo](/img/posts/reto-1-fuente.jpg).
+[Ver fichero en tamaño completo](https://res.cloudinary.com/antonio-laguna/image/upload/v1624245483/antonio.laguna/reto-1-fuente_wquaxt.jpg).
 
 Algunos de los colores:
 

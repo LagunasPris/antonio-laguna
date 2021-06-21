@@ -9,7 +9,6 @@ const markdownItImageFigures = require('markdown-it-image-figures');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const socialImages = require('@11tyrocks/eleventy-plugin-social-images');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
 const embedYoutube = require('eleventy-plugin-youtube-embed');
 const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
@@ -35,7 +34,6 @@ module.exports = function(config) {
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
   config.addPlugin(syntaxHighlight);
-  config.addPlugin(socialImages);
   config.addPlugin(embedTwitter, {
     cacheText: true,
     doNotTrack: true,
@@ -69,11 +67,9 @@ module.exports = function(config) {
   config.addWatchTarget('./src/css/');
   config.addWatchTarget('./src/js/');
 
-  config.addPassthroughCopy('./src/img');
   config.addPassthroughCopy('./src/icons');
   config.addPassthroughCopy('_headers');
   config.addPassthroughCopy('favicon.ico');
-  config.addPassthroughCopy('static/img');
   config.addPassthroughCopy('_includes/assets/');
 
   config.addShortcode('year', () => `${new Date().getFullYear()}`);
@@ -93,9 +89,8 @@ module.exports = function(config) {
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
-  Object.keys(imageShortcodes).forEach(shortcode => {
-    config.addShortcode(shortcode, imageShortcodes[shortcode])
-  })
+  config.addShortcode('image', imageShortcodes.image);
+  config.addShortcode('socialImage', imageShortcodes.socialImage);
 
   // Minify HTML output
   config.addTransform('htmlmin', function(content, outputPath) {

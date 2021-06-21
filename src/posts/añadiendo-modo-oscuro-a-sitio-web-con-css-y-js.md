@@ -43,7 +43,7 @@ Estas son las cosas que tuve en cuenta:
 * Permitir que el usuario cambie el tema a su antojo. Por defecto, si tienes activado el modo oscuro en tu sistema operativo, verás el modo oscuro y si no has tocado nada, verás el modo claro pero **tú decides** con qué te quedas.
 * Evitar cambiar todo lo oscuro por algo claro. Una sombra blanca quedaba como un hachazo en los ojos. Opté por una completamente negra.
 
-![Imagen que ilustra una imagen que tiene una sombra blanca sobre fondo oscuro](/img/posts/sombra-blanca-modo-oscuro.jpg "_El meta-horror_")
+{% image 'sombra-blanca-modo-oscuro_wk9vzr.jpg' 1414 676 'Imagen que ilustra una imagen que tiene una sombra blanca sobre fondo oscuro' '<em>El meta-horror</em>' %}
 
 * Aprovechar para bajar la intensidad en las imágenes.
 

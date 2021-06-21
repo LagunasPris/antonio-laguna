@@ -2,7 +2,7 @@ const CLOUDNAME = 'antonio-laguna';
 const FOLDER = 'v1624199559/antonio.laguna/';
 const BASE_URL = `https://res.cloudinary.com/${CLOUDNAME}/image/upload/`;
 const FALLBACK_WIDTHS = [300, 600, 928, 1856];
-const FALLBACK_WIDTH = 680;
+const FALLBACK_WIDTH = 618;
 
 const SHARE_IMAGE_FILE = 'social-image-template_gnkf6t.jpg';
 const TITLE_FONT = 'Fira%20Sans';
@@ -22,6 +22,22 @@ function getSrc(file, width) {
 function getSrcset(file, widths) {
   const widthSet = widths || FALLBACK_WIDTHS;
   return widthSet.map(width => `${getSrc(file, width)} ${width}w`).join(', ');
+}
+
+function image(src, imageWidth, imageHeight, alt, caption, className, width) {
+  let figCaption = '';
+  let cssClass = '';
+  const imageSrc = getSrc(src, width);
+
+  if (caption) {
+    figCaption = `<figcaption>${caption}</figcaption>`;
+  }
+
+  if (className) {
+    cssClass = ` class="${className}" `;
+  }
+
+  return `<figure data-type="image"><img alt="${alt}"${cssClass} loading="lazy" decoding="async" src="${imageSrc}" width="${imageWidth}" height="${imageHeight}" srcset="${getSrcset(src)}" sizes="(min-width: 684px) 618px, 90.4vw">${figCaption}</figure>`;
 }
 
 function cloudinarySafeText(text) {
@@ -67,8 +83,9 @@ function socialImageUrl(title, description) {
 }
 
 module.exports = {
-  srcset: (file, widths) => getSrcset(file, widths),
-  src: (file, width) => getSrc(file, width),
-  socialImage: (title, description) => socialImageUrl(title, description),
-  defaultSizes: () => '(min-width: 980px) 928px, calc(95.15vw + 15px)',
+  srcset: getSrcset,
+  src: getSrc,
+  socialImage: socialImageUrl,
+  image,
+  defaultSizes: () => '(min-width: 684px) 618px, 90.4vw',
 };
