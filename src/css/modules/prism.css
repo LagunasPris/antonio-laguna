@@ -44,6 +44,10 @@ pre[class*=language-] {
     content: 'HTML';
   }
 
+  &.language-svg::before {
+    content: 'SVG';
+  }
+
   &.language-jsx::before {
     content: 'JSX';
   }
