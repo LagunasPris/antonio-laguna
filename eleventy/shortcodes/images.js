@@ -4,7 +4,7 @@ const BASE_URL = `https://res.cloudinary.com/${CLOUDNAME}/image/upload/`;
 const FALLBACK_WIDTHS = [300, 600, 928, 1856];
 const FALLBACK_WIDTH = 618;
 
-const SHARE_IMAGE_FILE = 'social-image-template_gnkf6t.jpg';
+const SHARE_IMAGE_FILE = 'social-template_lfj9sg.jpg';
 const TITLE_FONT = 'Fira%20Sans';
 const TITLE_FONT_SIZE = '54';
 const TITLE_BOTTOM_OFFSET = 306;
