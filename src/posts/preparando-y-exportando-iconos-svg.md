@@ -62,7 +62,7 @@ Mi recomendación es deshacerse de ellos haciendo click en cada capa y luego en 
 
 <video src="https://res.cloudinary.com/antonio-laguna/video/upload/v1624346738/antonio.laguna/simplifying-groups_le50ky.mp4" playsinline loop autoplay muted width="640" height="490"></video>
 
-### Deshaciendo uniones/máscaras
+### Deshaciendo uniones y máscaras
 
 Uno de los trucos que se usan para hacer un icono es poner capas juntas y luego unirlas, substraerlas o usarlas como máscaras. Esas operaciones son caras en términos del espacio que van a consumir. Piensa que un rectángulo tiene pocos puntos pero si lo unimos a otra forma, los cálculos se vuelven más complejos y resultan en ficheros con un tamaño mayor.
 
