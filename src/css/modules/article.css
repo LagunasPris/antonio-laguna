@@ -88,6 +88,10 @@
         text-align: center;
       }
     }
+
+    p video {
+      margin: 0 auto;
+    }
   }
 
   &__footer {
