@@ -1,7 +1,6 @@
-import lazyload from './lazy-loading';
 import webmentionsHelpers from '../../eleventy/helpers/webmentions';
 
-const DEFAULT_AVATAR = '/img/webmention-avatar-default.svg';
+const DEFAULT_AVATAR = 'https://res.cloudinary.com/antonio-laguna/image/upload/v1624254488/antonio.laguna/webmention-avatar-default_ydiia0.svg';
 const ENDPOINT = 'https://webmention.io/api/mentions?perPage=1000&jsonp=parseWebmentions';
 const Selectors = {
   Counts: {
@@ -26,7 +25,7 @@ const Selectors = {
     const author = vals.author ? vals.author : {};
     const link = template.querySelector('.u-url');
 
-    template.querySelector('.u-photo').dataset.src = author.photo || DEFAULT_AVATAR;
+    template.querySelector('.u-photo').src = author.photo || DEFAULT_AVATAR;
     link.href = vals.mentionUrl;
     link.title = `Ver perfil de ${author.name}`;
     template.querySelector('.p-author').innerHTML = author.name;
@@ -41,7 +40,7 @@ const Selectors = {
     authorEl.href = author.url;
     authorEl.title = `Ver perfil de ${author.name}`;
 
-    template.querySelector('.u-photo').dataset.src = author.photo || DEFAULT_AVATAR;
+    template.querySelector('.u-photo').src = author.photo || DEFAULT_AVATAR;
     template.querySelector('.p-author').innerText = author.name;
     template.querySelector('.e-entry').innerHTML = vals.data?.content;
     template.querySelector('.u-url').href = vals.data?.url;
@@ -89,7 +88,6 @@ const Selectors = {
       processMention(parsed.comments, comments, commentTemplate, fillComment, unHide);
 
       unHide.forEach(el => el.classList.remove('hide'));
-      lazyload();
     }
   }
 

@@ -1,14 +1,15 @@
 ---
 title: "Fundamentos de React: Aprendiendo JSX"
-description: Aprende sobre JSX. El lenguaje que ha creado React mezclando HTML y JavaScript.
-date: 2021-05-19
+description: Aprende sobre JSX. El lenguaje que ha creado React mezclando HTML y JavaScript. Indagamos en los componentes, elementos, props y algunos patrones.
+socialDescription: 'Aprende los fundamentos de JSX: el lenguaje que mezcla HTML y JS'
+date: 2021-06-21
 enableToc: true
 tags:
   - React
   - Guia React
-postTweet: ''
+postTweet: '1406877126389809154'
 ghBranch: '002-aprendiendo-jsx'
-video: 'https://www.youtube.com/watch?v=H_3IkTklcX8'
+video: 'https://www.youtube.com/watch?v=RZ6EVaxmtN4'
 ---
 
 :::hidden-header Introducción
@@ -17,6 +18,7 @@ Ahora que ya tenemos [una ligera idea sobre cómo funciona React](/posts/guia-re
 
 Si eres de los que prefiere disfrutar el contenido en formato vídeo, puedes verme contando esto mismo por aquí:
 
+https://youtu.be/watch?v=RZ6EVaxmtN4
 
 Si no, sigue leyendo.
 
@@ -110,7 +112,7 @@ class Greetings extends React.Component {
 
 No obstante, las clases están en proceso de ser discontinuadas y solo vamos a centrarnos en componentes funcionales.
 
-### Reglas de los componentes/elementos
+### Reglas de los componentes y elementos
 
 Los componentes que van en una única línea no necesitan paréntesis a su alrededor. No obstante, para evitar problemas con los `;`, es recomendable usar paréntesis si vamos a usar varias líneas.
 
@@ -335,6 +337,21 @@ function Greetings(ref) {
 Greetings.defaultProps = {
   name: "visitante"
 };
+```
+
+### Props booleanas
+
+En ocasiones querremos que una prop sea `true` o `false`. Si una prop no tiene valor alguno, React la evaluará como `true`:
+
+```jsx
+<Greetings name="visitante" isLoggedIn />
+```
+
+En este caso, `isLoggedIn` tendría el valor `true`. Únicamente nos interesa pasar un valor, si depende de una variable:
+
+```jsx
+const isLogged = true; // o false
+<Greetings name="visitante" isLoggedIn={isLogged} />
 ```
 
 ## Con hijos o sin ellos

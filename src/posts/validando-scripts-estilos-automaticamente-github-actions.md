@@ -1,5 +1,6 @@
 ---
 title: Validando scripts y estilos de forma automática con GitHub Actions
+socialTitle: Validando JS y CSS con GitHub Actions
 description: Aprende cómo usar las acciones de GitHub de forma sencilla para llevar a cabo tareas sencillas como usar linters de forma automática.
 date: 2021-04-19
 tags:
@@ -146,7 +147,7 @@ Que se encarga de revisar todos los ficheros y de no dejar que ninguna `warning`
 
 Si lo pruebas y tienes errores 😬 deberías ver algo así:
 
-![Captura de pantalla que muestra un error en un fichero de ESLint](/img/posts/fallo-eslint-github-action.png "Error en ESLint")
+{% image 'fallo-eslint-github-action_pmdsja.png' 1216 380 'Captura de pantalla que muestra un error en un fichero de ESLint' 'Error en ESLint' %}
 
 ## GitHub actions con Stylelint
 
@@ -174,7 +175,7 @@ jobs:
 
 Aparte de cambiar el comando final por `npm run lint:css` habrás observado que hemos usado la acción `xt0rted/stylelint-problem-matcher@v1`. Esta se encarga de asociar los problemas a los ficheros:
 
-![Captura de pantalla que muestra un error en un fichero de Stylelint](/img/posts/fallo-stylelint-github-action.png "Error en Stylelint")
+{% image 'fallo-stylelint-github-action_pdzxwv.png' 1216 443 'Captura de pantalla que muestra un error en un fichero de Stylelint' 'Error en Stylelint' %}
 
 Esto no es necesario en ESLint porque ya se encarga la librería de forma automática.
 
@@ -182,7 +183,7 @@ Esto no es necesario en ESLint porque ya se encarga la librería de forma autom�
 
 Espero que este pequeño tutorial te haya servido y que puedas automatizar ciertos procesos y revisiones. En mis equipos ha ayudado este tipo de configuraciones que llevan poco tiempo y aseguran que la revisión posterior de código va a estar únicamente centrada en problemas y no en fallos de consistencia.
 
-![Captura de pantalla que muestra ambas acciones habiendo fallado](/img/posts/errores-github-actions.png "Error en ambas acciones")
+{% image 'errores-github-actions_db1tm3.png' 928 323 'Captura de pantalla que muestra ambas acciones habiendo fallado' 'Error en ambas acciones' %}
 
 *[FTP]: File Transfer Protocol
 *[YAML]: Yet Another Markup Language

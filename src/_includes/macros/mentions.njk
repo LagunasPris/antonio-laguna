@@ -8,11 +8,11 @@
        rel="noreferrer"
        title="Ver perfil de {{ author }}">
       <img
-        src=""
-        data-src="{{ image | default('/img/webmention-avatar-default.svg') }}"
         alt=""
         class="lazy mentions__image u-photo"
+        src="{{ image | default('https://res.cloudinary.com/antonio-laguna/image/upload/v1624254488/antonio.laguna/webmention-avatar-default_ydiia0.svg') }}"
         loading="lazy"
+        decoding="async"
         width="48"
         height="48"
       >
@@ -30,11 +30,11 @@
          title="Ver perfil de {{ author }}"
          rel="noreferrer">
         <img
-          src=""
-          data-src="{{ image | default('/static/images/webmention-avatar-default.svg') }}"
+          src="{{ image | default('https://res.cloudinary.com/antonio-laguna/image/upload/v1624254488/antonio.laguna/webmention-avatar-default_ydiia0.svg') }}"
           alt="{{ author }}"
           class="lazy mentions__image u-photo"
           loading="lazy"
+          decoding="async"
           width="48"
           height="48"
         >
