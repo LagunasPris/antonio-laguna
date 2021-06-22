@@ -48,7 +48,7 @@ Esto ya parece algo más sencillo y que podemos entender, ¿no? Estamos creando 
 
 :::info ¿Qué es Babel?
 
-Babel es un *transpilador* que no es más que un nombre muy rimbombante para *resumir* lo siguiente. Es una librería que se encarga de transformar código en otro que pueda entender un navegador. Babel es útil para poder usar JSX sin tener que usar `React.createElement` o poder usar `const` u otras características de JavaScript que los navegadores aun no hayan implementado.
+Babel es un *transpilador* que no es más que un nombre muy rimbombante para *resumir* lo siguiente: Es una librería que se encarga de transformar código en otro que pueda entender un navegador. Babel es útil para poder usar JSX sin tener que usar `React.createElement` o poder usar `const` u otras características de JavaScript que los navegadores aun no hayan implementado.
 
 :::
 
@@ -128,7 +128,7 @@ function Greetings() {
 
 Los componentes tienen que devolver un único elemento raíz. Hacer algo así estaría prohibido:
 
-```
+```js
 function Greetings() {
   return (
     <h1>¡Hola, visitante!</h1>
