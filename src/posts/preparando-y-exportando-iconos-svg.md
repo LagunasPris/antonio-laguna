@@ -128,10 +128,14 @@ Ahora comparemos la salida. Como puedes ver en la animación arriba, hay una bue
 
 Ahora está todo en una línea, los `path`s se han simplificado y ya casi estamos listos. La última parte es cambiar el valor de los atributos `fill`. Vamos a quitar el que está arriba del todo y que tiene valor de `none` y cambiemos los que tienen `#000` a `currentColor`. De esta forma podemos hacer que los iconos tengan el color de nuestro texto y funcionen genial con transiciones de color o dentro de un enlace o botón sin tener que escribir nada de CSS. Siempre puedes seleccionar el SVG con CSS y cambiar el color al que quieras.
 
+Por regla general y en el 99.99% de los casos, puedes quitar las reglas `fill-rule` y `clip-rule` que aparecen también con lo que le arañaríamos aun algunos bytes más. No obstante, te recomiendo probar porque depende de la complejidad del icono tal y como nos explica [Xaviju](https://twitter.com/Xaviju):
+
+https://twitter.com/Xaviju/status/1407249803189358599
+
 Este es el código final de nuestros cascos:
 
 ```svg
-<svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 6.824c-6.186 0-11.2 5.056-11.2 11.294v8.47c0 .78-.627 1.412-1.4 1.412-.773 0-1.4-.632-1.4-1.412v-8.47C4 10.32 10.268 4 18 4s14 6.32 14 14.118v8.47c0 .78-.627 1.412-1.4 1.412-.773 0-1.4-.632-1.4-1.412v-8.47c0-6.238-5.014-11.294-11.2-11.294z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4 21.333C4 20.597 4.627 20 5.4 20h4.2c2.32 0 4.2 1.79 4.2 4v4c0 2.21-1.88 4-4.2 4H8.2C5.88 32 4 30.21 4 28v-6.667zm2.8 1.334V28c0 .736.627 1.333 1.4 1.333h1.4c.773 0 1.4-.597 1.4-1.333v-4c0-.736-.627-1.333-1.4-1.333H6.8zm19.6 0c-.773 0-1.4.597-1.4 1.333v4c0 .736.627 1.333 1.4 1.333h1.4c.773 0 1.4-.597 1.4-1.333v-5.333h-2.8zM22.2 24c0-2.21 1.88-4 4.2-4h4.2c.773 0 1.4.597 1.4 1.333V28c0 2.21-1.88 4-4.2 4h-1.4c-2.32 0-4.2-1.79-4.2-4v-4z" fill="currentColor"/></svg>
+<svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"><path d="M18 6.824c-6.186 0-11.2 5.056-11.2 11.294v8.47c0 .78-.627 1.412-1.4 1.412-.773 0-1.4-.632-1.4-1.412v-8.47C4 10.32 10.268 4 18 4s14 6.32 14 14.118v8.47c0 .78-.627 1.412-1.4 1.412-.773 0-1.4-.632-1.4-1.412v-8.47c0-6.238-5.014-11.294-11.2-11.294z" fill="currentColor"/><path d="M4 21.333C4 20.597 4.627 20 5.4 20h4.2c2.32 0 4.2 1.79 4.2 4v4c0 2.21-1.88 4-4.2 4H8.2C5.88 32 4 30.21 4 28v-6.667zm2.8 1.334V28c0 .736.627 1.333 1.4 1.333h1.4c.773 0 1.4-.597 1.4-1.333v-4c0-.736-.627-1.333-1.4-1.333H6.8zm19.6 0c-.773 0-1.4.597-1.4 1.333v4c0 .736.627 1.333 1.4 1.333h1.4c.773 0 1.4-.597 1.4-1.333v-5.333h-2.8zM22.2 24c0-2.21 1.88-4 4.2-4h4.2c.773 0 1.4.597 1.4 1.333V28c0 2.21-1.88 4-4.2 4h-1.4c-2.32 0-4.2-1.79-4.2-4v-4z" fill="currentColor"/></svg>
 ```
 
 Ahora ya podemos ponerlo en nuestra aplicación ¡y empezar a usarlo sin problemas!
