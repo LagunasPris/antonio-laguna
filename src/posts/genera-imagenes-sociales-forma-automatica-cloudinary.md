@@ -228,7 +228,7 @@ El resultado es muy bueno y nos evitamos tener que preocuparnos de esto nunca m�
 
 Si has llegado hasta aquí, tendrás todas las herramientas que necesitas para añadir imágenes para Facebook y Twitter automáticas en tu blog.
 
-Si te animas a implementarlo en tu sitio, ¡avísame por [Twitter](https://twitter.com/ant_laguna) o por [correo](https://antonio.laguna.es/sobre-mi/) para que vea cómo lo has hecho.
+Si te animas a implementarlo en tu sitio, ¡avísame por [Twitter](https://twitter.com/ant_laguna) o por [correo](https://antonio.laguna.es/sobre-mi/) para que vea cómo lo has hecho!
 
 Por último, te dejo aquí algunos enlaces que te pueden ser de interés:
 
