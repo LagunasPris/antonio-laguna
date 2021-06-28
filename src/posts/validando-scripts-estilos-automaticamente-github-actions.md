@@ -7,6 +7,7 @@ tags:
   - CSS
   - JS
   - Tutorial
+  - Automatización
 postTweet: '1384042329980477440'
 ---
 
