@@ -1,7 +1,7 @@
 ---
 title: Genera imágenes sociales para tus posts de forma automática con Cloudinary
 description: Haz que tu contenido destaque en Twitter y Facebook generando automáticamente imágenes para tus artículos
-date: 2021-06-28
+date: 2021-06-29
 tags:
   - Cloudinary
   - Social
@@ -18,7 +18,7 @@ Crear imágenes para las redes sociales añade más tareas a la hora de crear un
 
 Hasta ahora he estado una opción *semi*automática. Antes de lanzar un post, ejecutaba un comando que usaba [Puppeteer](https://github.com/puppeteer/puppeteer) para renderizar una página, hacerle una captura y guardarla.
 
-En este artículo voy a explicar cómo he usado [Cloudinary](https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/wdcykmqfwa07rryjaaqj) que combina el hosting de las imágenes con APIs para modificarlas. La banda gratuita es más que suficiente para la mayoría de sitios personales.
+En este artículo voy a explicar cómo he usado [Cloudinary](https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/wdcykmqfwa07rryjaaqj) que combina el hosting de las imágenes con APIs para modificarlas. La opción gratuita es más que suficiente para la mayoría de sitios personales.
 
 :::info Sobre los enlaces
 
