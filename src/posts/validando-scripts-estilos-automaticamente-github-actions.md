@@ -10,7 +10,7 @@ tags:
 postTweet: '1384042329980477440'
 ---
 
-A las personas que nos dedicamos al desarrollo del software nos encanta automatizar cosas. Aunque casi siempre es beneficioso (dado que nos evita tener que repetir la inversión de tiempo una   y otra vez), en esta ocasión creo que es doblemente beneficioso.
+A las personas que nos dedicamos al desarrollo del software nos encanta automatizar cosas. Aunque casi siempre es beneficioso (dado que nos evita tener que repetir la inversión de tiempo una y otra vez), en esta ocasión creo que es doblemente beneficioso.
 
 Es habitual tener unas convenciones comunes en torno al código que hay que seguir. Estas nos ayudan a que el código sea **consistente**. La consistencia nos ayuda a la hora de leer código y entenderlo con mayor facilidad. El beneficio es el mismo que obtienes cuando lees una página bien estructurada. El flujo de la información — aunque no afecta al contenido directamente — cambia la forma en la que percibimos y consumimos los datos.
 

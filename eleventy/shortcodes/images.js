@@ -5,13 +5,15 @@ const FALLBACK_WIDTHS = [300, 600, 928, 1856];
 const FALLBACK_WIDTH = 618;
 
 const SHARE_IMAGE_FILE = 'social-template_lfj9sg.jpg';
+const SHARE_IMAGE_WIDTH = 1280;
+const SHARE_IMAGE_HEIGHT = 640;
 const TITLE_FONT = 'Fira%20Sans';
-const TITLE_FONT_SIZE = '54';
+const TITLE_FONT_SIZE = 54;
 const TITLE_BOTTOM_OFFSET = 306;
-const TAGLINE_FONT_SIZE = '30';
+const TAGLINE_FONT_SIZE = 30;
 const TAGLINE_TOP_OFFSET = 356;
-const TAGLINE_LINE_HEIGHT = '10';
-const TEXT_AREA_WIDTH = '705';
+const TAGLINE_LINE_HEIGHT = 10;
+const TEXT_AREA_WIDTH = 705;
 const TEXT_LEFT_OFFSET = 455;
 const TEXT_COLOR = 'fff';
 
@@ -44,13 +46,10 @@ function cloudinarySafeText(text) {
   return encodeURIComponent(text).replace(/(%2C)/g, '%252C').replace(/(%2F)/g, '%252F');
 }
 
-function socialImageUrl(title, description) {
-  const width = '1280';
-  const height = '640';
-  let tagLineText = '';
+function getSocialImageUrl(title, description) {
   const imageConfig = [
-    `w_${width}`,
-    `h_${height}`,
+    `w_${SHARE_IMAGE_WIDTH}`,
+    `h_${SHARE_IMAGE_HEIGHT}`,
     'q_auto:best',
     'c_fill',
     'f_jpg',
@@ -65,6 +64,8 @@ function socialImageUrl(title, description) {
     `y_${TITLE_BOTTOM_OFFSET}`,
     `l_text:${TITLE_FONT}_${TITLE_FONT_SIZE}_bold:${cloudinarySafeText(title)}`,
   ].join(',');
+
+  let tagLineText = '';
 
   if (description.trim()) {
     const taglineConfig = [
@@ -85,7 +86,7 @@ function socialImageUrl(title, description) {
 module.exports = {
   srcset: getSrcset,
   src: getSrc,
-  socialImage: socialImageUrl,
+  socialImage: getSocialImageUrl,
   image,
   defaultSizes: () => '(min-width: 684px) 618px, 90.4vw',
 };
