@@ -448,7 +448,7 @@ Recuerda. Un gran poder conlleva una gran responsabilidad.
 
 ## Patrones con JSX
 
-Ahora que ya conocemos al 95% lo que podemos hacer con JSX, vamos a introducir algunos de los patrones sencillos que podemos hacer con JSX para facilitarnos la vida.
+Ahora que ya conocemos al 95% lo que podemos hacer con JSX, vamos a introducir algunos de los patrones sencillos que podemos hacer con el lenguaje para facilitarnos la vida.
 
 ### Renderización condicional
 
