@@ -7,7 +7,7 @@ tags:
   - Node
   - Tutorial
   - Automatización
-postTweet: ''
+postTweet: '1412314724646195202'
 ---
 
 ¿Recuerdas cuando hablé sobre [validar estilos y scripts de forma automática con GitHub](/posts/validando-scripts-estilos-automaticamente-github-actions/)? ¿No? Dale una vuelta, te espero...
