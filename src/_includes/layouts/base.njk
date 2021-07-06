@@ -98,5 +98,7 @@
 {% block scripts %}{% endblock %}
 <script defer src="{{ '/js/main.js' | addHash }}"></script>
 <script async defer data-domain="antonio.laguna.es" src="https://plausible.io/js/plausible.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+{% block afterAnalytics %}{% endblock %}
 </body>
 </html>
