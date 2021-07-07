@@ -174,15 +174,20 @@ templateClass: template--post
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "{{ title }}",
-  "image": [],
+  "image": "{{ pageSocialImg }}",
   "author": "{{ meta.author.name }}",
   "genre": "{{ meta.genre }}",
   "commentCount": {{ postMentions.comments.length }},
   "publisher": {
     "@type": "Person",
     "@id": "#siteOwner"
+  },
+  "interactionStatistic": {
+    "@type": "InteractionCounter",
+    "interactionType": "https://schema.org/LikeAction",
+    "userInteractionCount": "{{ postMentions.likes.length }}"
   },
   "url": "{{ meta.url }}{{ canonicalUrl or page.url }}",
   "mainEntityOfPage": "{{ meta.url }}{{ canonicalUrl or page.url }}",
