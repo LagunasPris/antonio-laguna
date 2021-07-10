@@ -17,7 +17,7 @@
   <title>{{ pageTitle }}</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" />
+  <link rel="stylesheet preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Fira+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" media="print" onload="this.media='all'" />
 
   <noscript>
@@ -98,5 +98,7 @@
 {% block scripts %}{% endblock %}
 <script defer src="{{ '/js/main.js' | addHash }}"></script>
 <script async defer data-domain="antonio.laguna.es" src="https://plausible.io/js/plausible.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+{% block afterAnalytics %}{% endblock %}
 </body>
 </html>

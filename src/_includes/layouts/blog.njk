@@ -153,7 +153,7 @@ templateClass: template--post
         <ul class="display--flex text-level--6" role="list">
           {%- if previousPost %}
             <li class="article__suggested">
-              <a class="suggested__link" rel="prev" href="{{ previousPost.url | url }}">
+              <a class="suggested__link" rel="prev" href="{{ previousPost.url | url }}" data-analytics='"Suggested", {"props":{"type":"Prev"}}'>
                 <span>Anterior</span>
                 {{ previousPost.data.title }}
               </a>
@@ -161,7 +161,7 @@ templateClass: template--post
           {% endif %}
           {%- if nextPost %}
             <li class="article__suggested">
-              <a class="suggested__link" rel="next" href="{{ nextPost.url | url }}">
+              <a class="suggested__link" rel="next" href="{{ nextPost.url | url }}" data-analytics='"Suggested", {"props":{"type":"Next"}}'>
                 <span>Siguiente</span>
                 {{ nextPost.data.title }}
               </a>
@@ -174,15 +174,20 @@ templateClass: template--post
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "{{ title }}",
-  "image": [],
+  "image": "{{ pageSocialImg }}",
   "author": "{{ meta.author.name }}",
   "genre": "{{ meta.genre }}",
   "commentCount": {{ postMentions.comments.length }},
   "publisher": {
     "@type": "Person",
     "@id": "#siteOwner"
+  },
+  "interactionStatistic": {
+    "@type": "InteractionCounter",
+    "interactionType": "https://schema.org/LikeAction",
+    "userInteractionCount": "{{ postMentions.likes.length }}"
   },
   "url": "{{ meta.url }}{{ canonicalUrl or page.url }}",
   "mainEntityOfPage": "{{ meta.url }}{{ canonicalUrl or page.url }}",

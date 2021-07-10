@@ -38,3 +38,7 @@ templateClass: 404-page
 
   <img class="not-found__image" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1624254488/antonio.laguna/404_t6xpof.gif" alt="" width="220" height="213" />
 {% endblock %}
+
+{% block afterAnalytics %}
+  <script>plausible('404',{ props: { path: document.location.pathname } });</script>
+{% endblock %}
