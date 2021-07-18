@@ -399,7 +399,7 @@ Ahora, te dejo un pequeño ejercicio.
 
 ¿Cómo harías que el primer radio esté seleccionado al cargar la aplicación?
 
-¡Cuéntamelo!
+¡Cuéntamelo! La solución la puedes ver [aquí](https://github.com/Antonio-Laguna/curso-react/tree/001-guia-react-hooks).
 
 *[HTML]: HyperText Markup Language
 *[JS]: JavaScript

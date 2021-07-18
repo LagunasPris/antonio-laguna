@@ -22,7 +22,7 @@ layout: layouts/base.njk
   </h2>
 
   {% set postsHeadingLevel = 'h3' %}
-  {% set posts = collections.posts | reverse | head(5) %}
+  {% set posts = collections.articles | reverse | head(5) %}
   {% include 'components/postlist.njk' %}
 
   <div class="course-list">
