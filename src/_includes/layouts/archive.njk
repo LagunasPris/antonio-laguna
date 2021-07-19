@@ -8,7 +8,7 @@
 
     {% block postList %}
       {% set postsHeadingLevel = 'h3' %}
-      {% set posts = collections.posts | reverse %}
+      {% set posts = collections.articles | reverse %}
       {% include "components/postlist.njk" %}
     {% endblock %}
   </div>

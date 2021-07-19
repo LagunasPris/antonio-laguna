@@ -15,7 +15,7 @@
     </div>
 
     <ol class="course__lessons spacing--xl" role="list">
-      {% set posts = collections['Guia React'] %}
+      {% set posts = collections['Guia React'] | published %}
       {% for post in posts %}
         <li class="display--flex lesson__wrapper">
           <article class="course__lesson display--flex bg--primary color--light">
@@ -46,7 +46,6 @@
           </article>
         </li>
       {% endfor %}
-      <canvas class="course__canvas"></canvas>
     </ol>
 
     <div class="course__extra">

@@ -29,10 +29,6 @@ function registerAnalyticsEvents(els, callback) {
   }
 }
 
-// Handle link events - those that have data-analytics
-const elements = document.querySelectorAll('a[data-analytics]');
-registerAnalyticsEvents(elements, handleLinkEvent);
-
 /**
  * Handle Link Events with plausible
  * https://github.com/plausible/analytics/blob/e1bb4368460ebb3a0bb86151b143176797b686cc/tracker/src/plausible.js#L74
@@ -63,3 +59,7 @@ function handleLinkEvent(event) {
     }
   }
 }
+
+// Handle link events - those that have data-analytics
+const elements = document.querySelectorAll('a[data-analytics]');
+registerAnalyticsEvents(elements, handleLinkEvent);

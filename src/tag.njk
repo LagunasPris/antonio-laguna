@@ -19,6 +19,6 @@ permalink: "/tag/{{ tag | slug }}/"
 {% extends 'layouts/archive.njk' %}
 
 {% block postList %}
-  {% set posts = collections[tag] | reverse %}
+  {% set posts = collections[tag] | published | reverse %}
   {% include "components/postlist.njk" %}
 {% endblock %}
