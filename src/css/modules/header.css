@@ -15,6 +15,20 @@
   }
 
   &__wrapper {
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (--viewport-md) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__right {
+    margin-top: 1.5rem;
+
+    @media (--viewport-md) {
+      margin-top: 0;
+    }
   }
 }

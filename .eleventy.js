@@ -26,6 +26,7 @@ const webmentionsFilter = require('./eleventy/filters/webmentions-for-page');
 const githubPathFilter = require('./eleventy/filters/github-path');
 const pluralizeFilter = require('./eleventy/filters/pluralize');
 const publishedFilter = require('./eleventy/filters/published');
+const hiddenTagsFilter = require('./eleventy/filters/remove-hidden-tags');
 const imageShortcodes = require('./eleventy/shortcodes/images');
 
 const infoContainer = require('./eleventy/containers/info');
@@ -88,6 +89,7 @@ module.exports = function(config) {
   config.addFilter('webmentionCountForPage', webmentionsFilter.count);
   config.addFilter('head', headFilter);
   config.addFilter('published', publishedFilter);
+  config.addFilter('removeHiddenTags', hiddenTagsFilter);
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
@@ -98,7 +100,7 @@ module.exports = function(config) {
 
   config.addCollection('articles',
       collection => collection
-        .getFilteredByTag('posts')
+        .getFilteredByGlob(['src/posts/*.md', 'src/snippets/*.md'])
         .filter(post => post.date <= now && !post.data.draft)
   );
 

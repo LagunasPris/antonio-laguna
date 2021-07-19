@@ -159,6 +159,10 @@
       color: var(--color-react);
     }
   }
+
+  &__article-link--no-number::before {
+    content: initial;
+  }
 }
 
 @keyframes rotate {

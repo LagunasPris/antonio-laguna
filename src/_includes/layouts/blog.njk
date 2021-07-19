@@ -7,6 +7,9 @@ templateClass: template--post
 
 {% extends "layouts/base.njk" %}
 
+{% set isSnippet = 'snippets' in tags %}
+{% set isReactGuide = 'Guia React' in tags %}
+
 {% block extraHead %}
   {%- set pageDate = page.date | sitemapDateTimeString -%}
   {%- set lastModifiedDate = page.inputPath | lastModifiedDate | sitemapDateTimeString -%}
@@ -19,12 +22,14 @@ templateClass: template--post
   {%- endif -%}
   <meta property="article:published_time" content="{{ page.date | htmlDateString }}" />
   {% if lastmod > pageDate %}<meta property="article:modified_time" content="{{ lastmod }}" />{% endif %}
-  {% for tag in tags %}{% if tag != 'posts' and tag != 'Guia React' %}<meta property="article:tag" content="{{ tag }}" />{% endif %}{% endfor %}
+  {% for tag in tags | removeHiddenTags  %}<meta property="article:tag" content="{{ tag }}" />{% endfor %}
 
+  {% if not isSnippet %}
   <meta name="twitter:label1" content="Tiempo de lectura" />
   <meta name="twitter:data1" content="{{ duration.render(content, false, '') | trim}}" />
   <meta name="twitter:label2" content="Etiquetado en" />
-  <meta name="twitter:data2" content="{% for tag in tags %}{% if tag != 'posts' and tag != 'Guia React' %}{{ tag }}{% if not loop.last %},{% endif %}{% endif %}{% endfor %}" />
+  <meta name="twitter:data2" content="{% for tag in tags | removeHiddenTags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}" />
+  {% endif %}
 {% endblock %}
 
 {% block article %}
@@ -45,12 +50,16 @@ templateClass: template--post
               <span class="visually-hidden">Fecha de publicación</span>
               {{ icons.calendar() }}
             </dt>
-            <dd class="article__meta__value"><time class="dt-published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></dd>
+            <dd class="article__meta__value">
+              <time class="dt-published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+            </dd>
+            {% if not isSnippet %}
             <dt class="article__meta__title display--flex flex--v-center flex--wrap">
               <span class="visually-hidden">Tiempo de Lectura</span>
               {{ icons.time() }}
             </dt>
             <dd class="article__meta__value">{{ duration.render(content) | trim }}</dd>
+            {% endif %}
             {% if tags %}
               <dt class="article__meta__title display--flex flex--v-center flex--wrap">
                 <span class="visually-hidden">Etiquetas</span>
@@ -58,10 +67,12 @@ templateClass: template--post
               </dt>
               <dd class="article__meta__value">
                 <ul role="list" class="article__tags spacing--none display--flex flex--wrap">
-                  {% for tag in tags %}
-                    {% if tag != 'posts' and tag != 'Guia React' %}
-                    <li><a class="article__tag p-category" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">{{ tag }}</a></li>
-                    {% endif %}
+                  {% for tag in tags | removeHiddenTags %}
+                    <li>
+                      <a class="article__tag p-category" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">
+                        {{ tag }}
+                      </a>
+                    </li>
                   {% endfor %}
                 </ul>
               </dd>
@@ -93,7 +104,7 @@ templateClass: template--post
         <p><a href="{{ page.inputPath | ghPath }}">Ver en GitHub</a></p>
       </footer>
 
-      {% if 'Guia React' in tags %}
+      {% if isReactGuide %}
         <div class="course-list">
           <div class="course-card bg--primary color--light">
             <h2 class="card__title text-level--5">Aprende React</h2>
@@ -107,7 +118,8 @@ templateClass: template--post
       <div class="article__mentions" id="mentions">
         <h2 class="mentions__title spacing--sm">En las redes</h2>
         {% if postTweet %}
-          <p class="spacing--md">{{ icons.tweet(24, ' mentions__tweet') }} ¡<a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?in_reply_to={{ postTweet }}">Únete a la conversación</a> en Twitter! O si te gustó el artículo y crees que otros deberían leerlo, ¡<a target="_blank" rel="noreferrer" href="https://twitter.com/intent/retweet?tweet_id={{ postTweet }}">compártelo</a>!</p>
+          <p class="spacing--md">{{ icons.tweet(24, ' mentions__tweet') }} ¡<a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet?in_reply_to={{ postTweet }}">Únete a la conversación</a> en Twitter! O si te gustó el
+            {% if isSnippet %}fragmento{% else %}artículo{% endif%} y crees que otros deberían leerlo, ¡<a target="_blank" rel="noreferrer" href="https://twitter.com/intent/retweet?tweet_id={{ postTweet }}">compártelo</a>!</p>
         {% endif %}
 
         {% set retweet %}{{ postMentions.reposts.length | pluralize('retweet', 'retweets') }}{% endset %}

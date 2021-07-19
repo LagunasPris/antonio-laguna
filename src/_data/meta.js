@@ -6,7 +6,7 @@ module.exports = {
   genre: 'Desarrollo Web',
   author: {
     name: 'Antonio Laguna',
-    email: 'anlagmat@gmail.com',
+    email: 'antonio@laguna.com',
     jobTitle: 'Lead Front End Developer',
     url: 'https://antonio.laguna.es',
     networks: {
