@@ -6,9 +6,9 @@ enableToc: true
 tags:
   - React
   - Guia React
-postTweet: ''
-ghBranch: '003-listas-jsx'
-video: 'https://www.youtube.com/watch?v=RHqrw0sqvL4'
+postTweet: '1417029511762296833'
+ghBranch: '003-renderizando-listas'
+video: 'https://www.youtube.com/watch?v=-JM6Ie2IhU0'
 ---
 
 :::hidden-header Introducción
@@ -28,7 +28,7 @@ Si aun no has leído [Aprendiendo JSX](/posts/guia-react-aprendiendo-jsx/) te re
 
 Como siempre, este artículo tiene un compañero audiovisual que puedes ver aquí:
 
-https://youtu.be/RHqrw0sqvL4
+https://youtu.be/-JM6Ie2IhU0
 
 ## Renderizando una lista
 
