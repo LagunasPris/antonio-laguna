@@ -94,26 +94,31 @@
         border-color: var(--color-accent);
       }
     }
-
-    &__button {
-      background-color: var(--color-selection);
-      border: 2px solid var(--color-selection);
-      border-radius: 0 0 .4rem .4rem;
-      color: var(--color-selection-text);
-      padding: .5rem 1.5rem;
-      transition: .2s color, .2s background-color, .2s border-color;
-      width: 100%;
-
-      @media (--viewport-md) {
-        border-radius: 0 .4rem .4rem 0;
-        width: auto;
-      }
-
-      &:hover {
-        background-color: var(--color-background);
-        border-color: var(--color-accent);
-        color: var(--color-text);
-      }
-    }
   }
+}
+
+.article__mentions .form__button,
+.article__body__button {
+  background-color: var(--color-selection);
+  border: 2px solid var(--color-selection);
+  border-radius: 0 0 .4rem .4rem;
+  color: var(--color-selection-text);
+  padding: .5rem 1.5rem;
+  transition: .2s color, .2s background-color, .2s border-color;
+  width: 100%;
+
+  @media (--viewport-md) {
+    border-radius: 0 .4rem .4rem 0;
+    width: auto;
+  }
+
+  &:hover {
+    background-color: var(--color-background);
+    border-color: var(--color-accent);
+    color: var(--color-text);
+  }
+}
+
+.article__body__button {
+  border-radius: .4rem;
 }

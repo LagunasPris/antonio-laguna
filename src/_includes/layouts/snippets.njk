@@ -1,0 +1,39 @@
+{% extends 'layouts/base.njk' %}
+
+{% import 'macros/icons.njk' as icons %}
+
+{% block article %}
+  <div class="container">
+    <div class="course__details spacing--lg">
+      <div class="course__description text--loose text-level--5">
+        <h1 class="text-level--2">Fragmentos</h1>
+        <p>En fragmentos puedes encontrar artículos muy breves demostrando algo que me ha ayudado en el día a día y que me sirve de cajón desastre para técnicas o trozos de código que no quiero olvidar.</p>
+      </div>
+    </div>
+
+    <ol class="course__lessons spacing--xl" role="list">
+      {% set posts = collections.snippets | published %}
+      {% for post in posts %}
+        <li class="display--flex lesson__wrapper">
+          <article class="course__lesson display--flex bg--primary color--light">
+            <a href="{{ post.url | url }}" class="spacing--md course__article-link course__article-link--no-number">
+              <h2 class="text-level--5 spacing--xs leading--small">{{ post.data.title }}</h2>
+              <p class="text-level--6">{{ post.data.description }}</p>
+            </a>
+            <div class="course__links">
+              <ul role="list" class="article__tags spacing--none display--flex flex--wrap">
+                {% for tag in post.data.tags | removeHiddenTags %}
+                  <li>
+                    <a class="article__tag p-category" href="/tag/{{ tag | slug }}" title="Descubre más artículos etiquetados en {{ tag }}">
+                      {{ tag }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+{% endblock %}
