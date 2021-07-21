@@ -104,6 +104,22 @@ module.exports = function(config) {
         .filter(post => post.date <= now && !post.data.draft)
   );
 
+  config.addCollection('tagList', collection => {
+    let tagSet = new Set();
+
+    collection.getAll().forEach(function(item) {
+      if (item.data.tags) {
+        const tags = hiddenTagsFilter(item.data.tags);
+
+        for (const tag of tags) {
+          tagSet.add(tag);
+        }
+      }
+    });
+
+    return [...tagSet];
+  });
+
   // Minify HTML output
   config.addTransform('htmlmin', function(content, outputPath) {
     if (outputPath.indexOf('.html') > -1) {

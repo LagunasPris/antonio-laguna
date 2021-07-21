@@ -12,6 +12,8 @@ eleventyComputed:
   title: "Artículos etiquetados con {{ tag }}"
   description: "Todos mis artículos etiquetados en {{ tag }} hasta la fecha."
 permalink: "/tag/{{ tag | slug }}/"
+sitemapFrequency: 'weekly'
+sitemapIgnore: true
 ---
 
 {% set templateClass %}tag tag-{{ tag | slug }}{% endset %}
