@@ -1,7 +1,7 @@
 ---
 title: Introducción a las propiedades personalizadas o variables en CSS
 description: Veamos qué nos ofrecen las custom properties en CSS y cómo interactúan con la cascada.
-date: 2021-07-18
+date: 2021-07-26
 tags:
   - CSS
 postTweet: ''
@@ -181,3 +181,5 @@ En un próximo artículo veremos cómo podemos usar estas propiedades con JavaSc
 Más recursos:
 
 * [Noe Medina](https://twitter.com/n03m1ms) escribió este genial artículo: [¿Por qué usar las variables nativas de CSS?](https://www.paradigmadigital.com/dev/por-que-usar-variables-css/).
+
+*[CSS]: Cascade Style Sheet

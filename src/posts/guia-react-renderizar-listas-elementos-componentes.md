@@ -171,3 +171,6 @@ A modo de recopilación estas son las reglas:
 El reto que te propongo es convertir en componente lo que renderizan las listas de nuestro ejemplo. Ahora mismo no es muy DRY y el código se repite. Además las IDs se repiten en el formulario por lo que el navegador nos da más errores.
 
 Si te animas a hacerlo me lo puedes [mandar por correo](/sobre-mi) o en [las discusiones de GitHub](https://github.com/Antonio-Laguna/curso-react/discussions).
+
+*[JSX]: JavaScript XML
+*[DOM]: Document Object Model
