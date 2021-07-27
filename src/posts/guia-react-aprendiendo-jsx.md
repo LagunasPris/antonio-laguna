@@ -538,7 +538,6 @@ Todos los ejemplos que hemos repasado aquí, puedes verlos en [esta rama](https:
 * [Spec de JSX](http://facebook.github.io/jsx/): En ella se especifica que la idea no es que se añada a JavaScript si no que sea usada por transpiladores (como Babel).
 * [Prueba Babel en Línea](https://babeljs.io/repl).
 
-
 *[HTML]: HyperText Markup Language
 *[JS]: JavaScript
 *[JSX]: JavaScript XML
