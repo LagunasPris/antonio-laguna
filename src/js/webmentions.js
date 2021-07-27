@@ -21,11 +21,20 @@ const Selectors = {
   const randomness = Math.random();
   const scriptPath = `${ENDPOINT}&target=${encodeURIComponent(currentUrl)}&_=${randomness}`;
 
+  function fillAuthorPhoto(template, author) {
+    const photo = template.querySelector('.u-photo');
+    photo.src = author.photo || DEFAULT_AVATAR;
+    photo.alt = '';
+    photo.onerror = () => {
+      photo.src = DEFAULT_AVATAR;
+    };
+  }
+
   function fillLike(template, vals) {
     const author = vals.author ? vals.author : {};
     const link = template.querySelector('.u-url');
 
-    template.querySelector('.u-photo').src = author.photo || DEFAULT_AVATAR;
+    fillAuthorPhoto(template, author);
     link.href = vals.mentionUrl;
     link.title = `Ver perfil de ${author.name}`;
     template.querySelector('.p-author').innerHTML = author.name;
@@ -40,7 +49,7 @@ const Selectors = {
     authorEl.href = author.url;
     authorEl.title = `Ver perfil de ${author.name}`;
 
-    template.querySelector('.u-photo').src = author.photo || DEFAULT_AVATAR;
+    fillAuthorPhoto(template, author);
     template.querySelector('.p-author').innerText = author.name;
     template.querySelector('.e-entry').innerHTML = vals.data?.content;
     template.querySelector('.u-url').href = vals.data?.url;
@@ -91,7 +100,7 @@ const Selectors = {
     }
   }
 
-  if (currentUrl.includes('/posts/')) {
+  if (currentUrl.includes('/posts/') || currentUrl.includes('/snippets/')) {
     const script = document.createElement('script');
     script.src = scriptPath;
     script.async = true;

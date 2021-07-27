@@ -1,10 +1,10 @@
 ---
 title: Introducción a las propiedades personalizadas o variables en CSS
 description: Veamos qué nos ofrecen las custom properties en CSS y cómo interactúan con la cascada.
-date: 2021-07-26
+date: 2021-07-27
 tags:
   - CSS
-postTweet: ''
+postTweet: '1419919817197465601'
 ---
 
 Ahora que cada vez hay más cosas de las que usamos que ya no dan soporte a IE11 como [Wordpress](https://make.wordpress.org/core/2021/04/22/ie-11-support-phase-out-plan/), [Angular](https://github.com/angular/angular/issues/41840), [Bootstrap](https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/) o [GitHub](https://help.github.com/en/github/getting-started-with-github/supported-browsers) por nombrar algunos, me parece un buen momento para echar un vistazo a lo que las CSS custom properties o propiedades personalizadas de CSS o variables en CSS nos pueden ofrecer.
