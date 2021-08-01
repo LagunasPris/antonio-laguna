@@ -55,6 +55,10 @@ pre[class*=language-] {
   &.language-css::before {
     content: 'CSS';
   }
+
+  &.language-scss::before {
+    content: 'SCSS';
+  }
   /* stylelint-enable */
 }
 

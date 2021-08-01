@@ -112,6 +112,7 @@
     width: auto;
   }
 
+  &:focus,
   &:hover {
     background-color: var(--color-background);
     border-color: var(--color-accent);
