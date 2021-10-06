@@ -1,0 +1,28 @@
+{% import 'macros/icons.njk' as icons %}
+
+<quiz-es class="bleed" start-text="Comenzar" next-text="Siguiente">
+  <h2 slot="quiz-title" class="quiz__title text-level--4">{{ quiz.title }}</h2>
+  <div slot="quiz-description" class="quiz__description">
+    <p>{{ quiz.description }}</p>
+  </div>
+  <div slot="quiz-result" class="quiz__result">
+    <p>¡Lo has completado! Este es tu resultado:</p>
+    <div class="progress-circle">
+      <div class="progress-circle__number"></div>
+      <div class="progress-circle__fill">
+        <svg class="icon" viewBox="0 0 40 40">
+          <circle r="15.9154943092" cy="20" cx="20" />
+          <circle class="progress-circle__result" r="15.9154943092" cy="20" cx="20" stroke-dashoffset="100" transform="rotate(-90,20,20)" />
+        </svg>
+      </div>
+    </div>
+    <p>Comparte tu progreso en Twitter</p>
+    <p>
+      <a href="https://twitter.com/intent/tweet" class="button--tweet" target="_blank" data-title="{{ quiz.title }}" data-template="He completado $TITLE y he acertado $RESULT preguntas. ¿Te animas a intentarlo?" data-url="{{ meta.url }}{{ canonicalUrl or page.url }}" data-tags="{% for tag in tags | removeHiddenTags %}{{ tag | slug }}{% if not loop.last %},{% endif %}{% endfor %}" data-via="{{ meta.twitterUsername }}">{{ icons.tweet(24, ' quiz__tweet') }} Compartir</a>
+    </p>
+  </div>
+</quiz-es>
+
+<script>
+  window.questions = {{ quiz.questions | json | safe }}
+</script>

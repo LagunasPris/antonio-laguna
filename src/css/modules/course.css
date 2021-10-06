@@ -1,7 +1,11 @@
 .course-list {
-  margin: var(--spacing-xl) auto;
+  margin: var(--spacing-md) auto var(--spacing-lg);
   max-width: 96rem;
-  padding: 0 1.6rem;
+
+  @media (--viewport-md) {
+    margin: var(--spacing-xl) auto;
+    padding: 0 1.6rem;
+  }
 }
 
 .course-card {

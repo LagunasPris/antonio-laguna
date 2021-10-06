@@ -6,7 +6,7 @@ module.exports = function (vars) {
     const fluidTypeMixin = fluidType(vars);
 
     for (let i = 1; i <= 6; i++) {
-      styles[`.text-level--${i}`] = fluidTypeMixin(
+      styles[`.text-level--${i}, .ugc .text-level--${i}`] = fluidTypeMixin(
         rule,
         'font-size',
         'min-width',
