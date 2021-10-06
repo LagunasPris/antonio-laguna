@@ -5,7 +5,7 @@ date: 2021-10-06
 tags:
   - CSS
   - PostCSS
-postTweet: '1389140613820567554'
+postTweet: '1445697014700802048'
 ---
 
 Cuando empecé la implementación del modo oscuro decidí dejar Sass atrás para siempre. Los motivos principales son tres:
