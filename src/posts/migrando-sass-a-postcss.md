@@ -1,10 +1,20 @@
+---
+title: Migrando de Sass a PostCSS
+description: Descubre cómo puedes usar PostCSS para reemplazar Sass con CSS moderno
+date: 2021-10-06
+tags:
+  - CSS
+  - PostCSS
+postTweet: '1389140613820567554'
+---
+
 Cuando empecé la implementación del modo oscuro decidí dejar Sass atrás para siempre. Los motivos principales son tres:
 
-* Sass ha sufrido varias mutaciones desde Ruby, Node/Lib y ahora DartSass. 
+* Sass ha sufrido varias mutaciones desde Ruby, Node/Lib y ahora DartSass.
 * Sass no me estaba ofreciendo nada que no me pudiera dar otra cosa.
 * PostCSS me permite usar la sintaxis de CSS del futuro, hoy.
 
-El último punto es quizá el más importante, el poder usar características que no están disponibles en CSS ahora mismo pero que lo estarán en no muy poco tiempo. Y es que es un proceso muy parecido al que llevamos haciendo ya mucho tiempo con JavaScript y Babel.
+El último punto es quizá el más importante, el poder usar características que no están disponibles en CSS ahora mismo, pero que lo estarán en no muy poco tiempo. Y es que es un proceso muy parecido al que llevamos haciendo ya mucho tiempo con JavaScript y Babel.
 
 Lo cierto es que Sass me gusta y es un pre-procesador que es tremendamente popular y de hecho muchas herramientas nos lo da ya hecho y configurado para usarlo. Quizá ya estés usando PostCSS sin darte cuenta. El principal plugin de PostCSS es Autoprefixer que se encarga de añadir los prefijos necesarios de los navegadores a CSS cuando hace falta. Pero al final Autoprefixer es eso... un *plugin*. Combinar plugins es lo que hace que PostCSS brille. Podemos incluso compilar ficheros `.scss` sin tener que usar Sass.
 
@@ -14,6 +24,14 @@ En este tutorial quiero explicar cómo configurar PostCSS para conseguir *casi* 
 
 Todo lo que vas a leer aquí está además en un repositorio que he creado en GitHub:
 
+<div class="github-cards">
+  <a href="https://github.com/Antonio-Laguna/demo-postcss" class="github-card">
+    <h3>Demo PostCSS</h3>
+    <p>Usando PostCSS como alternativa a Sass</p>
+    <span class="github-card__meta"><span class="github-card__language-icon" style="color: #563d7c">●</span> CSS</span>
+  </a>
+</div>
+
 Necesita Node así que ejecuta `npm install`  para obtener todas las dependencias. Puedes compilar los ficheros usando:
 
 `npm run css:dev`
@@ -22,7 +40,7 @@ Autocompilar si cambian los ficheros con:
 
 `npm run css:watch`
 
-Y luego sal pulsando `Ctrl` o `Cmd` + `C` en el terminal. Ambas opciones nos dan el mapa del código (source map) en `build/css/main.css.map` que nos permite leer el CSS en la herramientas para desarrolladores de nuestro navegador. 
+Y luego sal pulsando `Ctrl` o `Cmd` + `C` en el terminal. Ambas opciones nos dan el mapa del código (source map) en `build/css/main.css.map` que nos permite leer el CSS en la herramientas para desarrolladores de nuestro navegador.
 
 Podemos compilar el código para producción con:
 
@@ -45,12 +63,12 @@ npm i postcss postcss-cli postcss-import postcss-mixins postcss-nested postcss-p
 Esto son un montón de dependencias. Mientras se instalan veamos qué hace cada una:
 
 1. `postcss` y `postcss-cli`: Es el que se encarga de orquestar todos los plugins que se van a encargar de, uno a uno, transformar nuestro CSS.
-2. `[postcss-import](https://github.com/postcss/postcss-import)`: Este plugin nos va a permitir usar `@import` para incrustar el contenido de un fichero CSS dentro de otro sin generar una petición adicional de forma parecida a lo que hace Sass.
-3. `[postcss-mixins](https://github.com/postcss/postcss-mixins)`: Este plugin nos permite crear mixins, no solo en CSS si no que podemos usar JS lo cual nos abre la puerta a compartir código entre JavaScript y CSS de manera muy sencilla.
-4. `[postcss-nested](https://github.com/postcss/postcss-nested)`: A la hora de hacer nesting tenemos [la opción que quiere implementar la CSSWG](https://github.com/csstools/postcss-nesting) y esta otra que nos permite hacer nesting como lo haríamos en Sass. 
-5. `[cssnano](https://cssnano.co/)`: Para comprimir el CSS al máximo.
+2. [`postcss-import`](https://github.com/postcss/postcss-import): Este plugin nos va a permitir usar `@import` para incrustar el contenido de un fichero CSS dentro de otro sin generar una petición adicional de forma parecida a lo que hace Sass.
+3. [`postcss-mixins`](https://github.com/postcss/postcss-mixins): Este plugin nos permite crear mixins, no solo en CSS si no que podemos usar JS lo cual nos abre la puerta a compartir código entre JavaScript y CSS de manera muy sencilla.
+4. [`postcss-nested`](https://github.com/postcss/postcss-nested): A la hora de hacer nesting tenemos [la opción que quiere implementar la CSSWG](https://github.com/csstools/postcss-nesting) y esta otra que nos permite hacer nesting como lo haríamos en Sass.
+5. [`cssnano`](https://cssnano.co/): Para comprimir el CSS al máximo.
 
-Si has contado bien, nos falta un plugin y es `[postcss-preset-env](https://github.com/csstools/postcss-preset-env)` y es que necesita su propio apartado.
+Si has contado bien, nos falta un plugin y es [`postcss-preset-env`](https://github.com/csstools/postcss-preset-env) y es que necesita su propio apartado.
 
 ### postcss-preset-env
 
@@ -59,14 +77,14 @@ Quizá sea el plugin más importante de todos. Este plugin se encarga de que pod
 Con él podemos usar cosas como:
 
 * `@custom-media` para crear media queries personalizadas.
-* `@custom-selector` para crear selectores personalizados. 
+* `@custom-selector` para crear selectores personalizados.
 * Autoprefixer para añadir prefijos para navegadores automáticamente.
 * La [notación de 8 dígitos](https://www.w3.org/TR/css-color-4/#hex-notation) para hexadecimal.
 * O [propiedades personalizadas](/introduccion-css-propiedades-personalizadas) con navegadores que no tienen soporte.
 
-	Por defecto, este plugin nos va permitir usar las características de CSS que se encuentren en fase 2 o superior. ¿Qué significa eso? Pues son ideas *relativamente* inestables y que pueden cambiar y es una característica asociada a una forma particular de resolver un problema.
-	
-	En [CSSDB](https://cssdb.org/) puedes ver todas las características junto a sus fases con enlaces además a los plugins de PostCSS por separado que podrías incluir para usarlas si no quieres usar `postcss-preset-env`.
+  Por defecto, este plugin nos va permitir usar las características de CSS que se encuentren en fase 2 o superior. ¿Qué significa eso? Pues son ideas *relativamente* inestables y que pueden cambiar y es una característica asociada a una forma particular de resolver un problema.
+
+  En [CSSDB](https://cssdb.org/) puedes ver todas las características junto a sus fases con enlaces además a los plugins de PostCSS por separado que podrías incluir para usarlas si no quieres usar `postcss-preset-env`.
 
 ## Creando la configuración
 
@@ -155,7 +173,7 @@ Tenemos más opciones como `--watch` para iniciar un proceso que vigile los fich
 
 Además de los ya mencionados, uso otros plugins que me parecen interesantes:
 
-`[postcss-calc](https://github.com/postcss/postcss-calc)`: Con este plugin podemos lograr reducir la cantidad de `calc` que tenemos que hacer ya que los interpola  creando un CSS más ligero:
+[`postcss-calc`](https://github.com/postcss/postcss-calc): Con este plugin podemos lograr reducir la cantidad de `calc` que tenemos que hacer ya que los interpola  creando un CSS más ligero:
 
 ```css
 :root {
@@ -178,7 +196,7 @@ h1 {
 }
 ```
 
-Otro que me gusta mucho es `[postcss-sort-media-queries](https://github.com/solversgroup/postcss-sort-media-queries)` que nos va a permitir combinar todas las media queries que tengamos en todo el proyecto lo cual ahorra *mucho* espacio. Como podemos ver en su GitHub, aquí puedes ver un ejemplo:
+Otro que me gusta mucho es [`postcss-sort-media-queries`](https://github.com/solversgroup/postcss-sort-media-queries) que nos va a permitir combinar todas las media queries que tengamos en todo el proyecto lo cual ahorra *mucho* espacio. Como podemos ver en su GitHub, aquí puedes ver un ejemplo:
 
 ```css
 /* Antes */
@@ -226,10 +244,10 @@ Si todo esto te parece un cambio muy drástico, lo cual es comprensible, hay alg
 
 * [Advanced Variables](https://github.com/csstools/postcss-advanced-variables): Plugin para tener variables a lo Sass, con `@if`, `@each`, `@mixin` y `@for` como añadidos.
 * [Nested](https://github.com/postcss/postcss-nested): Plugin para usar las reglas de animación de Sass.
-* [Sintaxis Scss](https://github.com/postcss/postcss-scss): Plugin necesario si vas a usar los de arriba. 
+* [Sintaxis Scss](https://github.com/postcss/postcss-scss): Plugin necesario si vas a usar los de arriba.
 
 ## Notas finales
 
-Espero que con esto te hayas hecho una idea de cómo puedes valerte de PostCSS para dotar a tus ficheros CSS de super poderes. 
+Espero que con esto te hayas hecho una idea de cómo puedes valerte de PostCSS para dotar a tus ficheros CSS de super poderes.
 
 ¿Conoces más plugins? ¡Me encantaría conocerlos!
