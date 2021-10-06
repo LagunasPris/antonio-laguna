@@ -1,0 +1,13 @@
+<div class="course-list">
+  <div class="course-card bg--primary color--light">
+    <h2 class="card__title text-level--5">Aprende React</h2>
+    {% if isQuiz %}
+      <span class="text-level--6 spacing--sm">Este test es parte del <a href="/curso-react/">curso de React</a>. Si quieres repasar los conceptos te recomiendo visitar el resto del curso y leer los artículos. <br/> Todo el contenido, material, ejercicios y soluciones de los artículos <a href="https://github.com/Antonio-Laguna/curso-react/" target="_blank" rel="noreferrer">están disponibles en GitHub</a> para que puedas disponer de ellos a tu ritmo, cómo y dónde quieras.<br/>
+              Además, si tienes dudas o quieres mostrar algo, ¡<a href="https://github.com/Antonio-Laguna/curso-react/discussions" target="_blank" rel="noreferrer">pásate por las discusiones</a>!</span>
+    {% else %}
+      <span class="text-level--6 spacing--sm">Este artículo es parte del <a href="/curso-react/">curso de React</a>. Si te ha interesado te recomiendo visitar el resto del curso para leer más artículos. <br/> Todo el contenido, material, ejercicios y soluciones de este artículo <a href="https://github.com/Antonio-Laguna/curso-react/tree/{{ ghBranch }}" target="_blank" rel="noreferrer">están disponibles en GitHub</a> para que puedas disponer de ellos a tu ritmo, cómo y dónde quieras.<br/>
+              Además, si tienes dudas o quieres mostrar algo, ¡<a href="https://github.com/Antonio-Laguna/curso-react/discussions" target="_blank" rel="noreferrer">pásate por las discusiones</a>!</span>
+    {% endif %}
+    <span class="card__icon">{{ icons.react() }}</span>
+  </div>
+</div>

@@ -1,6 +1,4 @@
----
-templateClass: template--post
----
+{% set templateClass %}template--post{% for tag in tags | removeHiddenTags %} tag-{{ tag | slug }}{% endfor %}{% endset %}
 {% import 'macros/duration.njk' as duration %}
 {% import 'macros/mentions.njk' as mentions %}
 {% import 'macros/icons.njk' as icons %}
@@ -22,7 +20,7 @@ templateClass: template--post
   {%- endif -%}
   <meta property="article:published_time" content="{{ page.date | htmlDateString }}" />
   {% if lastmod > pageDate %}<meta property="article:modified_time" content="{{ lastmod }}" />{% endif %}
-  {% for tag in tags | removeHiddenTags  %}<meta property="article:tag" content="{{ tag }}" />{% endfor %}
+  {% for tag in tags | removeHiddenTags %}<meta property="article:tag" content="{{ tag }}" />{% endfor %}
 
   {% if not isSnippet %}
   <meta name="twitter:label1" content="Tiempo de lectura" />
@@ -53,7 +51,7 @@ templateClass: template--post
             <dd class="article__meta__value">
               <time class="dt-published" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
             </dd>
-            {% if not isSnippet %}
+            {% if not isSnippet and not isQuiz %}
             <dt class="article__meta__title display--flex flex--v-center flex--wrap">
               <span class="visually-hidden">Tiempo de Lectura</span>
               {{ icons.time() }}
@@ -95,7 +93,11 @@ templateClass: template--post
           {{ content | toc | safe }}
         {% endif %}
         <div class="article__content ugc text-level--5 e-content">
-          {{ content | safe }}
+          {% if isQuiz %}
+            {% include "components/quiz.njk" %}
+          {% else %}
+            {{ content | safe }}
+          {% endif %}
         </div>
       </div>
 
@@ -105,14 +107,7 @@ templateClass: template--post
       </footer>
 
       {% if isReactGuide %}
-        <div class="course-list">
-          <div class="course-card bg--primary color--light">
-            <h2 class="card__title text-level--5">Aprende React</h2>
-            <span class="text-level--6 spacing--sm">Este artículo es parte del <a href="/curso-react/">curso de React</a>. Si te ha interesado te recomiendo visitar el resto del curso para leer más artículos. <br/> Todo el contenido, material, ejercicios y soluciones de este artículo <a href="https://github.com/Antonio-Laguna/curso-react/tree/{{ ghBranch }}" target="_blank" rel="noreferrer">están disponibles en GitHub</a> para que puedas disponer de ellos a tu ritmo, cómo y dónde quieras.<br/>
-              Además, si tienes dudas o quieres mostrar algo, ¡<a href="https://github.com/Antonio-Laguna/curso-react/discussions" target="_blank" rel="noreferrer">pásate por las discusiones</a>!</span>
-            <span class="card__icon">{{ icons.react() }}</span>
-          </div>
-        </div>
+        {% include "components/react-guide-blog-promo.njk" %}
       {% endif %}
 
       <div class="article__mentions" id="mentions">

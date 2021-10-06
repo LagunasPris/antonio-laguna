@@ -2,17 +2,19 @@
   margin: 0 auto;
 
   &,
-  &__title {
+  &__title-wrapper {
     max-width: 96rem;
   }
 
-  &__title {
+  &__title-wrapper {
     align-items: center;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1.3rem;
+  }
 
+  &__title {
     &__link {
       background-color: var(--color-secondary-dark);
       border-radius: .4rem;

@@ -15,11 +15,10 @@ layout: layouts/base.njk
     </span>
   </h1>
 
-  <h2 class="text-level--6 spacing--sm text--upper color--secondary posts-feed__title display--flex">
-    Últimos artículos
-
-    <a class="posts-feed__title__link" href="/posts">Ver todos</a>
-  </h2>
+  <div class="display--flex spacing--sm text--upper posts-feed__title-wrapper">
+    <h2 class="text-level--6 color--secondary posts-feed__title">Últimos artículos</h2>
+    <a class="posts-feed__title__link text-level--6 font--bold" href="/posts">Ver todos</a>
+  </div>
 
   {% set postsHeadingLevel = 'h3' %}
   {% set posts = collections.articles | reverse | head(5) %}
@@ -34,4 +33,28 @@ layout: layouts/base.njk
       </span>
     </a>
   </div>
+
+  <section class="companies">
+    <h2 class="text-level--6 text--center text--upper spacing--md">He colaborado con</h2>
+    <ul class="companies__list" role="list">
+      <li class="companies__company">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507303/antonio.laguna/companies/billboard_i3vyh4.svg" alt="Billboard" class="company company--light" width="251" height="53">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507303/antonio.laguna/companies/billboard-light_esihrt.svg" alt="Billboard" class="company company--dark" width="251" height="53">
+      </li>
+      <li class="companies__company">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507305/antonio.laguna/companies/facebook-logo_csj17a.svg" alt="Facebook" class="company company--light" width="500" height="55">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507305/antonio.laguna/companies/facebook-logo-light_wpvg6k.svg" alt="Facebook" class="company company--dark" width="500" height="55">
+      </li>
+      <li class="companies__company">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507305/antonio.laguna/companies/girls-who-code_acj17r.svg" alt="Girls Who Code" class="company" width="130" height="55">
+      </li>
+      <li class="companies__company">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507303/antonio.laguna/companies/google_fhj0ag.svg" alt="Google" class="company" width="272" height="92">
+      </li>
+      <li class="companies__company">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507303/antonio.laguna/companies/microsoft_cmyzwl.svg" alt="Microsoft" class="company company--light" width="1034" height="221">
+        <img loading="lazy" decoding="async" src="https://res.cloudinary.com/antonio-laguna/image/upload/v1633507303/antonio.laguna/companies/microsoft-light_dqjsoq.svg" alt="Microsoft" class="company company--dark" width="1034" height="221">
+      </li>
+    </ul>
+  </section>
 </div>

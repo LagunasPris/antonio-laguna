@@ -15,6 +15,7 @@ const eleventyPluginTOC = require('@thedigitalman/eleventy-plugin-toc-a11y');
 const mila = require('markdown-it-link-attributes')
 
 const addHash = require('./eleventy/filters/add-hash');
+const jsonFilter = require('./eleventy/filters/json');
 const headFilter = require('./eleventy/filters/head');
 const htmlDateString = require('./eleventy/filters/html-date-string');
 const lastModifiedDate = require('./eleventy/filters/last-modified-date');
@@ -90,6 +91,7 @@ module.exports = function(config) {
   config.addFilter('head', headFilter);
   config.addFilter('published', publishedFilter);
   config.addFilter('removeHiddenTags', hiddenTagsFilter);
+  config.addFilter('json', jsonFilter);
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 
@@ -156,7 +158,12 @@ module.exports = function(config) {
     level: [1, 2, 3, 4]
   })
     .use(markdownItAttrs)
-    .use(markdownItImageFigures, { lazy: true, figcaption: true, dataType: true })
+    .use(markdownItImageFigures, {
+      lazy: true,
+      figcaption: true,
+      dataType: true,
+      async: true
+    })
     .use(markdownItAbbr)
     .use(markdownItContainer, 'info', infoContainer(markdownLibrary))
     .use(markdownItContainer, 'hidden-header', hiddenHeaderContainer(markdownLibrary))

@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import filesize from 'rollup-plugin-filesize';
 
-export default ['main', 'course'].map(name => ({
+export default ['main', 'course', 'quiz'].map(name => ({
   input: `src/${name}.js`,
   output: [
     {
