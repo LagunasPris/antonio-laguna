@@ -1,5 +1,5 @@
 .site-header {
-  margin-bottom: 6rem;
+  margin-bottom: 3.75rem;
   padding-bottom: var(--spacing-sm);
   padding-top: var(--spacing-sm);
 
@@ -8,8 +8,8 @@
 
     svg {
       @media (--viewport-sm-only) {
-        height: 36px;
-        width: 50px;
+        height: 2.25rem;
+        width: 3.125rem;
       }
     }
   }
@@ -25,7 +25,7 @@
   }
 
   &__right {
-    margin-top: 1.5rem;
+    margin-top: .9375rem;
 
     @media (--viewport-md) {
       margin-top: 0;

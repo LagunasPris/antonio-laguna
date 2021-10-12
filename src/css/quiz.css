@@ -8,27 +8,27 @@
   --button-hover-bg: var(--color-background);
   --button-hover-border: var(--color-accent);
   --button-hover-color: var(--color-text);
-  border: .2rem solid var(--border-color);
-  border-radius: .4rem;
+  border: .125rem solid var(--border-color);
+  border-radius: .25rem;
   overflow: hidden;
-  padding: 2.4rem;
+  padding: 1rem;
   position: relative;
 
   button {
     background-color: var(--button-bg);
-    border: .2rem solid var(--button-border);
-    border-radius: .4rem;
+    border: .125rem solid var(--button-border);
+    border-radius: .25rem;
     color: var(--button-color);
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: .2em;
-    margin-top: 2.4rem;
-    padding: .5rem 1.5rem;
+    margin-top: 1rem;
+    padding: .375rem 1rem;
     text-transform: uppercase;
     transition: .2s color, .2s background-color, .2s border-color;
 
     @media (--viewport-md) {
-      border-radius: 0 .4rem .4rem 0;
+      border-radius: 0 .25rem .25rem 0;
       width: auto;
     }
 
@@ -54,7 +54,7 @@
   }
 
   .line {
-    letter-spacing: -.1rem;
+    letter-spacing: -.0625rem;
   }
 
   [type=radio]:not(:checked),
@@ -67,24 +67,24 @@
   [type=radio]:not(:checked) + label,
   [type=radio]:checked + label {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.25rem;
     line-height: 1.7;
-    padding-left: 3.8rem;
+    padding-left: 2.375rem;
     position: relative;
   }
 
   [type=radio]:not(:checked) + label::before,
   [type=radio]:checked + label::before {
     background: #fff;
-    border: .1rem solid var(--border-color);
-    border-radius: .4rem;
+    border: .0625rem solid var(--border-color);
+    border-radius: .25rem;
     content: '';
-    height: 2.2rem;
-    left: .7rem;
+    height: .375rem;
+    left: .5rem;
     position: absolute;
-    top: 1.6rem;
+    top: 1rem;
     transition: box-shadow .275s;
-    width: 2.2rem;
+    width: .375rem;
   }
 
   [type=radio] + label::after {
@@ -98,12 +98,12 @@
     border-radius: 50%;
     color: var(--border-color);
     content: '';
-    height: 1.4rem;
-    left: 1.1rem;
+    height: 1.25rem;
+    left: .6875rem;
     position: absolute;
-    top: 2rem;
+    top: 1.25rem;
     transition: transform .275s, opacity .275s;
-    width: 1.4rem;
+    width: .875rem;
   }
 
   [type=radio]:checked + label::after {
@@ -113,7 +113,7 @@
 
   [type=radio]:checked:focus + label::before,
   [type=radio]:not(:checked):focus + label::before {
-    box-shadow: inset 0 .1rem .3rem rgba(0, 0, 0, .1), 0 0 0 .5rem rgba(252, 191, 73, .3);
+    box-shadow: inset 0 .0625rem .1875rem rgba(0, 0, 0, .1), 0 0 0 .3125rem rgba(252, 191, 73, .3);
   }
 }
 
@@ -143,7 +143,7 @@
 
 .quiz__progress {
   background-color: var(--progress-bg);
-  height: .6rem;
+  height: 0.375rem;
   left: 0;
   position: absolute;
   top: 0;
@@ -161,41 +161,41 @@
 }
 
 .quiz__step {
-  padding: 2rem;
+  padding: 1.25rem;
 }
 
 .quiz__description {
-  margin: 1.6rem 0;
+  margin: 1rem 0;
 }
 
 .question__title {
-  margin-bottom: 2.4rem;
+  margin-bottom: 1rem;
 }
 
 .question__label {
-  border-radius: .4rem;
+  border-radius: .25rem;
   display: block;
-  margin-bottom: .8rem;
-  padding: 1rem;
+  margin-bottom: .5rem;
+  padding: 0.625rem;
 }
 
 .progress-circle {
   display: block;
-  height: 30rem;
-  margin: 2rem auto;
+  height: 18.75rem;
+  margin: 1.25rem auto;
   position: relative;
-  width: 30rem;
+  width: 18.75rem;
 
   @media (--viewport-md) {
-    height: 35rem;
-    width: 35rem;
+    height: 21.875rem;
+    width: 21.875rem;
   }
 
   &__fill {
     circle {
       fill: none;
       stroke: var(--progress-bg);
-      stroke-width: .3rem;
+      stroke-width: .1875rem;
 
       &:nth-child(2) {
         animation: load-circle 1s;
@@ -210,8 +210,8 @@
     align-items: center;
     bottom: 0;
     display: inline-flex;
-    font-size: 5rem;
-    height: 10rem;
+    font-size: 3.125rem;
+    height: 6.25rem;
     justify-content: center;
     left: 0;
     margin: auto;
@@ -221,7 +221,7 @@
     width: 100%;
 
     @media (--viewport-md) {
-      font-size: 7rem;
+      font-size: 4.375rem;
     }
   }
 }
@@ -229,16 +229,16 @@
 .button--tweet {
   align-items: center;
   background-color: var(--color-tweet);
-  border: .2rem solid var(--color-tweet);
-  border-radius: 4rem;
+  border: .125rem solid var(--color-tweet);
+  border-radius: 2.5rem;
   display: inline-flex;
-  margin-top: 3rem;
-  padding: .8rem 1.6rem;
+  margin-top: 1.875rem;
+  padding: .5rem 1rem;
   text-decoration: none;
   transition: background .123s;
 
   svg {
-    margin-right: .4rem;
+    margin-right: .25rem;
   }
 
   &:focus,

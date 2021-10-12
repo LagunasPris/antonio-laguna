@@ -12,16 +12,16 @@
 }
 
 .github-card {
-  border: .1rem solid var(--border);
-  border-radius: .6rem;
+  border: .0625rem solid var(--border);
+  border-radius: .375rem;
   color: var(--color-text);
   display: block;
   flex: 1;
-  margin: 1rem;
-  padding: 2rem;
+  margin: .625rem;
+  padding: 1.25rem;
   text-decoration: none;
 
-  h3 {
+  .github-card__title {
     color: var(--accent);
     font-style: normal;
     font-weight: bold;
@@ -37,7 +37,7 @@
     color: var(--color-text);
     text-decoration: none;
 
-    h3 {
+    .github-card__title {
       text-decoration: underline;
     }
   }

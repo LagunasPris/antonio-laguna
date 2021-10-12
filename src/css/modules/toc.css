@@ -1,17 +1,17 @@
 .article__toc {
   margin-bottom: var(--spacing-md);
-  padding: 0 .5rem;
+  padding: 0 .375rem;
   width: 100%;
 
   @media (--viewport-lg) {
     margin-bottom: 0;
     margin-left: auto;
-    max-height: calc(-15rem + 100vh);
-    max-width: 26rem;
+    max-height: calc(-9.375rem + 100vh);
+    max-width: 16.25rem;
     order: 1;
     overflow: auto;
     position: sticky;
-    top: 15rem;
+    top: 9.375rem;
   }
 }
 
@@ -19,7 +19,7 @@
   &__anchor,
   &__item {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1rem;
     line-height: 1;
   }
 
@@ -28,12 +28,12 @@
     padding-left: 0;
 
     & & {
-      margin-top: 1rem;
-      padding-left: .8rem;
+      margin-top: .625rem;
+      padding-left: .5rem;
 
       .toc__anchor,
       .toc__item {
-        font-size: 1.5rem;
+        font-size: 1rem;
       }
     }
   }
@@ -64,6 +64,6 @@
   }
 
   &__item {
-    margin-top: 1rem;
+    margin-top: .625rem;
   }
 }

@@ -3,17 +3,17 @@
   background: transparent;
   border: 0;
   cursor: pointer;
-  margin-left: .5rem;
+  margin-left: .375rem;
   padding: 0;
   transition: text-shadow .3s;
-  width: 4.5rem;
+  width: 2.8125rem;
 
   &__icon--light {
     display: none;
   }
 
   &:hover {
-    text-shadow: 0 0 .5rem var(--color-text);
+    text-shadow: 0 0 .375rem var(--color-text);
   }
 }
 

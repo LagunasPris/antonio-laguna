@@ -1,18 +1,18 @@
 .course-list {
   margin: var(--spacing-md) auto var(--spacing-lg);
-  max-width: 96rem;
+  max-width: 60rem;
 
   @media (--viewport-md) {
     margin: var(--spacing-xl) auto;
-    padding: 0 1.6rem;
+    padding: 0 1rem;
   }
 }
 
 .course-card {
-  border-radius: .8rem;
+  border-radius: .5rem;
   display: block;
   overflow: hidden;
-  padding: 3.2rem;
+  padding: 2rem;
   position: relative;
 
   &,
@@ -23,15 +23,15 @@
   svg {
     animation: rotate 5s linear infinite;
     animation-play-state: paused;
-    height: 12rem;
-    width: 12rem;
+    height: 7.5rem;
+    width: 7.5rem;
   }
 
   .card__icon {
     color: rgba(255, 255, 255, .3);
     position: absolute;
-    right: -6rem;
-    top: -6rem;
+    right: -3.75rem;
+    top: -3.75rem;
     transform-origin: center center;
     transition: transform .35s ease-in-out, color .35s ease-in-out;
   }
@@ -40,7 +40,7 @@
   &:focus {
     .card__icon {
       color: var(--color-react);
-      transform: translate3d(-1rem, 1rem, 0);
+      transform: translate3d(-.625rem, .625rem, 0);
     }
 
     svg {
@@ -77,19 +77,19 @@
     display: block;
     height: auto;
     margin: 0 auto;
-    max-width: 40rem;
+    max-width: 25rem;
   }
 
   &__lessons {
     counter-reset: course;
     display: flex;
     flex-wrap: wrap;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -.625rem;
+    margin-right: -.625rem;
 
     .lesson__wrapper {
       margin-bottom: var(--spacing-sm);
-      padding: 0 1rem;
+      padding: 0 .625rem;
       position: relative;
       width: 100%;
 
@@ -104,10 +104,10 @@
   }
 
   &__lesson {
-    border-radius: .8rem;
+    border-radius: .5rem;
     flex-direction: column;
     justify-content: space-between;
-    padding: 3.2rem 3.2rem 1rem;
+    padding: 2rem 2rem .625rem;
     position: relative;
     z-index: 1;
 
@@ -117,25 +117,25 @@
   }
 
   &__links {
-    padding-top: 1rem;
+    padding-top: .625rem;
     position: relative;
 
     &::after {
       background-color: var(--color-background);
       content: '';
-      height: 2px;
-      inset: 0 -3.2rem auto;
+      height: .125rem;
+      inset: 0 -2rem auto;
       position: absolute;
     }
 
     ul {
       justify-content: center;
-      margin-left: -1rem;
-      margin-right: -1rem;
+      margin-left: -.625rem;
+      margin-right: -.625rem;
     }
 
     li {
-      margin: 1rem;
+      margin: .625rem;
     }
   }
 
@@ -147,10 +147,10 @@
       content: counter(course);
       font-family: var(--font-base);
       font-weight: bold;
-      padding: 0 10px;
+      padding: 0 .625rem;
       position: absolute;
-      right: -30px;
-      top: -30px;
+      right: -1.875rem;
+      top: -1.875rem;
     }
 
     &::before,
