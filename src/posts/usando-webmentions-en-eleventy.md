@@ -93,6 +93,7 @@ Eleventy tiene muchas funciones chulas y una de ellas son los [ficheros de datos
 Simplificando un poco, la parte principal es esta.
 
 ```js
+{% raw %}
 // _data/webmentions.js
 const ENDPOINT = 'https://webmention.io/api';
 const TOKEN = process.env.WEBMENTION_IO_TOKEN;
@@ -121,6 +122,7 @@ async function fetchWebmentions(since, perPage = 10000) {
 
   return null;
 }
+{% endraw %}
 ```
 
 Es una llamada asíncrona a la ruta que nos facilita el servicio con su token y su dominio. El fichero [lo puedes ver en GitHub](https://github.com/LagunasPris/antonio-laguna/blob/master/src/_data/webmentions.js).
@@ -318,6 +320,7 @@ Como ves, hay diferencias en cómo están las cosas distribuidas en el objeto pe
 El HTML que vamos a usar es bastante estándar. Para poder reusarlo luego dentro de JavaScript está dentro de una [macro](https://mozilla.github.io/nunjucks/templating.html#macro). Este, por ejemplo, es el código para un *like*/*retweet*:
 
 ```html
+{% raw %}
 <li class="mentions__element h-card{% if type %} mentions__element--{{ type }}{% endif %}">
   <a class="display--block u-url"
      href="{{ url }}"
@@ -336,6 +339,7 @@ El HTML que vamos a usar es bastante estándar. Para poder reusarlo luego dentro
     <span class="p-author visually-hidden" aria-hidden="true">{{ author }}</span>
   </a>
 </li>
+{% endraw %}
 ```
 
 En las imágenes, en caso de que no venga definimos una por defecto para no dejar un círculo ahí roto vacío aunque en mis pruebas nunca ha venido uno vacío.

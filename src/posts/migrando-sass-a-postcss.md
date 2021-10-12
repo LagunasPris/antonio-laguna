@@ -26,7 +26,7 @@ Todo lo que vas a leer aquí está además en un repositorio que he creado en Gi
 
 <div class="github-cards">
   <a href="https://github.com/Antonio-Laguna/demo-postcss" class="github-card">
-    <h3>Demo PostCSS</h3>
+    <h3 class="github-card__title">Demo PostCSS</h3>
     <p>Usando PostCSS como alternativa a Sass</p>
     <span class="github-card__meta"><span class="github-card__language-icon" style="color: #563d7c">●</span> CSS</span>
   </a>

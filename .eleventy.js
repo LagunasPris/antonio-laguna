@@ -7,6 +7,7 @@ const markdownItAttrs = require('markdown-it-attrs');
 const markdownItContainer = require('markdown-it-container');
 const markdownItImageFigures = require('markdown-it-image-figures');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const UpgradeHelper = require('@11ty/eleventy-upgrade-help');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
@@ -34,6 +35,7 @@ const infoContainer = require('./eleventy/containers/info');
 const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
 
 module.exports = function(config) {
+  config.addPlugin(UpgradeHelper);
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
   config.addPlugin(syntaxHighlight);

@@ -413,6 +413,7 @@ Si usamos una variable que empieza por una letra mayúscula, podemos usar la var
 Una de las cosas que nos da JSX es un entorno seguro en el que no tenemos que preocuparnos por lo que valgan las variables. JSX se encarga de escapar todo el contenido por nosotros para que nada que venga de fuera pueda contener código malicioso. Veamos un ejemplo:
 
 ```jsx
+{% raw %}
 function Greetings({ name }) {
   return <h1>¡Hola, {name}!</h1>;
 }
@@ -423,6 +424,7 @@ ReactDOM.render(
   <Greetings name={name} />,
   document.getElementById('root')
 );
+{% endraw %}
 ```
 
 ¿Qué crees que va a pasar aquí? Si crees que `visitante` va a estar rodeado de etiquetas `strong` es correcto, pero creo que no de la manera en que esperabas. En la pantalla vamos a ver `¡Hola, <strong>visitante</strong>!`. Sin que `strong` sea tomado en cuenta.
@@ -430,6 +432,7 @@ ReactDOM.render(
 Normalmente esto es lo que queremos pero hay ocasiones en las que necesitaremos poder hacer que eso tenga efecto. Para esto, React nos ofrece una `prop` llamada `dangerouslySetInnerHTML` a la que le podemos pasar un objeto especial. Veámoslo:
 
 ```jsx
+{% raw %}
 function Greetings({ name }) {
   return <h1>¡Hola, <span dangerouslySetInnerHTML={{ __html: name }} />!</h1>;
 }
@@ -440,6 +443,7 @@ ReactDOM.render(
   <Greetings name={name} />,
   document.getElementById('root')
 );
+{% endraw %}
 ```
 
 Si esa prop tiene un objeto con la clave `__html`, su valor será tratado como **seguro**. Como puedes ver, este tratamiento es engorroso, el nombre de la prop es largo y además requiere un objeto con una clave con dos guiones bajos... Es a propósito para que solo lo uses cuando sea necesario.
@@ -459,9 +463,11 @@ Para ello, nos podemos valer de los operadores ternarios y del hecho de que Reac
 Así logramos un `if` dentro de una expresión de JSX:
 
 ```jsx
+{% raw %}
 function Greetings({ name }) {
   return name && <h1>¡Hola, {name}!</h1>;
 }
+{% endraw %}
 ```
 
 De esta manera, si la prop `name` no tiene valor, no mostrará nada. Dado que `name` se evalúa como falso, no llega a ejecutarse la siguiente parte y no se muestra nada.
@@ -469,6 +475,7 @@ De esta manera, si la prop `name` no tiene valor, no mostrará nada. Dado que `n
 No obstante, a menudo querremos ofrecer resultados diferentes dependiendo de si la variable o expresión es verdadera o falsa:
 
 ```jsx
+{% raw %}
 function Greetings({ name }) {
   return name ? (
     <h1>¡Hola, {name}!</h1>
@@ -476,6 +483,7 @@ function Greetings({ name }) {
     <h1>¡Hola!</h1>
   );
 }
+{% endraw %}
 ```
 
 Gracias a este operador ternario, podemos ofrecer valores alternativos dependiendo de lo que necesitemos.
@@ -487,6 +495,7 @@ Ya adelantábamos antes que las props pueden ser cualquier cosa. ¡Hasta otros c
 A veces nos puede resultar útil un componente que nos sirva para establecer una disposición de elementos en pantalla. Imaginemos un componente que nos expone 2 columnas y podemos pasar el contenido que queramos a cada una de las columnas:
 
 ```jsx
+{% raw %}
 function Columns({ left, right }) {
   return (
     <div className="columns">
@@ -495,6 +504,7 @@ function Columns({ left, right }) {
     </div>
   )
 }
+{% endraw %}
 ```
 
 El CSS lo vamos a hacer muy sencillo para ilustrar lo que queremos:

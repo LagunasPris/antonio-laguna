@@ -48,6 +48,7 @@ La plantilla vamos a basarla completamente en el README que tengamos actualmente
 Abajo del todo el código queda así:
 
 ```html
+{% raw %}
 <h3>Mis últimos artículos</h3>
 <ul>
   {{#posts}}
@@ -68,9 +69,10 @@ Abajo del todo el código queda así:
   <br/>
   Última vez: {{refreshDate}}
 </p>
+{% endraw %}
 ```
 
-Con `{{#posts}}` estamos iterando sobre una futura matriz que contenga todos los artículos que vamos a renderizar [tal y como explican en la documentación de mustache](https://github.com/janl/mustache.js#non-empty-lists). Cada artículo tiene su `id` (que es la URL), el `title` o título y el `summary` o resumen / descripción.
+Con `{% raw %}{{#posts}}{% endraw %}` estamos iterando sobre una futura matriz que contenga todos los artículos que vamos a renderizar [tal y como explican en la documentación de mustache](https://github.com/janl/mustache.js#non-empty-lists). Cada artículo tiene su `id` (que es la URL), el `title` o título y el `summary` o resumen / descripción.
 
 ## Preparando el script
 
@@ -179,6 +181,7 @@ A grandes rasgos, la acción va a realizar los siguientes pasos:
 Vamos a crear nuestro fichero para la tarea en `.github/workflows/readme.yaml` y la tarea, de acuerdo a lo de arriba se ve así:
 
 ```yml
+{% raw %}
 name: README build
 
 jobs:
@@ -206,6 +209,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_NAME: 'main'
+{% endraw %}
 ```
 
 Los pasos son los que hemos descrito anteriormente. Únicamente destaco un par de puntos.
