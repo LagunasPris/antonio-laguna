@@ -1,0 +1,34 @@
+.tags {
+  margin: var(--spacing-xl) auto;
+  max-width: 60rem;
+
+  .tags__list {
+    justify-content: space-evenly;
+    margin-bottom: 0;
+  }
+
+  .tags__link {
+    align-items: center;
+    color: var(--color-text);
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--color-accent);
+
+      .tags__icon {
+        color: var(--icon-accent);
+        transform: scale(1.1) translateZ(0);
+      }
+    }
+  }
+
+  .tags__icon {
+    fill: currentColor;
+    transform: translateZ(0);
+    transform-origin: center bottom;
+    transition: color .123s, transform .123s;
+  }
+}

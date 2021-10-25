@@ -18,6 +18,7 @@
 @import 'modules/article.css';
 @import 'modules/mentions.css';
 @import 'modules/toc.css';
+@import 'modules/tag-list.css';
 @import 'modules/prism.css';
 
 @import 'pages/home.css';
