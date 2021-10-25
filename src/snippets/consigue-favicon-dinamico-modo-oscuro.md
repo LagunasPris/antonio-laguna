@@ -1,7 +1,7 @@
 ---
 title: Cómo conseguir un favicon dinámico para el modo oscuro
-description: Pequeño truco con CSS para evitar saltos en las animaciones que se activan en hover.
-date: 2021-10-20
+description: Descubre cómo puedes usar un favicon diferente dependiendo de si está activado el modo oscuro o el modo claro en el navegador del usuario.
+date: 2021-10-25
 tags:
   - JS
   - HTML
@@ -20,7 +20,7 @@ Veamos cómo resolverlo.
 
 ## El HTML
 
-Antes de empezar asegúrate de que tienes  una versión para modo claro y otra para modo oscuro en ficheros diferentes.
+Antes de empezar asegúrate de que tienes una versión para modo claro y otra para modo oscuro en ficheros diferentes.
 
 En nuestro head, vamos a cambiar cómo definimos el favicon y vamos a añadirle un par de atributos `data`:
 
@@ -86,14 +86,18 @@ Como punto extra, usamos `addEventListener` por si el icono cambiara durante la 
 
 Ahora tenemos dos opciones para colocar este código:
 
-La primera opción es colocarlo con todo nuestro JavaScript que, por buenas prácticas se tendría que ejecutar al final del todo. El *problema* es que la gente que tenga modo oscuro verá el icono original **siempre** y luego cambiará cuando se ejecute JavaScript.
+1. La primera opción es colocarlo con todo nuestro JavaScript que, por buenas prácticas se tendría que ejecutar al final del todo. El *problema* es que la gente que tenga modo oscuro verá el icono original **siempre** y luego cambiará cuando se ejecute JavaScript.
+2. La segunda opción es la de meter todo este código **justo debajo** de la definición de los elementos `link`. De esta forma tendremos una minúscula porción de código bloqueando la página, pero ganamos evitando que veamos ningún cambio en el icono mientras carga la página.
 
-La segunda opción es la de meter todo este código **justo debajo** de la definición de los elementos `link`. De esta forma tendremos una minúscula porción de código bloqueando la página pero ganamos evitando que veamos ningún cambio en el icono mientras carga la página.
+Yo me decanto por la segunda opción porque el impacto en rendimiento es negligible y el icono cambiando a la vista del usuario me pone un poco nervioso. No obstante, lo recomendable es comprimir y transpilar el código ya que lo vamos a soltar directamente en el `head` de nuestra página.
 
-Para ello, lo recomendable es comprimirlo y transpilarlo. Te dejo aquí el fragmento:
+Te dejo aquí el fragmento:
 
 ```js
 (function(){if("not-all"!==window.matchMedia("(prefers-color-scheme").media){var a=window.matchMedia("(prefers-color-scheme: dark)"),d=document.querySelectorAll('link[rel="icon"]'),c=function(){var e=a.matches?"hrefDark":"hrefLight";Array.prototype.slice.call(d).forEach(function(b){b.href=b.dataset[e]})};a.addEventListener("change",c);c()}})();
 ```
 
 Este fragmento es lo mismo que hemos visto anteriormente pero pasado por [Babel](https://babeljs.io/repl) y por [Closure Compiler](https://closure-compiler.appspot.com/home) consiguiendo un 47% de reducción frente al fragmento original.
+
+*[HTML]: HyperText Markup Language
+*[JS]: JavaScript
