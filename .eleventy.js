@@ -35,7 +35,6 @@ const infoContainer = require('./eleventy/containers/info');
 const hiddenHeaderContainer = require('./eleventy/containers/hidden-header');
 
 module.exports = function(config) {
-  config.addPlugin(UpgradeHelper);
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
   config.addPlugin(syntaxHighlight);

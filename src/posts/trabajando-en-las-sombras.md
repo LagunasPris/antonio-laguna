@@ -12,7 +12,7 @@ En este tiempo que he estado ausente del blog, he estado haciendo algunas otras 
 
 [José Luis Antúnez](https://twitter.com/jlantunez) me contactó a finales de Agosto para darle una vuelta a su web. Normalmente no hago trabajos aparte. Me gusta ser responsable con mi tiempo libre y dedicar tiempo a mi familia y a mí mismo. Sin embargo, la web de José Luis es muy interesante y he disfrutado mucho trabajando con él.
 
-{% image 'https://res.cloudinary.com/antonio-laguna/image/upload/v1633692584/monograma-jose-luis-antunez_z6kgv1.png' 1112 634 'Monograma de José Luis con una J y una L' 'Monograma de la web' %}
+{% image 'monograma-jose-luis-antunez_xiep6w.png' 1112 634 'Monograma de José Luis con una J y una L' 'Monograma de la web' %}
 
 Nos conocemos desde [WebSlides](https://webslides.tv/) y mantenemos el contacto de vez en cuando (ahora menos con la pandemia). Es una persona a la que admiro y respeto muchísimo así que nos pusimos manos a la obra con la web con mucho karma.
 

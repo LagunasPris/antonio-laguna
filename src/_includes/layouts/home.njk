@@ -24,9 +24,33 @@ layout: layouts/base.njk
   {% set posts = collections.articles | reverse | head(5) %}
   {% include 'components/postlist.njk' %}
 
+  <div class="tags text--center">
+    <h2 class="text-level--5 text--upper spacing--lg">Artículos y fragmentos de Front-End</h2>
+    <ul class="tags__list display--flex" role="list">
+      <li class="tags__tag">
+        <a href="/tag/js" class="tags__link" style="--icon-accent: #f7df1e;">
+          {{ icons.javascript(48, ' tags__icon spacing--sm') }}
+          JavaScript
+        </a>
+      </li>
+      <li class="tags__tag">
+        <a href="/tag/css" class="tags__link" style="--icon-accent: #1572b6;">
+          {{ icons.css(48, ' tags__icon spacing--sm') }}
+          CSS
+        </a>
+      </li>
+      <li class="tags__tag">
+        <a href="/tag/html" class="tags__link" style="--icon-accent: #e34f26;">
+          {{ icons.html(48, ' tags__icon spacing--sm') }}
+          HTML
+        </a>
+      </li>
+    </ul>
+  </div>
+
   <div class="course-list">
     <a class="course-card bg--primary color--light" href="/curso-react/">
-      <h2 class="card__title text-level--5">Aprende React</h2>
+      <h3 class="card__title text-level--5">Aprende React</h3>
       <span class="text-level--6">Embárcate conmigo y aprende desde cero sobre una de las librerías más usadas de JavaScript</span>
       <span class="card__icon">
         {{ icons.react() }}
