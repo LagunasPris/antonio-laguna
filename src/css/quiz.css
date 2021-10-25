@@ -143,7 +143,7 @@
 
 .quiz__progress {
   background-color: var(--progress-bg);
-  height: 0.375rem;
+  height: .375rem;
   left: 0;
   position: absolute;
   top: 0;
@@ -176,7 +176,7 @@
   border-radius: .25rem;
   display: block;
   margin-bottom: .5rem;
-  padding: 0.625rem;
+  padding: .625rem;
 }
 
 .progress-circle {
