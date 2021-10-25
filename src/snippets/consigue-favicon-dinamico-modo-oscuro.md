@@ -5,7 +5,7 @@ date: 2021-10-25
 tags:
   - JS
   - HTML
-postTweet:
+postTweet: 1452539781934686210
 ---
 
 Ah... el modo oscuro. Hay tantos defensores como detractores. En el Front a veces nos vemos en la tesitura de dar soporte a esta característica de una forma u otra.
@@ -99,5 +99,10 @@ Te dejo aquí el fragmento:
 
 Este fragmento es lo mismo que hemos visto anteriormente pero pasado por [Babel](https://babeljs.io/repl) y por [Closure Compiler](https://closure-compiler.appspot.com/home) consiguiendo un 47% de reducción frente al fragmento original.
 
+## Nota final
+
+Algunos navegadores tienen soporte para usar SVG como Favicons los cuales permiten incrustar la media query dentro de ellos y además ofrecen mejor calidad de escalado en líneas generales. No obstante el soporte es un poco inconsistente ahora mismo. Safari no tiene soporte y Firefox es inconsistente con el modo oscuro en estos.
+
 *[HTML]: HyperText Markup Language
 *[JS]: JavaScript
+*[SVG]: Scalable Vector Graphic
