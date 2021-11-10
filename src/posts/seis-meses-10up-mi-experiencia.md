@@ -3,7 +3,8 @@ title: "6 meses en 10up - Mi experiencia"
 description: Hace ya algo más de seis meses desde que cambié de empresa. Comparto contigo mi reflexión inicial.
 date: 2021-11-10
 tags:
-- Personal
+  - Personal
+postTweet: '1458378275080835075'
 ---
 
 El día 5 de Octubre se cumplieron mis primeros 6 meses en 10up, como con todo cambio me gusta pararme a reflexionar, **¿ha merecido la pena?**
