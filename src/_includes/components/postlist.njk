@@ -4,6 +4,7 @@
     <article class="posts-feed__post display--flex">
       <div class="post__date text--upper font--bold color--secondary font--mono">{{ post.date | shortDate }}</div>
       <{{ headingLevel }} class="post__title font--regular">{{ post.data.title }}</{{ headingLevel }}>
+      <{{ headingLevel }} class="post__title font--regular">{{ post.data.displayTitle | default(post.data.title) | safe }}</{{ headingLevel }}>
       <a class="post__link" href="{{ post.url | url }}" aria-label="Leer {{ post.data.title  }}"></a>
     </article>
   {% endfor %}

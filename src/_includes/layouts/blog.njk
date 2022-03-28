@@ -37,7 +37,7 @@
     <article class="article h-entry">
       <header class="article__header display--flex flex--wrap flex--v-center spacing--sm">
         <div class="article__intro">
-          <h1 class="article__title leading--small text-level--2 p-name">{{ title }}</h1>
+          <h1 class="article__title leading--small text-level--2 p-name">{{ displayTitle | default(title) | safe }}</h1>
           <section class="article__summary text-level--5 font--italic color--primary" aria-label="Corto resumen">
             <p class="p-summary">{{ description }}</p>
           </section>
