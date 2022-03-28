@@ -5,7 +5,7 @@ description: Descubre cómo puedes crear un fichero gitignore global para evitar
 date: 2022-03-28
 tags:
   - Git
-postTweet:
+postTweet: 1508356502230384640
 ---
 
 Una de las cosas que hasta hace bien poco hacía era añadir este tipo de líneas en todos los ficheros `.gitignore` que podía:
@@ -15,17 +15,17 @@ package-lock.json
 + .idea
 ```
 
-Claro, esta compartía sitio con `.vscode` o `Thumbs.db`. Si todos añadimos nuestras reglas específicas de nuestro entorno de trabajo, `.gitignore` necesitaría un trabajo de mantenimiento curioso y esto además dificultaría contribuciones de código abierto.
+Claro, esta compartía sitio con otras como  `.vscode` o `Thumbs.db`. Si todos añadimos nuestras reglas específicas de nuestro entorno de trabajo, `.gitignore` sería complejo de mantener y esto dificulta contribuciones de código abierto.
 
-Hace poco he descubierto que hay una mejor solución: tener un fichero `.gitignore` global y personal para todos los repositorios. Veamos cómo hacerlo.
+Hace poco he descubierto que hay solución mejor: tener un fichero `.gitignore` global y personal para todos los repositorios. Veamos cómo hacerlo.
 
-Lo primero que vamos a hacer es crear un fichero `.gitignore` para nuestras reglas globales. En entornos Unix lo normal es mantenerlos en nuestro directorio `$HOME`:
+Lo primero que haremos es crear un fichero `.gitignore` para nuestras reglas globales. En entornos Unix lo normal es mantenerlos en nuestro directorio `$HOME`:
 
 ```bash
 $ touch ~/.gitignore
 ```
 
-Luego, ábrelo con tu editor favorito (seguro que es nano) y rellénalo a tu gusto. Este es el mío:
+Luego, ábrelo con tu editor favorito (seguro que es `nano`) y rellénalo a tu gusto. Este es el mío:
 
 ```text
 .idea
