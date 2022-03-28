@@ -7,7 +7,6 @@ const markdownItAttrs = require('markdown-it-attrs');
 const markdownItContainer = require('markdown-it-container');
 const markdownItImageFigures = require('markdown-it-image-figures');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const UpgradeHelper = require('@11ty/eleventy-upgrade-help');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const embedTwitter = require('eleventy-plugin-embed-twitter');
@@ -29,6 +28,8 @@ const githubPathFilter = require('./eleventy/filters/github-path');
 const pluralizeFilter = require('./eleventy/filters/pluralize');
 const publishedFilter = require('./eleventy/filters/published');
 const hiddenTagsFilter = require('./eleventy/filters/remove-hidden-tags');
+const byYearFilter = require('./eleventy/filters/by-year');
+const increaseHeadingFilter = require('./eleventy/filters/increase-heading');
 const imageShortcodes = require('./eleventy/shortcodes/images');
 
 const infoContainer = require('./eleventy/containers/info');
@@ -93,6 +94,8 @@ module.exports = function(config) {
   config.addFilter('published', publishedFilter);
   config.addFilter('removeHiddenTags', hiddenTagsFilter);
   config.addFilter('json', jsonFilter);
+  config.addFilter('byYear', byYearFilter);
+  config.addFilter('increaseHeading', increaseHeadingFilter);
 
   config.addNunjucksAsyncFilter('lastModifiedDate', lastModifiedDate);
 

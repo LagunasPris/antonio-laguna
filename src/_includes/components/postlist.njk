@@ -1,11 +1,31 @@
 {% set headingLevel = postsHeadingLevel | default('h2') %}
+{% set yearHeadingLevel = headingLevel %}
+{% set showYears = true %}
+{% set modifiedFlow = false %}
+
 <div class="posts-feed">
-  {%- for post in posts -%}
+  {%- for year in posts | byYear -%}
+    {% if loop.first and loop.last %}
+      {% set showYears = false %}
+    {% else %}
+      {% if not modifiedFlow %}
+        {% set headingLevel = headingLevel | increaseHeading %}
+        {% set modifiedFlow = true %}
+      {% endif %}
+    {% endif %}
+    {% set yearNumber = year[0] %}
+    {% set yearPosts = year[1] %}
+
+    {% if showYears %}
+      <{{ yearHeadingLevel }} class="posts-feed__year">{{ yearNumber }}</{{ yearHeadingLevel }}>
+    {% endif %}
+
+    {% for post in yearPosts %}
     <article class="posts-feed__post display--flex">
       <div class="post__date text--upper font--bold color--secondary font--mono">{{ post.date | shortDate }}</div>
-      <{{ headingLevel }} class="post__title font--regular">{{ post.data.title }}</{{ headingLevel }}>
       <{{ headingLevel }} class="post__title font--regular">{{ post.data.displayTitle | default(post.data.title) | safe }}</{{ headingLevel }}>
       <a class="post__link" href="{{ post.url | url }}" aria-label="Leer {{ post.data.title  }}"></a>
     </article>
+    {% endfor %}
   {% endfor %}
 </div>
