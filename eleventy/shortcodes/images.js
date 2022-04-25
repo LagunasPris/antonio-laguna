@@ -1,5 +1,5 @@
 const CLOUDNAME = 'antonio-laguna';
-const FOLDER = 'v1624199559/antonio.laguna/';
+const FOLDER = 'antonio.laguna/';
 const BASE_URL = `https://res.cloudinary.com/${CLOUDNAME}/image/upload/`;
 const FALLBACK_WIDTHS = [300, 600, 928, 1856];
 const FALLBACK_WIDTH = 618;
