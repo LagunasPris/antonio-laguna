@@ -75,7 +75,7 @@ La ley dice que podemos desgravar cualquier gasto derivado de nuestra actividad.
 
 En mi caso estos son los gastos fijos que suelo deducir:
 
-* Coste de la gestoría. [Como contaba @n03m1ms](https://twitter.com/n03m1ms/status/1512060866623119362), por regla general (y me incluyo) no tenemos ni idea de cómo gestionar movidas fiscales. Uso [Cuéntica](cuentica.com) (muy contento) y me desentiendo de presentar impuestos ni calcularlos.
+* Coste de la gestoría. [Como contaba @n03m1ms](https://twitter.com/n03m1ms/status/1512060866623119362), por regla general (y me incluyo) no tenemos ni idea de cómo gestionar movidas fiscales. Uso [Cuéntica](https://cuentica.com) (muy contento) y me desentiendo de presentar impuestos ni calcularlos.
 * Coste de internet.
 * Aplicaciones que uso. Cualquier aplicación que tenga que ver con el trabajo nos la podemos desgravar.
 * La cuota de autónomo.
