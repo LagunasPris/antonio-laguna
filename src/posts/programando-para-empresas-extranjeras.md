@@ -125,4 +125,4 @@ Al menos esta es mi experiencia y, durante 7 años, no he tenido inspecciones ni
 ¿Te quedan dudas? ¿Haces algo de forma diferente? ¡Me encantaría saberlo!
 
 *[SL]: Sociedad Limitada
-*[IRPF]: Impuesto sobre la Renta
+*[IRPF]: Impuesto sobre la Renta de las Personas Físicas
