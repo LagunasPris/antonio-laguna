@@ -31,7 +31,9 @@ Es perfectamente posible crear una Sociedad Limitada (o alguna de sus variantes)
 * La contabilidad es más compleja (y por ende, más cara).
 * El administrador de una SL (tú) tiene que ser un Autónomo también y la cuota es más cara.
 
-Crear una SL (según tengo entendido) sólo merece la pena para cantidades de dinero considerables.
+Crear una SL (según tengo entendido) no merece la pena a nivel fiscal a menos que factures mucho dinero. No obstante, existe una ventaja a nivel de responsabilidad.
+
+Cuando hay un problema grave y de litigios, como autónomo vas con todo. Si te embargaran pues respondes con todos tus bienes personales. Como Sociedad Limitada la responsabilidad queda limitada a los bienes de la empresa (que pueden no ser ninguno). Como personas que nos dedicamos al desarrollo es complicado que nos veamos envueltos en este tipo de entuertos (a menos que obremos de mala fé) pero es importante destacar esta distinción.
 
 ## ¿Cómo hago facturas?
 
@@ -66,6 +68,7 @@ Esto nos soluciona un poco el hecho de que, al contrario que si trabajáramos pa
 El ser autónomos solo tiene un gasto fijo obligatorio, y es la famosa cuota que, a día 23 de Abril de 2022 está en 294€ mensuales aunque podemos aumentar nuestra base de cotización y llegar a pagar hasta 1266.66€.
 
 La base de cotización la podemos elegir de forma individual (al contrario que cuando trabajamos de forma asalariada). Esta base determina la calidad de prestaciones sociales que percibiremos (paro y pensión).
+Cabe destacar que el cambio de la base de cotización (en el 2022 al menos), es únicamente posible hasta los 47 años. A partir de los 48 entraremos en una situación especial en la que ya no podremos jugar con esta base. Si te encuentras en estas franjas de edad, te recomiendo que lo comentes con una asesoría para ver qué base de cotización te interesa.
 
 A parte de eso, no existen más gastos fijos *obligatorios*. Veamos qué podemos desgravar.
 
@@ -123,6 +126,10 @@ Aunque es todo un mundo, espero que con este artículo haya podido aclarar cómo
 Al menos esta es mi experiencia y, durante 7 años, no he tenido inspecciones ni cosas extrañas.
 
 ¿Te quedan dudas? ¿Haces algo de forma diferente? ¡Me encantaría saberlo!
+
+## Ediciones
+
+¡Gracias a [@tinitun](https://twitter.com/tinitun/status/1518599863994306560) por sus apuntes sobre SL y cuotas!
 
 *[SL]: Sociedad Limitada
 *[IRPF]: Impuesto sobre la Renta de las Personas Físicas
