@@ -101,14 +101,12 @@
 .article__body__button {
   background-color: var(--color-selection);
   border: .125rem solid var(--color-selection);
-  border-radius: 0 0 .25rem .25rem;
   color: var(--color-selection-text);
   padding: .375rem 1rem;
   transition: .2s color, .2s background-color, .2s border-color;
   width: 100%;
 
   @media (--viewport-md) {
-    border-radius: 0 .25rem .25rem 0;
     width: auto;
   }
 
@@ -117,6 +115,14 @@
     background-color: var(--color-background);
     border-color: var(--color-accent);
     color: var(--color-text);
+  }
+}
+
+.article__mentions .form__button {
+  border-radius: 0 0 .25rem .25rem;
+
+  @media (--viewport-md) {
+    border-radius: 0 .25rem .25rem 0;
   }
 }
 
