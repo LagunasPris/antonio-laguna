@@ -5,7 +5,7 @@ date: 2022-04-25
 enableToc: true
 tags:
   - Personal
-postTweet:
+postTweet: '1518535333574586369'
 ---
 
 Hace unos días, [@SGordilloDev](https://twitter.com/SGordilloDev) retransmitía esta pregunta de [@Anniuska](https://twitter.com/Anniuska):
