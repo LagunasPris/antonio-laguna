@@ -133,3 +133,4 @@ Al menos esta es mi experiencia y, durante 7 años, no he tenido inspecciones ni
 
 *[SL]: Sociedad Limitada
 *[IRPF]: Impuesto sobre la Renta de las Personas Físicas
+*[IVA]: Impuesto sobre el Valor Añadido
