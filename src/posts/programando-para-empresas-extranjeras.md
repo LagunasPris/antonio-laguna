@@ -35,6 +35,8 @@ Crear una SL (según tengo entendido) no merece la pena a nivel fiscal a menos q
 
 Cuando hay un problema grave y de litigios, como autónomo vas con todo. Si te embargaran pues respondes con todos tus bienes personales. Como Sociedad Limitada la responsabilidad queda limitada a los bienes de la empresa (que pueden no ser ninguno). Como personas que nos dedicamos al desarrollo es complicado que nos veamos envueltos en este tipo de entuertos (a menos que obremos de mala fé) pero es importante destacar esta distinción.
 
+Si tienes más curiosidad, te recomiendo que te leas este artículo de Cuéntica en el que hablan de la decisión en profundidad: [¿Autónomo o SL?](https://cuentica.com/asesoria/autonomo-o-sl/)
+
 ## ¿Cómo hago facturas?
 
 Pues depende del trato que tengas con la empresa.

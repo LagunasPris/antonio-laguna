@@ -5,7 +5,7 @@ date: 2022-05-03
 tags:
   - CSS
   - JS
-postTweet:
+postTweet: '1521443395230740481'
 ---
 
 En el anterior artículo sobre custom properties: [Introducción a las propiedades personalizadas o variables en CSS](/posts/introduccion-css-propiedades-personalizadas/), aprendimos las cosas que podíamos hacer *sólo* con CSS. Cómo podíamos usar ella cascada, cambiarlas con media queries, tener valores por defecto y combinarlas con `calc()` por ejemplo.
