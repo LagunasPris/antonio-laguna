@@ -1,7 +1,7 @@
 ---
 title: 'El potencial de las CSS Custom Properties: son dinámicas'
 description: Descubre cómo podemos usar las custom properties de forma dinámica y con JavaScript
-date: 2022-04-28
+date: 2022-05-03
 tags:
   - CSS
   - JS

@@ -176,7 +176,7 @@ Y este sería el resultado. Si estás en un escritorio te animo a ajustar el tam
 
 Estos son algunos de los poderes que la custom properties nos ofrecen. Conforme las tecnologías avancen y los navegadores mejoren, vamos a tener muchas más opciones.
 
-En un próximo artículo veremos cómo podemos usar estas propiedades con JavaScript lo cual nos da aun más opciones a la hora de nuevos trucos e interacciones.
+En el siguiente artículo vemos cómo podemos usar estas propiedades con JavaScript lo cual nos da aún más opciones a la hora de nuevos trucos e interacciones: [El potencial de las CSS Custom Properties: son dinámicas](/posts/potencial-css-custom-properties-dinamicas/).
 
 Más recursos:
 
