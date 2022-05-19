@@ -94,11 +94,11 @@ Además, cualquier gasto de equipamiento como ordenador, móvil o material de of
 
 Los impuestos se calculan en base **a los beneficios** que ganemos y tienen tramos. Como aclaración, los beneficios son lo que ingresamos con nuestras facturas menos nuestros gastos.
 
-Los primeros 12,450€ tributan al 19%, de ahí a 20,200€ un 24%, luego hasta 35,200 un 30%, seguimos hasta los 60,000€ con un 37%. Entre 60,000€ y 300,000€ tributaremos un 45% y a partir de 301,000€ un 47%.
+Los primeros 12.450€ tributan al 19%, de ahí a 20.200€ un 24%, luego hasta 35.200€ un 30%, seguimos hasta los 60.000€ con un 37%. Entre 60.000€ y 300.000€ tributaremos un 45% y a partir de 301.000€ un 47%.
 
 Eso es el tipo general sin más y luego tenemos deducciones por nuestra situación familiar (hijes, etc) así como incrementos si tenemos otros rendimientos.
 
-Antes de volver a España, me puse en contacto con un gestor y le pedí que me calculara una renta con el salario que iba a percibir y toda mi situación familiar. Obviamente esto no tenía en cuenta mis gastos pero me salió un IRPF medio de 24% para 45,000€ (en 2014). Desde entonces, de mi factura retengo de forma automática un 25% que guardo en una cuenta aparte para poder pagar el IRPF. Con esto me da para cubrir el IRPF trimestral así como el anual.
+Antes de volver a España, me puse en contacto con un gestor y le pedí que me calculara una renta con el salario que iba a percibir y toda mi situación familiar. Obviamente esto no tenía en cuenta mis gastos pero me salió un IRPF medio de 24% para 45.000€ (en 2014). Desde entonces, de mi factura retengo de forma automática un 25% que guardo en una cuenta aparte para poder pagar el IRPF. Con esto me da para cubrir el IRPF trimestral así como el anual.
 
 ## ¿Cuándo pago impuestos?
 
@@ -111,7 +111,7 @@ Los impuestos se pagan trimestralmente y anualmente. De manera trimestral (Enero
 De manera anual nos toca presentar los siguientes impuestos:
 
 * Modelo 390. Esta es la liquidación del IVA del año. Decidimos si lo que nos debe Hacienda lo dejamos a cuenta (si prevemos que vamos a hacer operaciones en España es recomendable porque se equilibran) o solicitamos la devolución. Esta devolución **suele tardar** y la Agencia Tributaria la suele ingresar en Mayo.
-* Modelo 100. Esta es la famosa Renta. Siempre que ingresemos más de 22,000€ de un único pagador o 14,000€ de varios pagadores, estamos obligados a presentarla. Aquí se suele liquidar ese porcentaje restante que no hayas cubierto con ese 20% que te retienen de forma trimestral en el modelo 130.
+* Modelo 100. Esta es la famosa Renta. Siempre que ingresemos más de 22.000€ de un único pagador o 14.000€ de varios pagadores, estamos obligados a presentarla. Aquí se suele liquidar ese porcentaje restante que no hayas cubierto con ese 20% que te retienen de forma trimestral en el modelo 130.
 
 ## ¿Qué derechos laborales tengo?
 
